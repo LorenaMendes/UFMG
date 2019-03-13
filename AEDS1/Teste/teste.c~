@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+	char *nome=(char*)malloc(6*sizeof(char));
+	FILE *arq;
+	arq = fopen("teste.txt","w");
+	if(arq == NULL) printf("ERRO!\n"); 
+	fprintf(arq,"Lorena\n");
+	arq = fopen("teste.txt","r");
+	fgets(nome,6,arq);
+	puts(nome);
+	return 0;
+}

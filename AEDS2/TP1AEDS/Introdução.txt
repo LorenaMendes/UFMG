@@ -1,0 +1,35 @@
+Instituição: Universidade Federal de Minas Gerais
+Disciplina: AEDSII
+Aluna: Lorena Mendes Peixoto
+Turma: Ciência da Computação (TA1)
+
+- Introdução
+
+	Foi proposto o desenvolvimento de um "motor de comentários" que fosse capaz de gerenciar inserção, resposta e deleção de comentários do Facebook. As ferramentas utilizadas foram as vistas até o momento nas aulas de AEDSII. Os princípios mais utilizados foram recursividade, estruturas de dados, ordenação e listas encadeadas.
+
+	O projeto teve por objetivo mostrar aos alunos possíveis aplicações do conteúdo teórico visto em sala de aula, além de incentivar o uso das ferramentas ensinadas e desenvolver nossa capacidade de codificar algoritmos projetados por nós mesmos.
+
+	Um grande desafio no desenvolvimento do projeto foi o tratamento dos dados de entrada, selecionando o que seria interpretado para chamar as funções principas. O uso da recursividade também foi, de certa forma, um desafio. É necessário ter certo cuidado ao utilizar essa ferramenta, pois, apesar de muito elegante, ela é um pouco difícil de se implementar.
+
+	Num geral, foi um trabalho interessante de fazer. O conteúdo visto nas aulas foi reforçado e isso garantiu um melhor aprendizado.
+
+- Desenvolvimento
+
+	As funções utilizadas no desenvolvimento foram as seguintes:
+
+	-> Adiciona(): Tem por finalidade adicionar um comentário ao final da lista de comentários. Foi a de mais simples implementação e sua complexidade é de ordem n. Foram feitas, basicamente, a inserção do novo elemento com o id passado por parâmetro e a manipulação dos apontadores ("lista-primeira", "lista->ultima", etc.), respeitando o novo item.
+
+	-> EncontraComentario(): Essa é uma função feita para auxiliar nas funções Responder() e Remover(). Tem por objetivo encontrar um elemento com o id passado por parâmetro em sua chamada. Encontrado ou não, o retorno dessa função define como a função "pai" se comportará. Sua complexidade é de ordem (NÃO SEI). A função percorre recursivamente cada comentário (do primeiro até o último da lista e, da mesma forma, "adentrando" às respostas de cada um) e faz comparações de modo a encontrar um elemento com o id igual ao procurado. Em caso de sucesso, retorna esse elemento (célula). Do contrário, retorna NULL.
+
+	-> Responde(): Tem por finalidade adicionar uma resposta a um comentáio. Essa resposta passa a ser uma nova lista, que contem todas as relacionadas ao comentário "pai". Os parâmetros que definem a assinatura da função são a lista em questão, o id do comentário ao qual se quer dar a resposta e o id da resposta. A complexidade dessa função é de ordem (NÃO SEI), e, para implementá-la, utilizei a função EncontraComentario(), que busca o primeiro id. Em seguida, caso ele exista, é chamada a função Adiciona(), passando por parâmentro a nova lista e o segundo id.
+
+	-> Remove(): Função feita para remover um comentário e todas as respostas que ele tiver. Como foi especificado que fosse feita de forma recursiva, a complexidade foi de ordem (NÃO SEI). Ela recebe por parâmetro a lista e o id do comentário que se quer apagar. Com o auxílio da função EncontraComentario(), é procurado o id em questão e, as respostas relacionadas a ele são apagadas, assim como o mesmo.
+
+	-> ImprimeLista(): Também recursiva, a função basicamente escreve os resultados das operações no arquivo de saída. Sua complexidade é de ordem (NÃO SEI), ela segue o seguinte algoritmo:
+		imprime(comentarios):
+			para cada comentario em comentarios:
+				imprime o identificador do comentario
+				se o comentario possui respostas:
+					imprime(respostas do comentario) // etapa recursiva
+
+	-> Ordena(): Essa função faz a ordenação de um vetor recebido por parâmetro. Esse vetor contém os id's dos comentários impressos pela função anteriormente descrita. A ordenação é feita segundo o algoritmo da inserção, e por isso tem complexidade de ordem n no melhor caso e n² no pior caso.
