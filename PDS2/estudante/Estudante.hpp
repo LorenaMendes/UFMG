@@ -5,7 +5,7 @@
 
 struct Estudante {
 	std::string nome;
-	long matricula;
+	int matricula;
 	float notas[5];
 
 	float calcularRSG();
