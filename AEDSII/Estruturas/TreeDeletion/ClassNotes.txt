@@ -1,0 +1,391 @@
+* Deletion in Trees
+
+? How would you eliminate 10 from this tree?
+
+    6                   6
+   / \                 / \
+  5   8               5   8
+ /   / \             /   / \
+4   7  12           4   7  12
+      /  \                   \
+     10  15                  15
+
+
+? How would you eliminate 5 from this tree?
+
+    6                   6
+   / \                 / \
+  5   8               4   8
+ /   / \                 / \
+4   7  12               7  12
+      /  \                /  \
+     10  15             10   15
+
+
+? How would you eliminate 8 from this tree?
+
+    6                   6
+   / \                 / \
+  5   8               5  10
+ /   / \             /   / \
+4   7  12           4   7  12
+      /  \                   \
+     10  15                  15
+
+
+? And, from this tree, how would you eliminate node 8?
+
+    6                   6
+   / \                 / \
+  5   8               5  12
+ /     \             /   / \
+4      12           4  10  15
+      /  \
+     10  15
+
+
+? How many cases are there when eliminating nodes from trees?
+- Key is not in the tree
+- Key is less than current tree
+- Key is greater than current tree
+- Key is current tree, and current tree has no left child
+- Key is current tree, and current tree has no right child
+- Key is current tree, and current tree has both children.
+
+
+? How would you handle each one of these cases?
+- Key is not in the tree
+  # do nothing.
+- Key is less than current tree
+  # Try to remove key from left subtree.
+- Key is greater than current tree
+  # Try to remove key from right subtree.
+- Key is current tree, and current tree has no right child
+  # Make current tree point to its left child
+- Key is current tree, and current tree has no left child
+  # Make current tree point to its right child
+- Key is current tree, and current tree has both children.
+  # Replace current tree's key with the key of the rightmost child of its
+    left subtree (or vice-versa)
+
+void Antecessor(Apontador q, Apontador *r) {
+  if ((*r)->Dir) {
+    Antecessor(q, &(*r)->Dir);
+  } else {
+    q->Reg = (*r)->Reg;
+    Apontador aux = *r;
+    *r = (*r)->Esq;
+    free(aux);
+  }
+}
+
+int Retira(TipoChave x, Apontador *p) {
+  Apontador Aux;
+  if (*p == NULL) {
+    return 0;
+  }
+  if (x < (*p)->Reg.Chave) {
+    return Retira(x, &(*p)->Esq);
+  } else  if (x > (*p)->Reg.Chave){
+    return Retira(x, &(*p)->Dir);
+  } else if ((*p)->Dir == NULL) {
+    Aux = *p;
+    *p = (*p)->Esq;
+    free(Aux);
+  } else if ((*p)->Esq == NULL) {
+    Aux = *p;
+    *p = (*p)->Dir;
+    free(Aux);
+   } else {
+    Antecessor(*p, &(*p)->Esq);
+   }
+   return 1;
+}
+
+
+? Write a program that inserts, removes and then traverses elements:
+
+TipoChave gen(const int MAX_KEY) {
+  return random() % MAX_KEY + 1;
+}
+
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntax: %s num_keys\n", argv[0]);
+    exit(1);
+  } else {
+    Apontador D;
+    Inicializa(&D);
+    int i;
+    const int NUM_KEYS = atoi(argv[1]);
+    // Inserts elements in the tree.
+    printf("Inserting:\n");
+    for (i = 0; i < NUM_KEYS; i++) {
+      Registro Reg;
+      Reg.Chave = gen(NUM_KEYS * 2);
+      if (Insere(Reg, &D))
+        printf("%4s%4d", "+", Reg.Chave);
+      else
+        printf("%4s%4d", "*", Reg.Chave);
+    }
+    // Visits every key in the tree.
+    printf("\nOriginal tree:\n");
+    Central(D, &visita);
+    // Removes elements from the tree.
+    printf("\nRemoving:\n");
+    for (i = 0; i < NUM_KEYS; i++) {
+      TipoChave Chave = gen(NUM_KEYS * 2);
+      if (Retira(Chave, &D))
+        printf("%4d%4s", Chave, "-");
+      else
+        printf("%4d%4s", Chave, "*");
+    }
+    // Visits every key in the tree.
+    printf("\nAfter removing elements:\n");
+    Central(D, &visita);
+  }
+}
+
+
+? How can you implement the union of two trees?
+
+
+? What is the asymptotic complexity of your algorithm?
+
+
+? We shall have two programs now. Could you organize them with a Makefile?
+
+CC     = clang
+CFLAGS =
+ODIR   = obj
+DEPS   = Tree.h
+_OBJ = Tree.o
+_OBJ_UN2 = Union2Main.o $(_OBJ)                  <===
+OBJ_UN2 = $(patsubst %,$(ODIR)/%,$(_OBJ_UN2))    <===
+_OBJ_DEL = DelMain.o $(_OBJ)
+OBJ_DEL = $(patsubst %,$(ODIR)/%,$(_OBJ_DEL))
+$(ODIR)/%.o: %.c $(DEPS)
+        $(CC) -Wall -c -o $@ $< $(CFLAGS)
+DelMain: $(OBJ_DEL)
+        $(CC) -Wall -o $@ $^ $(CFLAGS)
+Union2Main: $(OBJ_UN2)                           <===
+        $(CC) -Wall -o $@ $^ $(CFLAGS)           <===
+.PHONY: clean
+clean:
+        rm -f $(ODIR)/*.o DelMain
+
+
+? Let's code a program to create trees (to avoid having to write it multiple
+  times):
+
+TipoChave gen(const int MAX_KEY) {
+  return random() % MAX_KEY + 1;
+}
+
+Apontador createTree(const int NUM_KEYS, int* size_tree) {
+  Apontador D;
+  Inicializa(&D);
+  for (int i = 0; i < NUM_KEYS; i++) {
+    Registro Reg;
+    Reg.Chave = gen(NUM_KEYS * 2);
+    *size_tree += Insere(Reg, &D);
+  }
+  return D;
+}
+
+
+? Can you test this program? Write a driver to it:
+
+void visita(Apontador p) {
+  printf("Key = %8d, Dir? = %d, Esq? = %d\n", p->Reg.Chave, p->Dir != NULL,
+      p->Esq != NULL);
+}
+
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntax: %s num_keys\n", argv[0]);
+    exit(1);
+  } else {
+    //
+    // Create two trees:
+    int size_tree1 = 0;
+    Apontador T1 = createTree(atoi(argv[1]), &size_tree1);
+    int size_tree2 = 0;
+    Apontador T2 = createTree(atoi(argv[1]), &size_tree2);
+    //
+    // Pretty prints the trees:
+    printf("\nPre-Order in T1:\n");
+    Central(T1, &visita);
+    printf("\nPre-Order in T2:\n");
+    Central(T2, &visita);
+  }
+}
+
+
+? Could you try to visualize the trees in dot format?
+
+void printDot_aux(Apontador p) {
+  if (p->Esq)
+    printf("  %d -> %d\n", p->Reg.Chave, p->Esq->Reg.Chave);
+  if (p->Dir)
+    printf("  %d -> %d\n", p->Reg.Chave, p->Dir->Reg.Chave);
+}
+void printDot(Apontador p) {
+  printf("\ndigraph tree {\n");
+  Central(p, &printDot_aux);
+  printf("\n}\n");
+}
+
+int main(int argc, char** argv) {
+    ...
+    int size_tree1 = 0;
+    Apontador T1 = createTree(atoi(argv[1]), &size_tree1);
+    printDot(T1);
+    ...
+}
+
+
+? Could you modify printDot a bit, to print into a file?
+
+FILE *file;
+void printDot_aux(Apontador p) {
+  if (p->Esq)
+    fprintf(file, "  %d -> %d\n", p->Reg.Chave, p->Esq->Reg.Chave);
+  if (p->Dir)
+    fprintf(file, "  %d -> %d\n", p->Reg.Chave, p->Dir->Reg.Chave);
+}
+void printDot(Apontador p, const char* file_name) {
+  file = fopen(file_name, "w");
+  fprintf(file, "\ndigraph tree {\n");
+  Central(p, &printDot_aux);
+  fprintf(file, "\n}\n");
+  fclose(file);
+}
+
+int main(int argc, char** argv) {
+    ...
+    printDot(T1, "T1.dot");
+    printDot(T2, "T2.dot");
+    printDot(TM, "TM.dot");
+    ...
+}
+
+
+? Write a program that transforms a tree into an array:
+
+int* V;
+int N;
+void tree2array_aux(Apontador p) {
+  V[N++] = p->Reg.Chave;
+}
+int* tree2array(Apontador p, int size) {
+  V = (int*)malloc(size * sizeof(int));
+  N = 0;
+  Central(p, &tree2array_aux);
+  return V;
+}
+
+int main() {
+  ...
+  // Flatten the tree into an array:
+  int* A = tree2array(D, size_tree);
+  for (i = 0; i < size_tree; i++) {
+    printf("%4d", A[i]);
+  }
+  printf("\n");
+  ...
+}
+
+
+? Write a program that transforms an array into a tree in O(N)
+
+Apontador array2tree(int* A, int L, int R)  {
+  if (L > R) {
+    return NULL;
+  } else {
+    Apontador p = (Apontador) malloc (sizeof(No));
+    int mid = L + (R - L)/2;
+    p->Reg.Chave = A[mid];
+    p->Esq = array2tree(A, L, mid - 1);
+    p->Dir = array2tree(A, mid+1, R);
+    return p;
+  }
+}
+
+int main() {
+  ...
+  Apontador T = array2tree(A, 0, size_tree - 1);
+  printf("\nPre-Order of the new tree T:\n");
+  Central(T, &visita);
+  ...
+}
+
+
+? Can you prove that the complexity of this program is O(N)?
+
+
+? Write a program that merges two sorted arrays, without duplicates:
+
+int* merge(int* A1, int N1, int* A2, int N2, int* size_array) {
+  int* A = (int*) malloc(sizeof(int) * (N1 + N2));
+  int i1 = 0, i2 = 0, ia = 0;
+  while (i1 < N1 && i2 < N2) {
+    if (A1[i1] < A2[i2])
+      A[ia++] = A1[i1++];
+    else if (A1[i1] > A2[i2])
+      A[ia++] = A2[i2++];
+    else {
+      A[ia++] = A2[i2++];
+      i1++;
+    }
+  }
+  while (i1 < N1) {
+    A[ia++] = A1[i1++];
+  }
+  while (i2 < N2) {
+    A[ia++] = A2[i2++];
+  }
+  *size_array = ia;
+  return A;
+}
+
+
+? What is the asymptotic complexity of this program?
+
+
+? Implement the union of two trees, T1 and T2, in O(|T1| + |T2|)
+
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntax: %s num_keys\n", argv[0]);
+    exit(1);
+  } else {
+    // Create two trees:
+    int size_tree1 = 0;
+    Apontador T1 = createTree(atoi(argv[1]), &size_tree1);
+    int size_tree2 = 0;
+    Apontador T2 = createTree(atoi(argv[1]), &size_tree2);
+
+    // Flatten the trees into an array:
+    int* A1 = tree2array(T1, size_tree1);
+    int* A2 = tree2array(T2, size_tree2);
+
+    // Merges the two arrays into a big array:
+    int size_treeM = 0;
+    int* AM = merge(A1, size_tree1, A2, size_tree2, &size_treeM);
+
+    // Transform the merged array back into a tree
+    Apontador TM = array2tree(AM, 0, size_treeM - 1);
+
+    // Pretty prints the trees:
+    printDot(T1, "T1.dot");
+    printDot(T2, "T2.dot");
+    printDot(TM, "TM.dot");
+  }
+}
+
+
+? Have you notice that the resulting tree is balanced?
+
+
+? Why is that tree balanced? Can you prove that it will be always balanced?

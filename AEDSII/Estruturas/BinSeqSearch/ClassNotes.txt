@@ -1,0 +1,358 @@
+* There are different ways to store information for fast retrieval.
+
+? How would you implement a system to deal with the following queries:
+- The grades of students in my personal website.
+  - One student wants to find his grade.
+- The grades of students in the moodle.
+  - One student wants to find his grade.
+  - Professors wants to find the entries of several students.
+
+
+? What do these scenarios have in common?
+- There is no change in the database.
+
+
+? What are the differences between them?
+- Number of searches.
+
+
+? Now, consider the following system. How would you implement it?
+- The decolar.com website. I want to find a particular flight, with two sits available.
+
+
+? How is this system different than the previous ones?
+- Scale.
+- Dynamic updates.
+
+
+? Now, consider finding the first occurrence of a particular character in a string. How would you implement that?
+
+
+* Different programming languages provide different data-structures in which we can carry out searches.
+
+$> python
+>>> str = "Isto eh uma string"
+>>> str.index('s')
+1
+>>> dic = {"Fer": 1234, "Rafa": 4321, "Luis": 2233}
+>>> dic["Fer"]
+1234
+>>> dic["Fernando"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'Fernando'
+
+$> scala
+scala> val x = "Isto eh uma string"
+x: String = Isto eh uma string
+
+scala> x.indexOf('s')
+res0: Int = 1
+
+scala> val m = Map("Fer" -> 1234, "Rafa" -> 4321, "Luis" -> 2233)
+m: scala.collection.immutable.Map[String,Int] = Map(Fer -> 1234, Rafa -> 4321, Luis -> 2233)
+
+scala> m("Fer")
+res2: Int = 1234
+
+scala> m("Fernando")
+java.util.NoSuchElementException: key not found: Fernando
+  at scala.collection.MapLike$class.default(MapLike.scala:
+
+
+* Sequential Search
+
+? Which datatypes would you use to implement sequential search?
+
+# define MAX 80
+typedef int TipoChave;
+
+typedef struct {
+  TipoChave Chave;
+  /* outros componentes */
+} Registro;
+
+typedef int Indice;
+
+typedef struct {
+  Registro Item[MAX + 1];
+  Indice n;
+} Tabela;
+
+
+? Should you use an array, or a linked list? What are the advantages and
+disadvantages of each data-structure?
+
+
+? How would be the code to initialize "Tabela*"?
+void Inicializa(Tabela *T) {
+  T->n = 0;
+}
+
+
+? How would be the search?
+Indice Pesquisa(TipoChave x, Tabela *T){
+  int i;
+  T->Item[0].Chave = x;
+  i = T->n + 1;
+  do {
+    i--;
+  }  while (T->Item[i].Chave != x);
+  return i;
+}
+
+
+? What if I can't find the element? What do I return?
+
+  
+? How would be the insertion?
+void Insere(Registro Reg, Tabela *T) {
+  if (MAX == T->n)
+    printf("Erro : tabela cheia\n");
+  else { 
+    T->n++;
+    T->Item[T->n] = Reg;
+  }
+} 
+
+
+? Is it possible to use the first index of the data-structure?
+
+
+? How would be the removal of keys?    
+void Remove(TipoChave x, Tabela *T) {
+  int idx = Pesquisa(x, T);
+  if (idx != 0) 
+    T->Item[idx] = T->Item[T->n--];
+}
+
+
+? Design some code to test this ADT:
+#define MAX_KEY 100
+    
+TipoChave gen() { return random() % MAX_KEY + 1; }     
+  
+int main() {
+  Tabela *T;
+  Inicializa(T);
+  int i;
+  printf("Inserting:\n");
+  for (i = 0; i < MAX; i++) {
+    Registro Reg;
+    Reg.Chave = gen();
+    printf("%8d", Reg.Chave);
+    Insere(Reg, T);
+  }
+  printf("\nSearching:\n");
+  for (i = 0; i < MAX; i++) {
+    Indice idx = Pesquisa(i, T);
+    if (idx)
+      printf("%4d%4s", i, "+");
+    else
+      printf("%4d%4s", i, "-");
+  }
+  printf("\nDone!\n");
+}
+
+
+? This code has a bug. Can you spot it?
+? How to fix the bug?
+
+int main() {
+  Tabela T;
+  Inicializa(&T); // Remember: C passes arguments by value!
+  int i;
+  printf("Inserting:\n");
+  for (i = 0; i < MAX; i++) {
+    Registro Reg;
+    Reg.Chave = gen();
+    printf("%8d", Reg.Chave);
+    Insere(Reg, &T);
+  }
+  printf("\nSearching:\n");
+  for (i = 0; i < MAX; i++) {
+    Indice idx = Pesquisa(i, &T);
+    if (idx)
+      printf("%4d%4s", i, "+");
+    else
+      printf("%4d%4s", i, "-");
+  }
+  printf("\nDone!\n");
+}
+
+
+? Is there any memory leak here?
+
+
+? Could we use T, instead of *T, in the declaration of the functions?
+
+
+? What is the time complexity of sequential search?
+  ? Best case, worst case?
+
+
+? What about the average case? What's the O of (n + 1)/2?
+
+
+? In which situations can we implement sequential search?
+
+
+? What's the space complexity of sequential search?
+
+
+? What if we knew that all the elements in the array were ordered?
+  ? Could we, in this case, have a faster search?
+
+Indice Binaria(TipoChave x, Tabela *T) {
+  if (T->n == 0)
+    return 0;
+  else {
+    Indice i;
+    Indice Esq = 1; 
+    Indice Dir = T->n; 
+    do { 
+      i = (Esq + Dir) / 2; 
+      if (x > T->Item[i].Chave) 
+        Esq = i + 1; /* procura na partição direita */
+      else 
+        Dir = i - 1; /* procura na partição esquerda */
+    } while ((x != T->Item[i].Chave) && (Esq <= Dir));
+    return x == T->Item[i].Chave ? i : 0;
+  }
+}
+
+
+? What is this construction doing? "return x == T->Item[i].Chave ? i : 0;"
+
+
+? This implementation contains a bug. It is veeery hard to spot. Can you think
+about what would happen if the array is very big, and Esq + Dir overflows?
+
+
+* We can handle this situation by composing the mid condition as L+(R−L)/2.
+
+
+? Can you think on a gen() function that always generate keys in ascending
+order?
+
+#define MAX_KEY 5
+TipoChave gen() {
+  static TipoChave counter = 0;
+  counter += random() % MAX_KEY + 1;
+  return counter;
+}
+
+
+? How can you test this code?
+
+int main() {
+  Tabela T;
+  Inicializa(&T);
+  TipoChave maxKey;
+  int i;
+  printf("Inserting:\n");
+  for (i = 0; i < MAX; i++) {
+    Registro Reg;
+    maxKey = Reg.Chave = gen();
+    printf("%8d", Reg.Chave);
+    Insere(Reg, &T);
+  }
+  printf("\nSearching:\n");
+  for (i = 0; i < maxKey + 1; i++) {
+    Indice idx = Binaria(i, &T);
+    if (idx)
+      printf("%4d%4s", i, "+");
+    else
+      printf("%4d%4s", i, "-");
+  }
+  printf("\nDone!\n");
+}
+
+
+? What's this construction doing? "maxKey = Reg.Chave = gen();"
+? What's the associativity of "="?
+
+
+? What is the time complexity of our Binary Search?
+? How many times can we split the search space in half?
+
+
+? What's the space complexity of binary search?
+
+
+? Could you organize your files in a Makefile?
+
+CC     = clang
+CFLAGS =
+
+ODIR=obj
+
+DEPS = Search.h
+
+_OBJ = Search.o
+
+_OBJ_BIN = BinMain.o $(_OBJ)
+OBJ_BIN = $(patsubst %,$(ODIR)/%,$(_OBJ_BIN))
+
+_OBJ_SEQ = SeqMain.o $(_OBJ)
+OBJ_SEQ = $(patsubst %,$(ODIR)/%,$(_OBJ_SEQ))
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -Wall -c -o $@ $< $(CFLAGS)
+
+BinMain: $(OBJ_BIN)
+	$(CC) -Wall -o $@ $^ $(CFLAGS)
+
+SeqMain: $(OBJ_SEQ)
+	$(CC) -Wall -o $@ $^ $(CFLAGS)
+
+.PHONY: clean
+
+clean:
+	rm -f $(ODIR)/*.o
+
+
+? What's each line of the file above doing?
+
+
+? In which situations can we implement binary search?
+
+
+? How can you find the largest integer in C?
+
+int use_limits() {
+  return INT_MAX;
+}
+
+- or -
+
+int use_bitwise_arith() {
+  unsigned int i = ~0U >> 1;
+  return i;
+}
+
+
+? Could you use binary search to find the largest integer in C?
+
+int use_bin_search() {
+  int acc = 1;
+  int inc = 1;
+  while (1) {
+    if (acc + inc < 0) {
+      if (inc == 1)
+        return acc;
+      else {
+        inc = 1;
+      } 
+    } else {
+      acc += inc;
+      inc *= 2;
+    } 
+  } 
+} 
+
+int main() {
+  printf("use_limits = %d\n", use_limits());
+  printf("use_bitwise_arith = %d\n", use_bitwise_arith());
+  printf("use_bin_search = %d\n", use_bin_search());
+}

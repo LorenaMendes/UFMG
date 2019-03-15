@@ -1,0 +1,380 @@
+* Recap: binary search trees:
+
+? How to define a binary tree?
+
+- Nothing is a binary tree.
+- An element E, plus two binary trees, T1 and T2, are binary trees.
+
+
+? How to define a binary search tree?
+
+- Nothing is a binary search tree.
+- An element E, plus two trees, T1 and T2, are binary search trees if:
+  - Every element in T1 is less than E.
+  - Every element in T2 is greater than E.
+
+
+? What's the worst-case complexity of each one of these operations on trees?
+  ? Insert
+  ? Remove
+  ? Search
+
+
+? What is the key metric that determines these complexities?
+
+
+? If we decide to use a tree to sort numbers, what would be the complexity of
+  our sorting routine?
+
+
+? [treeSort.c] Implement a tree-based sort algorithm:
+
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "Tree.h"
+TipoChave gen1() {
+  return random();
+}
+void print(Apontador p) {
+  printf("%8d", p->Reg.Chave);
+}
+int main(int argc, char** argv) {
+  if (argc < 2) {
+    fprintf(stderr, "Syntax: %s num_nodes\n", argv[0]);
+  } else {
+    clock_t start, end;
+    Apontador D;
+    Inicializa(&D);
+    int i;
+    const int MAX = atoi(argv[1]);
+    start = clock();
+    for (i = 0; i < MAX; i++) {
+      Registro Reg;
+      Reg.Chave = gen1();
+      Insere(Reg, &D);
+    }
+    end = clock();
+    Central(D, &print);
+    printf("\n");
+    fprintf(stderr, "%lf\n", ((double)(end - start))/CLOCKS_PER_SEC);
+  }
+}
+
+[Makefile]
+...
+_OBJ_SORT = treeSort.o $(_OBJ)
+OBJ_SORT = $(patsubst %,$(ODIR)/%,$(_OBJ_SORT))
+
+treeSort1: $(OBJ_SORT)
+        $(CC) -Wall -o $@ $^ $(CFLAGS)
+...
+
+
+
+? [treeSort.bash] try to get the times for inputs of different sizes:
+
+#!/bin/bash
+for ((num_nodes = 100; num_nodes < 5000; num_nodes += 400))
+do
+  ./treeSort $num_nodes > /dev/null ;
+done
+
+
+? [treeSort.c] Change gen1(), so that it will always produces keys in
+  ascending order:
+
+TipoChave gen2() {
+  static TipoChave t = 0;
+  return t++;
+}
+
+
+? What is the meaning of 'static' in the program above?
+
+
+? How the time behavior of the two gen functions compare, in terms of the
+  speed of the tree-based sorting algorithm?
+
+
+? What if we had guarantees that the height of the tree is at most h?
+
+
+? What is a balanced tree?
+  - An empty tree is balanced.
+  - A tree T = (n, T1, T2) is balanced if:
+    - T1 is balanced
+    - T2 is balanced
+    - the size difference between T1 and T2 is at most 1.
+
+
+? What is the height h of a balanced tree with n elements?
+
+% Red-Black Trees %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+==== Properties ====
+
+0 Red-Black trees are binary search trees, so, all the properties of BST apply.
+* Additionally, we have the following properties:
+1 Each node is either red or black.
+2 If a node is red, then both its children are black.
+3 Every path from a given node to any of its descendant NIL nodes contains the
+  same number of black nodes.
+
+? Can you show that "the path from the root to the farthest leaf is no more than twice as long as the path from the root to the nearest leaf."
+
+For a red–black tree T, let B be the number of black nodes in property 3.
+Let the shortest possible path from the root of T to any leaf consist of B
+black nodes. Longer possible paths may be constructed by inserting red nodes.
+However, property 3 makes it impossible to insert more than one consecutive red
+node. Therefore, the longest possible path consists of 2*B nodes, alternating
+black and red (this is the worst case).
+
+
+? How's the shortest possible path from root to leaf?
+
+All black nodes.
+
+
+? How's the longest possible path from root to leaf?
+
+Alternation between red and black nodes
+
+
+==== Implementation ====
+
+? How would be the data-structure that describes nodes in a RB-Tree?
+
+typedef enum ColorType {
+    Red, Black
+} ColorType;
+
+typedef struct RedBlackNode *RedBlackTree;
+
+struct RedBlackNode {
+    ElementType Element;
+    RedBlackTree Left;
+    RedBlackTree Right;
+    ColorType Color;
+};
+
+
+? How would you insert a new node in the RB-Tree, ensuring the key properties?
+
+1. Nodes are inserted as Red
+2. Nodes are inserted as leaves
+3. Rotate nodes to preserve properties
+
+* Show video of examples of insertions:
+https://www.youtube.com/watch?v=Fg9t64nS4p8&t
+
+* Show video of simple rotation in RBT:
+https://www.youtube.com/watch?v=zomMSaA94Uk&t=8s
+
+* Show video of Double Rotations in RBT:
+https://www.youtube.com/watch?v=Qfqm4EuIs3w&t=22s
+
+
+=== Playing with the Tree ===
+
+? Can you change [treeSort.c] to use the RBT that we have in the git?
+
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "RBT.h"
+int gen1() {
+  return random();
+}
+int gen2() {
+  static int t = 0;
+  return t++;
+}
+void print(RedBlackTree p) {
+  printf("%8d", p->Element);
+}
+int main(int argc, char** argv) {
+  if (argc < 2) {
+    fprintf(stderr, "Syntax: %s num_nodes\n", argv[0]);
+  } else {
+    clock_t start, end;
+    RedBlackTree D;
+    D = Initialize();
+    int i;
+    const int MAX = atoi(argv[1]);
+    start = clock();
+    for (i = 0; i < MAX; i++) {
+      ElementType e = gen1();
+      Insert(e, D);
+    }
+    end = clock();
+    Central_RBT_Header(D, &print);
+    printf("\n");
+    fprintf(stderr, "%lf\n", ((double)(end - start))/CLOCKS_PER_SEC);
+  }
+}
+
+
+? Can you implement a program to find the height of the RBT?
+
+#define MAX(X, Y) ((X) > (Y) ? (X) : (Y))
+
+int RBT_Height(RedBlackTree T) {
+  int height_esq = 0;
+  int height_dir = 0;
+  if (!isNullNode(T->Left))
+    height_esq = RBT_Height(T->Left);
+  if (!isNullNode(T->Right))
+    height_dir = RBT_Height(T->Right);
+  return MAX(height_esq, height_dir) + 1;
+}
+
+int main(int argc, char** argv) {
+  ...
+  fprintf(stderr, "%lf, %d\n", ((double)(end - start))/CLOCKS_PER_SEC,
+        RBT_Height(D));
+  ...
+}
+
+
+? Could you compare it with the program that finds the height of a binary
+  search tree?
+
+#define MAX(X, Y) ((X) > (Y) ? (X) : (Y))
+
+int Tree_Height(Apontador T) {
+  int height_esq = 0;
+  int height_dir = 0;
+  if (T->Esq)
+    height_esq = Tree_Height(T->Esq);
+  if (T->Dir)
+    height_dir = Tree_Height(T->Dir);
+  return MAX(height_esq, height_dir) + 1;
+}
+
+int main(int argc, char** argv) {
+  ...
+  fprintf(stderr, "%lf, %d\n", ((double)(end - start))/CLOCKS_PER_SEC,
+        Tree_Height(D));
+  ...
+}
+
+
+? How would be a "driver", i.e., a program that invokes those two routines?
+
+#include "Tree.h"
+#include "RBT.h"
+#include "TreeGen.h"
+...
+#define MAX(X, Y) ((X) > (Y) ? (X) : (Y))
+int RBT_Height(RedBlackTree T) { ... }
+int Tree_Height(Apontador T) { ... }
+...
+int  main(int argc, char** argv) {
+  if (argc == 3) {
+    const int num_nodes = atoi(argv[1]);
+    const int tree_option = atoi(argv[2]);
+    switch(tree_option) {
+      case 0: {
+        Apontador P0 = genDegenerateTree(num_nodes);
+        printf("Altura da arvore: %d\n", Tree_Height(P0));
+        break;
+      }
+      case 1: {
+        Apontador P1 = genRandomTree(num_nodes, 5 * num_nodes);
+        printf("Altura da arvore: %d\n", Tree_Height(P1));
+        break;
+      }
+      case 2: {
+        RedBlackTree P2 = genDegenerateRBT(num_nodes);
+        printf("Altura da arvore: %d\n", RBT_Height(P2));
+        break;
+      }
+      case 3: {
+        RedBlackTree P3 = genRandomRBT(num_nodes, 5 * num_nodes);
+        printf("Altura da arvore: %d\n", RBT_Height(P3));
+        break;
+      }
+      default:
+        fprintf(stderr, "Unknown option: %d\n", tree_option);
+    }
+  }
+}
+
+
+? Can you draw the Red-Black Tree in dot format?
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "RBT.h"
+#include "Tree.h"
+#include "TreeGen.h"
+void printDot_aux(RedBlackTree p) {
+  if (p->Color == Red) {
+    printf("  %d [style=filled fillcolor=red];\n", p->Element);
+  }
+  if (p->Left)
+    printf("  %d -> %d;\n", p->Element, p->Left->Element);
+  if (p->Right)
+    printf("  %d -> %d;\n", p->Element, p->Right->Element);
+}
+void printDot(RedBlackTree p) {
+  printf("\ndigraph tree {\n");
+  Central_RBT_Header(p, &printDot_aux);
+  printf("\n}\n");
+}
+int main(int argc, char** argv) {
+  if (argc < 2) {
+    fprintf(stderr, "Syntax: %s num_nodes\n", argv[0]);
+  } else {
+    const int num_nodes = atoi(argv[1]);
+    RedBlackTree T = genRandomRBT(num_nodes, 100);
+    printDot(T);
+  }
+}
+
+
+? Write a function that determines the Black Height of a Red-Black tree, and
+  certifies that it obeys the property that this height is constant from any
+  node:
+
+int RBT_Black_Height(RedBlackTree T) {
+  if (isNullNode(T)) {
+    return 0;
+  } else {
+    int black_height_esq = RBT_Black_Height(T->Left);
+    int black_height_dir = RBT_Black_Height(T->Right);
+    // We check if T is not the Root (Element == NegInfinity)
+    if (T->Element != NegInfinity && black_height_dir != black_height_esq) {
+      printf("Error at node %d (%d vs %d)\n",
+          T->Element, black_height_esq, black_height_dir);
+    }
+    return MAX(black_height_esq, black_height_dir) +
+      (T->Color == Black ? 1 : 0);
+  }
+}
+
+int  main(int argc, char** argv) {
+  ...
+  RedBlackTree P3 = genRandomRBT(num_nodes, 5 * num_nodes);
+  printf("Altura da arvore: %d\n", RBT_Height(P3));
+  printf("Altura negra da arvore: %d\n", RBT_Black_Height(P3));
+}
+
+
+? Compare a bit the heights of ordinary trees and the height of red-black trees.
+  Is there much difference in their growth pattern?
+
+$> ./HeightTreeMain 4000 0
+Altura da arvore: 4000
+
+$> ./HeightTreeMain 4000 1
+Altura da arvore: 26
+
+$> ./HeightTreeMain 4000 2
+Altura da arvore: 21
+Altura negra da arvore: 12
+
+$> ./HeightTreeMain 4000 3
+Altura da arvore: 16
+Altura negra da arvore: 11

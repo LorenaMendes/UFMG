@@ -1,0 +1,354 @@
+* Hash tables
+  - In the last class, we saw how to produce a Set data type. The fastest
+    implementations were based on red-black trees, or on the sorted array,
+    sorted with quicksort.
+
+
+? Would it be possible to have an implementation with faster access times than
+  O(log n)? It would beat the red-black tree and the quicksort implementations.
+  - Yes: we can try direct indexing, via an array.
+
+
+? Could you re-implement the set with an array, using direct indexing?
+
+#include <string.h>
+#include <limits.h>
+#include <stdlib.h>
+#include "Set.h"
+struct set_concrete {
+  unsigned* array;
+};
+void initialize(Set* s) {
+  *s = (Set)malloc(sizeof(struct set_concrete));
+  (*s)->array = (unsigned*)calloc(UINT_MAX, sizeof(unsigned));
+}
+void insert(Set s, Key element) {
+  s->array[(unsigned)element] = 1;
+}
+int contains(Set s, Key element) {
+  unsigned index = element;
+  return s->array[index];
+}
+void close(Set s) {
+  free(s->array);
+  free(s);
+}
+
+
+? Assuming you have this implementation in T0.c, how do you compile it?
+$> clang -o IntArraySet CompSetMain.c T0.c -Iinclude
+
+
+? Could you compare the access times of this implementation against the access
+  times of the red-black-based implementation?
+  - see timeSet.bash
+
+
+? What is the size, in bytes, taken by the set? How could we check that?
+
+#include <stdio.h>
+void initialize(Set* s) {
+  *s = (Set)malloc(sizeof(struct set_concrete));
+  (*s)->array = (unsigned*)calloc(UINT_MAX, sizeof(unsigned));
+  printf("Size = %lu\n", UINT_MAX * sizeof(unsigned));
+}
+
+
+? This size is even larger than the amount of physical memory available for
+  this computer. How is that possible?
+
+
+? Could you simply allocate the array statically, and check its size?
+
+#include <stdio.h>
+#include <limits.h>
+int array[UINT_MAX];
+int main() {
+  unsigned long size = sizeof(array);
+  printf("%lu\n", size);
+}
+
+
+? Would this program work?
+
+#include <stdio.h>
+#include <limits.h>
+int main() {
+  int array[UINT_MAX];
+  unsigned long size = sizeof(array);
+  printf("%lu\n", size);
+}
+
+
+? How could we reduce the size of the memory that it takes to store the set?
+  - Implement a bit set.
+
+
+#include <string.h>
+#include <limits.h>
+#include <stdlib.h>
+#include "Set.h"
+#define WORD_SIZE  (8*sizeof(unsigned))
+#define ARRAY_SIZE (UINT_MAX/WORD_SIZE)
+
+struct set_concrete {
+  unsigned* array;
+};
+void initialize(Set* s) {
+  *s = (Set)malloc(sizeof(struct set_concrete));
+  (*s)->array = (unsigned*)calloc(ARRAY_SIZE, sizeof(unsigned));
+}
+
+
+? How could we insert an element in the set? In other words, how could we
+  modify just one bit of the set?
+
+void insert(Set s, Key element) {
+  unsigned index = element / WORD_SIZE;
+  unsigned offset = element % WORD_SIZE;
+  unsigned bit = 1 << offset;
+  s->array[index] |= bit;
+}
+
+
+? Can you implement the operation that checks if some bit is in the set?
+
+int contains(Set s, Key element) {
+  unsigned index = element / WORD_SIZE;
+  unsigned offset = element % WORD_SIZE;
+  unsigned bit = 1 << offset;
+  return s->array[index] & bit ? 1 : 0;
+}
+void close(Set s) {
+  free(s->array);
+  free(s);
+}
+
+
+? What's the size of the new allocation area?
+
+#include <stdio.h>
+#include <limits.h>
+#define WORD_SIZE  (8*sizeof(unsigned))
+#define ARRAY_SIZE (UINT_MAX/WORD_SIZE)
+int array[ARRAY_SIZE];
+int main() {
+  unsigned long size = sizeof(array);
+  printf("%lu\n", size);
+}
+
+
+? Could you compare the access times of Int-Set and Bit-Set?
+
+
+? Are there larger scalar types than 'unsigned int'?
+  - long
+  - long long
+
+
+? How can I find out the value of the upper bounds of such types?
+
+#include <stdio.h>
+#include <limits.h>
+int main() {
+  printf("%d\n", INT_MAX);
+  printf("%u\n", UINT_MAX);
+  printf("%lu\n", ULONG_MAX);
+}
+
+
+? What would happen with our BitSet, if I had tried to use ULONG_MAX as the
+  size of the bit array? In other words, try:
+#define ARRAY_SIZE (ULLONG_MAX/WORD_SIZE)
+
+- That's what happens:
+
+BitArraySet(5269,0x7fff77972310) malloc: *** mach_vm_map(size=2305843009213693952) failed (error code=3)
+*** error: can't allocate region
+*** set a breakpoint in malloc_error_break to debug
+Segmentation fault: 11
+
+
+? How can we still deal with keys of the 'long' type?
+
+
+* Hash-Tables
+
+
+? Which kind of structures would you think about to build a hash table?
+
+
+? What are the types that implement a hash table with separate chaining?
+
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
+
+#include "Set.h"
+
+struct node {
+  Key key;
+  struct node *next;
+};
+
+struct set_concrete {
+  struct node **table;
+  size_t size;
+};
+
+
+? How would you initialize this data structure?
+
+#define TABLE_SIZE 0xFFFF
+
+void initialize(Set* s) {
+  *s = (Set)malloc(sizeof(struct set_concrete));
+  (*s)->table = (struct node**)calloc(TABLE_SIZE + 1, sizeof(struct node*));
+}
+
+
+? And how would you delete this data structure?
+
+void close(Set s) {
+  for (int i = 0; i < TABLE_SIZE; i++) {
+    struct node *j = s->table[i];
+    while (j) {
+      struct node *aux = j;
+      j = j->next;
+      free(aux);
+    }
+  }
+  free(s->table);
+  free(s);
+}
+
+
+? What would happened if you remove the 'for' loop in the 'close' routine?
+
+$> valgrind ./HashSet 10000 10000
+==46852== LEAK SUMMARY:
+==46852==    definitely lost: 100,752 bytes in 6,297 blocks
+==46852==    indirectly lost: 59,248 bytes in 3,703 blocks
+
+
+? How would be implemented the hash function?
+
+size_t hash(Key element) {
+  return element & TABLE_SIZE;
+}
+
+
+? Can you now implement the 'insert' function?
+  - What are the actions implemented in insert?
+
+void insert(Set s, Key element) {
+  struct node* it;
+  size_t h = hash(element);
+  it = malloc(sizeof *it);
+  it->key = element;
+  it->next = s->table[h];
+  s->table[h] = it;
+}
+
+
+? How would be the table that results from inserting 12, 5, 20, 17, 31 onto
+  a hash with four buckets (hash(Key x) {return x % 4;}).
+
+
+? What about the 'contains' function?
+
+int contains(Set s, Key element) {
+  size_t h = hash(element);
+  if (s->table[h]) {
+    struct node *it = s->table[h];
+    while (it) {
+      if (it->key == element)
+        return 1;
+      else
+        it = it->next;
+    }
+  }
+  return 0;
+}
+
+
+? Can you compare the runtime of the Hash Table with different sizes of the
+  table?
+  - See timeSet.xlsx
+
+
+? Is the number of cells in the table the same as the number of elements we
+  have inserted?
+
+
+? Could you give me some data about the tables?
+  - What is the average size of the lists?
+  - What is the number of cells in the lists?
+  - What is the size of the largest list?
+  - What about the size of the smallest list?
+
+void close(Set s) {
+  int num_cells = 0;
+  int max_cells = 0;
+  int min_cells =INT_MAX;
+  for (int i = 0; i < TABLE_SIZE; i++) {
+    int counter = 0;
+    struct node *j = s->table[i];
+    while (j) {
+      struct node *aux = j;
+      j = j->next;
+      free(aux);
+      counter++;
+    }
+    if (counter > max_cells)
+      max_cells = counter;
+    if (counter < min_cells)
+      min_cells = counter;
+    num_cells += counter;
+  }
+  free(s->table);
+  free(s);
+  printf("\nTable size = %d\nNum Cells = %d, \nAvg size = %lf\nMax list = %d\nMin list = %d\n",
+      TABLE_SIZE, num_cells, ((double)num_cells)/TABLE_SIZE, max_cells, min_cells);
+}
+
+
+? Could you modify the hash table, so that it removes duplicates?
+
+void insert(Set s, Key element) {
+  struct node* it;
+  size_t h = hash(element);
+  if (!contains(s, element)) {
+    it = malloc(sizeof *it);
+    it->key = element;
+    it->next = s->table[h];
+    s->table[h] = it;
+  }
+}
+
+
+? How do they fare, in terms of time?
+
+hst_sort, neq_sort
+0.000949, 0.001044
+0.002682, 0.002769
+0.004658, 0.003981
+0.008095, 0.008028
+0.008394, 0.007184
+0.011385, 0.008426
+0.012236, 0.010184
+0.024452, 0.012113
+0.019481, 0.017243
+0.023524, 0.016220
+0.024059, 0.026700
+
+
+? What if I increase the number of keys within the hash? Does the time behavior
+  change?
+
+
+? What about the relative time between the Red-Black tree and the Hash table?
+  How do they compare if we change the number of elements in the table?
+
+
+? What if I increase the size of the table?

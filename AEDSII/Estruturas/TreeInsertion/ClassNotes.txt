@@ -1,0 +1,278 @@
+* Trees
+
+? How would you implement:
+  ? algorithm to play minimax?
+  ? expert medical system?
+  ? algorithm to find the closest point in an Euclidean Space?
+  ? Particles coliding.
+
+
+? Can I implement binary search in a programming language without random
+  access?
+
+
+? The binary search that we have seen requires us to keep the array sorted.
+  Would it be possible to relax this requirement, and still have binary
+  search, or something close to it?
+
+% The definition of trees %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+? How to define a binary tree?
+
+- Nothing is a binary tree.
+- An element E, plus two binary trees, T1 and T2, are binary trees.
+
+
+? How to define a binary search tree?
+
+- Nothing is a binary search tree.
+- An element E, plus two trees, T1 and T2, are binary search trees if:
+  - Every element in T1 is less than E.
+  - Every element in T2 is greater than E.
+
+
+? What are the operations that belong into this Abstract Data Type?
+
+
+% The implementation of trees %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+typedef int TipoChave;
+
+typedef struct Registro {
+    TipoChave Chave;
+      /* outros componentes */
+} Registro;
+
+typedef struct No * Apontador;
+
+typedef struct No {
+    Registro Reg;
+    Apontador Esq, Dir;
+} No;
+
+void Inicializa(Apontador *Dicionario);
+
+int Pesquisa(TipoChave x, Apontador p);
+
+int Insere(Registro x, Apontador *p);
+
+void Central(Apontador p);
+
+
+? Would that work (alias to struct, instead of alias to pointer)?
+  - typedef struct No Apontador
+
+
+? How would I initialize Dicionario?
+
+
+void Inicializa(Apontador *Dicionario) {
+  *Dicionario = NULL;
+}
+
+
+? How would you find an entry in the tree?
+
+int Pesquisa(TipoChave Chave, Apontador p) {
+  if (p == NULL)
+    return 0;
+  else if (Chave < p->Reg.Chave)
+    return Pesquisa(Chave, p->Esq);
+  else if (Chave > p->Reg.Chave)
+    return Pesquisa(Chave, p->Dir);
+  else
+    return 1;
+}
+
+
+? How would you insert an element in this tree?
+
+int Insere(Registro x, Apontador *p)  {
+  if (*p == NULL)  {
+    *p = (Apontador) malloc (sizeof(No));
+    (*p)->Reg = x;
+    (*p)->Esq = NULL;
+    (*p)->Dir = NULL;
+    return 1;
+  }
+  else if (x.Chave < (*p)->Reg.Chave)
+    return Insere(x, &(*p)->Esq);
+  else if (x.Chave > (*p)->Reg.Chave)
+    return Insere(x, &(*p)->Dir);
+  else
+    return 0;
+}
+
+
+? Can you prove that this algorithm ensures the key properties of binary
+  search trees?
+
+
+? What's the complexity to find an element in the tree?
+  ? Best case: O(1) when does it happen?
+  ? Worst case: O(n) when does it happen?
+  ? Average: O(ln n)
+
+%Tree Traversal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+? How to print all the elements in the tree, in sorted order?
+
+void Central(Apontador p) {
+  if (p == NULL) return;
+  Central(p->Esq);
+  printf("%d\n", p->Reg.Chave);
+  Central(p->Dir);
+}
+
+? Can you prove that this algorithm really does what you want?
+
+
+? Can you write a 'main' function to test this algorithm?
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "Tree.h"
+#define MAX 10
+TipoChave gen(const int MAX_KEY) {
+  return random() % MAX_KEY + 1;
+}
+int main() {
+  Apontador D;
+  Inicializa(&D);
+  int i;
+  printf("Inserting:\n");
+  for (i = 0; i < MAX; i++) {
+    Registro Reg;
+    Reg.Chave = gen(16);
+    if (Insere(Reg, &D))
+      printf("%4s%4d", "+", Reg.Chave);
+    else
+      printf("%4s%4d", "*", Reg.Chave);
+  }
+  printf("\nSearching:\n");
+  for (i = 0; i < MAX; i++) {
+    TipoChave Chave = i;
+    if (Pesquisa(Chave, D))
+      printf("%4d%4s", i, "+");
+    else
+      printf("%4d%4s", i, "-");
+  }
+  printf("\nPre-Order:\n");
+  Central(D);
+}
+
+
+? Is it not the case that the same register is being inserted multiple times
+  into the tree?
+
+
+? What would happen if I called printf before the first invocation of
+  Central?
+
+
+? What would happen if I called printf after the second invocation of
+  Central?
+
+
+% Pointer to Functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+? The problem with this implementation of Central is that it only does one
+  thing: prints some information. How could we make it more general?
+
+void visita(Apontador p) {
+  printf("%8d", p->Reg.Chave);
+}
+
+void Central(Apontador p, void (*visitante)(Apontador p)) {
+  if (p == NULL) return;
+  Central(p->Esq, visitante);
+  (*visitante)(p);
+  Central(p->Dir, visitante);
+}
+
+int main() {
+  ...
+  Central(D, &visita);
+  ...
+}
+
+? Can you produce an implementation of "visitante" that finds the largest
+  key in the tree?
+
+int largestKey;
+
+void getLargestKey(Apontador p) {
+  if (p->Reg.Chave > largestKey)
+    largestKey = p->Reg.Chave;
+}
+
+int main() {
+  ...
+  // Gets the largest key:
+  largestKey = 0;
+  Central(D, &getLargestKey);
+  printf("\nLargest key = %d\n", largestKey);  ...
+}
+
+
+? Can you draw the tree in dot format?
+
+void printDot(Apontador p) {
+  if (p->Esq)
+    printf("  %d -> %d\n", p->Reg.Chave, p->Esq->Reg.Chave);
+  if (p->Dir)
+    printf("  %d -> %d\n", p->Reg.Chave, p->Dir->Reg.Chave);
+}
+
+int main() {
+  ...
+  // Print the tree in dot format:
+  printf("\ndigraph tree {\n");
+  Central(D, &printDot);
+  printf("\n}\n");
+}
+
+- We can use any dot visualizer to see the file in dot format, e.g.:
+$> open file.dot
+
+% The accumulator vs the functional tree-traversal %%%%%%%%%%%%%%%
+
+? Write some code to determine the number of leaves in the tree:
+
+int numLeaves;
+
+void getNumLeaves_aux(Apontador p) {
+  if (!p->Esq)
+    numLeaves++;
+  if (!p->Dir)
+    numLeaves++;
+}
+
+int getNumLeavesAcc(Apontador p) {
+  numLeaves = 0;
+  Central(p, &getNumLeaves_aux);
+  return numLeaves;
+}
+
+int main() {
+  ...
+  // Prints the number of leaves in the tree.
+  printf("\nNum leaves = %d\n", getNumLeavesAcc(D));
+  ...
+}
+
+
+? Could you re-write this program, so that the number of leaves is returned by
+  the visitor?
+
+int getNumLeavesFun(Apontador p) {
+  return (p->Dir ? getNumLeavesFun(p->Dir) : 1)
+    + (p->Esq ? getNumLeavesFun(p->Esq) : 1);
+}
+
+% Final problem
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Input: in-order list, and pre-order list.
+Output: reconstruct the tree.

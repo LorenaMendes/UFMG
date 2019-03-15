@@ -1,0 +1,445 @@
+? What is the access time of a hash-table?
+
+
+? What if we know the size of the largest key?
+
+
+? Can we improve the access time of a binary tree, if we know the size of the
+  largest key?
+
+
+* Bitwise Tree (Bit-Trie)
+
+- An element is a bit-trie of height 0.
+- A node of height H and two bit-trees, Esq and Dir, are a bit-trie if:
+  - Every element in Esq has the H-th bit equal to 0
+  - Every element in Dir has the H-th bit equal to 1
+
+
+? What is the maximum height of a bit-trie?
+
+
+? Where are the elements located in the bit-trie?
+
+
+? Draw bit-tries that store the elements {0}, {0, 1, 4}, {0, 1, 4, 6} and
+  {0, 1, 4, 6, 7}.
+
+
+? The order in which we insert the elements change the format of the bit-trie?
+
+
+? What about in a normal binary search tree: does the order of insertion
+  change the shape of the tree?
+
+
+? What about a red-black tree? Does the order matter in the shape of the tree?
+
+
+* Testing the implementation of bit-tries.
+
+? Can you write a program to test the implementation of bit-tries? You should
+  insert a few nodes, and then see if the elements are there.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "Tree.h"
+
+int gen(const int MAX_KEY) {
+  return random() % MAX_KEY;
+}
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntaxe: %s num_nodes\n", argv[0]);
+    return 1;
+  } else {
+    Apontador T;
+    inicializa(&T);
+    int i;
+    const int MAX_NUM_KEYS = atoi(argv[1]);
+    //
+    // Inserts elements in the tree.
+    for (i = 0; i < MAX_NUM_KEYS; i++) {
+      Registro *reg = (Registro*) malloc(sizeof(Registro));
+      reg->chave = gen(MAX_NUM_KEYS);
+      insere(&T, reg);
+      printf("%8d", reg->chave);
+    }
+    printf("\n");
+    //
+    // Searches elements in the tree.
+    printf("\nSearching:\n");
+    for (i = 0; i < MAX_NUM_KEYS; i++) {
+      int chave = i;
+      if (pesquisa(T, chave))
+        printf("%4d%4s", i, "+");
+      else
+        printf("%4d%4s", i, "-");
+    }
+    printf("\n");
+  }
+}
+
+
+? How to compile and run this program?
+
+$> clang T1.c Trie.c -o T1 -Iinclude
+$> ./T1 10
+
+
+? Can you try to print the tree in dot format?
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "Tree.h"
+
+FILE* file;
+void printDot_aux(Apontador p) {
+  if (!(getReg(p))) {
+    fprintf(file, "  %lu [shape = point];\n", (long)p);
+  }
+  if (getEsq(p))
+    fprintf(file, "  %lu -> %lu\n", (long)p, (long)getEsq(p));
+  if (getDir(p))
+    fprintf(file, "  %lu -> %lu\n", (long)p, (long)getDir(p));
+}
+void printDot(Apontador p, char* file_name) {
+  file = fopen(file_name, "w");
+  fprintf(file, "\ndigraph tree {\n");
+  Central(p, &printDot_aux);
+  fprintf(file, "}\n");
+}
+
+int gen(const int MAX_KEY) {
+  return random() % MAX_KEY;
+}
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntaxe: %s num_nodes\n", argv[0]);
+    return 1;
+  } else {
+    Apontador T;
+    inicializa(&T);
+    int i;
+    const int MAX_NUM_KEYS = atoi(argv[1]);
+    //
+    // Inserts elements in the tree.
+    for (i = 0; i < MAX_NUM_KEYS; i++) {
+      Registro *reg = (Registro*) malloc(sizeof(Registro));
+      reg->chave = gen(MAX_NUM_KEYS);
+      insere(&T, reg);
+    }
+    //
+    // Print the tree in dot format:
+    printDot(T, "trie.dot");
+  }
+}
+
+
+? Is it clear how we distinguish nodes from leaves?
+
+
+? The tree does not look very pretty. Could you print labels on the edges,
+  e.g., 0 if you go to the left, and 1 otherwise?
+
+void printDot_aux(Apontador p) {
+  if (!(getReg(p))) {
+    fprintf(file, "  %lu [shape = point];\n", (long)p);
+  }
+  if (getEsq(p))
+    fprintf(file, "  %lu -> %lu [label = 0]\n", (long)p, (long)getEsq(p));
+  if (getDir(p))
+    fprintf(file, "  %lu -> %lu [label = 1]\n", (long)p, (long)getDir(p));
+}
+
+
+? Still, it does not look very informative. Could you print the leaves in
+  binary format, so that we can see how they separate?
+
+
+? For that, we need to translate integers into strings of bits. Can you write
+  a function that does just that?
+
+  ? How many characters do we need to store the bitwise representation of an
+  integer in C?
+
+#include <limits.h>
+...
+char* int2bin(int num) {
+  int num_bits = CHAR_BIT * sizeof(int);
+  // Remember: sizeof(char) == 1 always, always (defined in the C standard).
+  char* str = (char*)malloc(num_bits + 1);
+  str[num_bits] = '\0';
+  for (int i = 0; i < num_bits; i++) {
+    str[i] = num & (1 << i) ? '1' : '0';
+  }
+  return str;
+}
+
+
+? Now, use this function to print a more informative view of your trie:
+
+void printDot_aux(Apontador p) {
+  if (!(getReg(p))) {
+    fprintf(file, "  %lu [shape = point];\n", (long)p);
+  } else {
+    fprintf(file, "  %lu [shape = box, label = \"%s(%d)\"];\n",
+                    (long)p, int2bin(getReg(p)->chave), getReg(p)->chave);
+  }
+  if (getEsq(p))
+    fprintf(file, "  %lu -> %lu [label = 0]\n", (long)p, (long)getEsq(p));
+  if (getDir(p))
+    fprintf(file, "  %lu -> %lu [label = 1]\n", (long)p, (long)getDir(p));
+}
+
+
+? The trie still looks a bit too wide. Can you change its orientation?
+
+void printDot(Apontador p, char* file_name) {
+  file = fopen(file_name, "w");
+  fprintf(file, "\ndigraph tree {\n  graph[rankdir=LR]\n");
+  Central(p, &printDot_aux);
+  fprintf(file, "}\n");
+}
+
+
+? Can you force an insertion that leads to maximum height?
+
+int main(int argc, char** argv) {
+    Apontador T;
+    inicializa(&T);
+    Registro *reg0 = (Registro*) malloc(sizeof(Registro));
+    reg0->chave = 0x80000000;
+    insere(&T, reg0);
+    Registro *reg1 = (Registro*) malloc(sizeof(Registro));
+    reg1->chave = 0x00000000;
+    insere(&T, reg1);
+    printDot(T, "trie.dot");
+}
+
+
+* Comparing different implementations of trees
+
+
+? Which binary search trees do we know so far?
+  - Binary Search Tree
+  - Red-Black Tree
+  - Bit-Trie
+
+
+? Can you implement a common interface for all of them (see include/Tree.h)?
+
+#ifndef _TRIE_H
+#define _TRIE_H
+
+typedef struct registro {
+  int chave;
+  /* outros dados */
+} Registro;
+
+typedef struct No *Apontador;
+
+Registro* getReg(Apontador p);
+
+Apontador getEsq(Apontador p);
+
+Apontador getDir(Apontador p);
+
+void inicializa(Apontador *trie);
+
+Registro *pesquisa(Apontador p, int chave);
+
+void insere(Apontador *trie, Registro *reg);
+
+void Central(Apontador p, void (*visitante)(Apontador p));
+
+#endif
+
+
+? Can you implement a driver that compares them according to insertion time?
+
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "Tree.h"
+
+int genR(const int MAX_KEY) { return random() % MAX_KEY + 1; }
+
+Apontador gen_tree(const int MAX_NUM_KEYS) {
+  Apontador T;
+  inicializa(&T);
+  for (int i = 0; i < MAX_NUM_KEYS; i++) {
+    Registro *reg = (Registro*) malloc(sizeof(Registro));
+    reg->chave = genR(MAX_NUM_KEYS);
+    insere(&T, reg);
+  }
+  return T;
+}
+
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntaxe: %s num_nodes\n", argv[0]);
+    return 1;
+  } else {
+    const int MAX_NUM_KEYS = atoi(argv[1]);
+    clock_t start, end;
+    start = clock();
+    Apontador T = gen_tree(MAX_NUM_KEYS);
+    end = clock();
+    printf("%lf\n", ((double)(end - start))/CLOCKS_PER_SEC);
+  }
+}
+
+
+? Can you compile it to use a Bit-Trie, assuming this source is "T2.c"?
+
+$> clang T2.c Trie.c -o TrieComp -Iinclude
+$> ./TrieComp 1000
+0.000613
+$> ./TrieComp 10000
+0.005345
+$> ./TrieComp 100000
+0.053972
+
+
+? Can you change the implementation of the tree, to use an ordinary binary
+  search tree, instead of a trie?
+
+$> clang T2.c BinT.c -o BinTComp -Iinclude
+$> ./BinTComp 1000
+0.000360
+$> ./BinTComp 10000
+0.004207
+$> ./BinTComp 100000
+0.047579
+
+
+? Finally, can you compile the program to use a Red-Black tree?
+
+$> clang T2.c RBT.c -o RBTComp -Iinclude
+$> ./RBTComp 1000
+0.000443
+$> ./RBTComp 10000
+0.004933
+$> ./RBTComp 100000
+0.051552
+
+
+? Can you write a program to count the number of nodes in the tree?
+
+int num_nodes;
+void get_num_nodes_aux(Apontador p) {
+  num_nodes++;
+}
+int get_num_nodes(Apontador p) {
+  num_nodes = 0;
+  Central(p, &get_num_nodes_aux);
+  return num_nodes;
+}
+
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Syntaxe: %s num_nodes\n", argv[0]);
+    return 1;
+  } else {
+    const int MAX_NUM_KEYS = atoi(argv[1]);
+    clock_t start, end;
+    start = clock();
+    Apontador T = gen_tree(MAX_NUM_KEYS);
+    end = clock();
+    printf("%d, %lf\n",
+      get_num_nodes(T), ((double)(end - start))/CLOCKS_PER_SEC);
+  }
+}
+
+? Can you write a script to compare all these three implementations?
+
+min=10000
+max=100001
+stp=10000
+
+run_test() {
+  echo "$1, Num-Nodes, Time (s)"
+  for ((num_nodes = $min; num_nodes < $max; num_nodes += $stp))
+  do
+    ./$1 $num_nodes 
+  done
+}
+
+# Testing the binary search tree:
+clang BinT.c T2.c -o BinTComp -Iinclude 
+run_test BinTComp 
+
+# Testing the bit-trie:
+clang Trie.c T2.c -o TrieComp -Iinclude 
+run_test TrieComp 
+
+# Testing the Red-Black tree:
+clang RBT.c T2.c -o RBTComp -Iinclude 
+run_test RBTComp
+
+
+? Can you write some code to read the height of the trees?
+
+int get_height(Apontador p) {
+  Apontador esq_p = getEsq(p);
+  Apontador dir_p = getDir(p);
+  int esq_height = esq_p && esq_p != p ? get_height(esq_p) : 0;
+  int dir_height = dir_p && dir_p != p ? get_height(dir_p) : 0;
+  return (esq_height > dir_height ? esq_height : dir_height) + 1;
+}
+
+int main(int argc, char** argv) {
+  ...
+  printf("%d, %d, %lf\n", get_height(T), get_num_nodes(T),
+      ((double)(end - start))/CLOCKS_PER_SEC);
+  ...
+}
+
+
+? What if you change the key generator to use just random(), instead of
+  random % X? What happens to the height of the Bit-Trie?
+
+int genR(const int MAX_KEY) { return random(); }
+
+
+? What if you change the key generator to build the keys in sorted order?
+
+int genA(const int MAX_KEY) {
+  static int counter = 0;
+  counter += random() % 4;
+  return counter;
+}
+
+Apontador gen_tree(const int MAX_NUM_KEYS) {
+  ...
+  reg->chave = genA(MAX_NUM_KEYS);
+  ...
+}
+
+
+? How do tries compare to hash-tables? What are the advantages of Tries?
+- Best worst case lookup
+- Easy to sort the elements
+- No need of a hash function
+
+
+? And what are the disadvantages?
+- Usually slower access time on the average case.
+- Might require more space on the average.
+
+
+? Can you think about a cool application of a string-trie?
+- auto-complete text.
+
+
+? If we use a trie to sort data, which sorting algorithm are we emulating?
+- Radix-Sort
+
+
+? How does a trie (i.e., a string trie) compare against a Red-Black Tree?
+  What are the advantages?
+- We avoid comparisons when searching, as we compare one character at a time,
+  and never backtrack. In a RBT, we might have to compare strings multiple
+  times to find a key.
