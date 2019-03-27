@@ -11,17 +11,10 @@ int main(){
 	int cont = 0;
 	while (std::cin >> word){
 		cont ++;
+		for(int i=0; i<int(word.size()); i++) word[i] = tolower(word[i]);
 		if(word.size() >= 3){
 			if(mapa[word]) mapa[word]++;
 			else mapa[word] = 1;
-		}
-	}
-
-	std::map<std::string, int>::iterator it1;
-	std::map<std::string, int>::iterator it2;
-	for (it1 = mapa.begin(); it1 != mapa.end(); it1++){
-		for (it2 = mapa.begin(); it2 != mapa.end(); it2++){
-			if(it1->first.compare(it2->first)) std::cout << "Comparei\n";
 		}
 	}
 
