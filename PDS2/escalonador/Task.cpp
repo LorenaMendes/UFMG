@@ -19,9 +19,23 @@ void TaskScheduler::displayResult(std::vector<Task*> taskVector){
 	}
 }
 
-// void TaskScheduler::RoundRobin(){
-// 	int time = 0;
-// 	for (int i = 0; i < 20; ++i){
-		
-// 	}
-// }
+void TaskScheduler::RoundRobin(){
+	// int time = 0;
+	int quant = this->quantum;
+
+	for (int time = 0; time < 20; ++time){ // CONTA O TEMPO
+		for (int i = 0; i < int(this->tasksWaiting.size()); ++i){
+			Task *current = this->tasksWaiting[i];
+			if(current->inQueue){
+				if(current->duration-quant > 0){
+					current->end = time;
+					current->duration = duration-quant;
+				} else if(current->duration-quant == 0){
+					current->end = time;
+					current->duration = duration-quant;
+				}
+			}
+			
+		}
+	}
+}

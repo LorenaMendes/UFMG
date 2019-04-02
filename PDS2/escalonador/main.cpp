@@ -20,6 +20,7 @@ int main(){
 	for (int i = 0; i < tasks; ++i){
 		cin >> _id >> _arr >> _dur;
 		Task * task = new Task(_id,_arr,_dur);
+		task->inQueue = 1;
 		taskVector.push_back(task);
 	}
 
@@ -28,13 +29,12 @@ int main(){
 	taskScheduler->totalTasks = tasks;
 	for (int i = 0; i < tasks; ++i)
 		taskScheduler->schedulerQueue.push_back(taskVector[i]);
-	taskScheduler->displayResult(taskVector);
 	
 	// ORDENANDO POR ARRIVAL TIME E ID
 	sort(taskVector.begin(), taskVector.end(), compareByArrivalTime);
-	
-	cout << "\n";
 	taskScheduler->displayResult(taskVector);
+	
+	taskScheduler->RoundRobin();
 
 	// LIBERANDO A MEMÓRIA
 	for(Task * t : taskVector) delete t;
