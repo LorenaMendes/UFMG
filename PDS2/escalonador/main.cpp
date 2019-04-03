@@ -21,10 +21,11 @@ int main(){
 	// CRIANDO O TASKSCHEDULER
 	TaskScheduler * taskScheduler = new TaskScheduler(quantum, taskVector);
 	taskScheduler->totalTasks = tasks;
-	for (int i = 0; i < tasks; ++i)
-		taskScheduler->schedulerQueue.push_back(taskVector[i]);
+	// for (int i = 0; i < tasks; ++i)
+	// 	taskScheduler->schedulerQueue.push_back(taskVector[i]);
 	
-	// taskScheduler->RoundRobin();
+	taskScheduler->RoundRobin();
+	taskScheduler->displayResult(taskScheduler->tasksWaiting);
 
 	// LIBERANDO A MEMÓRIA
 	for(Task * t : taskVector) delete t;

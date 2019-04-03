@@ -24,6 +24,8 @@ struct TaskScheduler{
 	void checkIncomingTasks(int);
 	void RoundRobin();
 	void displayResult(std::vector<Task*>); //OK
+
+	void showlist(std::list<Task*> g);
 };			
 
 #endif
