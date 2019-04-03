@@ -20,7 +20,7 @@ int main(){
 
 	// CRIANDO O TASKSCHEDULER
 	TaskScheduler * taskScheduler = new TaskScheduler(quantum, taskVector);
-	taskScheduler->totalTasks = tasks;
+	// taskScheduler->totalTasks = tasks;
 	// for (int i = 0; i < tasks; ++i)
 	// 	taskScheduler->schedulerQueue.push_back(taskVector[i]);
 	
