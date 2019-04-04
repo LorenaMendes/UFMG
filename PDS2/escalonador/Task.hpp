@@ -18,11 +18,11 @@ struct Task{
 struct TaskScheduler{
 	int quantum; //OK
 	int totalTasks; //OK
-	std::list<Task*> schedulerQueue;
-	std::vector<Task*> tasksWaiting;
+	std::list<Task*> schedulerQueue; //OK
+	std::vector<Task*> tasksWaiting; //OK
 	TaskScheduler(int, std::vector<Task*>); //OK
-	void checkIncomingTasks(int);
-	void RoundRobin();
+	void checkIncomingTasks(int); //OK
+	void RoundRobin(); //OK
 	void displayResult(std::vector<Task*>); //OK
 
 	void showlist(std::list<Task*> g);
