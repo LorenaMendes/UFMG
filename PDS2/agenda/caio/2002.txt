@@ -1,0 +1,31 @@
+2002
+mes: --------------- janeiro
+>>compromisso:            lorena euu
+hora: 5
+dia: 10
+mes: --------------- fevereiro
+mes: --------------- março
+mes: --------------- abril
+mes: --------------- maio
+mes: --------------- junho
+mes: --------------- julho
+mes: --------------- agosto
+>>compromisso:     aaaa
+hora: 13
+dia: 15
+>>compromisso:    b
+hora: 14
+dia: 15
+mes: --------------- setembro
+>>compromisso:        ppp
+hora: 18
+dia: 17
+mes: --------------- outubro
+mes: --------------- novembro
+mes: --------------- dezembro
+>>compromisso:   b
+hora: 7
+dia: 1
+>>compromisso:   a
+hora: 15
+dia: 1

@@ -1,0 +1,51 @@
+defastro
+Estrela Sol
+Temperatura 5778
+Raio 695510
+Gravidade 274
+Gasoso False
+
+defastro
+Planeta Mercurio
+Temperatura 169
+Raio  2439
+Gravidade 3.7 
+Gasoso False
+
+defastro
+Planeta Marte
+Temperatura -60 
+Raio 3389
+Gravidade 3.71
+Gasoso False
+
+defastro
+Lua Fobos
+Orbita Marte
+Temperatura -40
+Raio 11
+Gravidade 0.001
+Gasoso False
+
+defastro
+Lua Deimos
+Orbita Marte
+Temperatura -40
+Raio 6
+Gravidade 0.003
+Gasoso False
+
+defastro
+Planeta Terra
+Temperatura 14
+Raio  6371 
+Gravidade 9.8 
+Gasoso False
+
+defastro
+Lua Lua
+Orbita Terra
+Temperatura -53
+Raio 1737
+Gravidade 1.6
+Gasoso False

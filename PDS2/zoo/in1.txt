@@ -1,0 +1,11 @@
+S 1
+P Leao01 210
+P Leao02 195
+S 2
+P Leao01 210
+P Leao03 185
+S 3
+P Leao01 153
+P Leao03 191
+S 4
+P Leao01 210

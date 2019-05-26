@@ -1,0 +1,11 @@
+S 1
+P Elefante01 6000
+P Tigre01 295
+S 3
+P Elefante01 5900
+S 5
+P Elefante01 4000
+P Tigre01 221
+S 7
+P Elefante01 3000
+P Tigre01 231

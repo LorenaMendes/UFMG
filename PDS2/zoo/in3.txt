@@ -1,0 +1,10 @@
+S 1
+P Coala01 12
+P Aguia01 5
+S 2
+S 3
+P Coala01 10
+P Coala02 11
+S 4
+P Aguia01 4
+S 8

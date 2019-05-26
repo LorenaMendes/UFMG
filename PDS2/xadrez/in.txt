@@ -1,0 +1,4 @@
+N a8 b6
+B c4 e8
+R c7 h2
+Q
