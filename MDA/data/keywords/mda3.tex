@@ -1,0 +1,430 @@
+\documentclass{beamer}
+% \documentclass[handout]{beamer}
+
+\usetheme{dcc}
+
+\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
+\usepackage{url}
+
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.}
+
+\newcommand{\pub}{\hskip2pt\raisebox{-3.5pt}{\pgfuseimage{beamericonarticle}}\hskip1pt}
+
+\title{Mineração de Dados Aplicada}
+\subtitle{Simple but Powerful Text-Processing Commands}
+
+\author{Loïc Cerf}
+
+\date{August, 21$^{\text{st}}$ 2019}
+
+\institute
+{
+  \scriptsize
+  DCC -- ICEx -- UFMG
+  \bigskip\\
+  \includegraphics[width=.334113288\linewidth]{images/dcc}\hfill\includegraphics[width=.5\linewidth]{images/ufmg}
+}
+
+\subject{Simple but Powerful Text-Processing Commands}
+
+\keywords{text files, commands, POSIX}
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section*{Simple but powerful text-processing commands}
+
+\begin{frame}
+  \frametitle{Part of the Unix philosophy}
+  \begin{block}{Part of the Unix philosophy}
+    Doug McIlroy (inventor of Unix pipes). In \emph{A Quarter-Century
+      of Unix} (1994):\\
+    \begin{quotation}
+      Write programs that do one thing and do it well. Write programs
+      to work together. Write programs to handle text streams, because
+      that is a universal interface.
+    \end{quotation}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Utilities from the 70s}
+  The Unix operating system came with specific text-processing
+  commands.  They are still very useful today. Since 1984, the GNU
+  project has improved them a lot (new options, improved
+  efficiency). The original commands are part of POSIX standards.
+
+  \vfill
+  \pause
+
+  Most Free operating systems are POSIX-compliant: GNU/Linux, BSD,
+  illumos, Haiku, etc. Mac OS X is too. Windows is not but Cygwin is a
+  good compatibility layer.
+\end{frame}
+
+\begin{frame}
+  \frametitle{The shell}
+  The \emph{shell} interprets every command fired in a terminal or in
+  an executable file, whose first line indicates the shell to use:
+  \texttt{\#!/bin/sh} (any POSIX-compliant shell) or
+  \texttt{\#!/bin/bash} or \texttt{\#!/bin/dash} or
+  \texttt{\#!/bin/zsh}, etc.
+
+  \vfill
+
+  \begin{exampleblock}{A 2-line shell script}
+    \texttt{\#!/bin/sh}\\
+    ~\\
+    \texttt{\# Get started with the MDA exercises}\\
+    \texttt{wget \url{dcc.ufmg.br/~lcerf/data.tar.xz} -O - | tar -xJ}\\
+    \texttt{mv data data-\$(date +\%m\%d) 2> /dev/null}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Geeks and repetitive tasks}
+  \includegraphics[width=\linewidth]{img/repetitive-tasks}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Standard I/O}
+  POSIX text processing commands:
+  \begin{itemize}
+  \item process the input stream of text line by line;
+  \item by default:
+    \begin{itemize}
+    \item read from the standard input (the keyboard if not
+      redirected);
+    \item write to the standard output (the terminal if not
+      redirected).
+    \end{itemize}
+  \end{itemize}
+
+  \vfill
+  \pause
+
+  \texttt{<}/\texttt{>} redirects the standard I/O from/to a file.  A
+  pipe binds an output stream to an input stream.  It can bear a name
+  (in argument of \texttt{mkfifo}) but most workflows only need the
+  unnamed pipe, \texttt{|}.  \texttt{|} redirects the standard output
+  of the command on the left to the standard input of the command on
+  the right.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Getting the data}
+  \texttt{\$ wget \url{dcc.ufmg.br/~lcerf/data.tar.xz} -O - | tar -xJ}
+
+  \vfill
+  \pause
+
+  \texttt{wget} and \texttt{tar} are two GNU commands. Like all GNU
+  commands:
+  \begin{itemize}[<+->]
+  \item the \texttt{man} command (\eg, \texttt{man wget}) gives their
+    specifications;
+  \item the \texttt{info} command (\eg, \texttt{info wget}) often
+    provides more detailed explanations, examples of use, etc.;
+  \item long options are prefixed with \texttt{{-}{-}}, short (\ie,
+    one letter) options with \texttt{-} and can be grouped (\eg,
+    \texttt{-xJ} equates to \texttt{-x -J});
+  \item options can take (right after) an argument; \texttt{-} means
+    the standard input (\texttt{/dev/stdin}) or the standard output
+    (\texttt{/dev/stdout}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reading a large text file}
+  Your favorite text editor (Vim or Emacs?) loads the entire file in
+  main memory, a problem if it weights gigabytes or more.
+
+  \vfill
+  \pause
+
+  The solution is named \texttt{less}. It is the viewer for
+  \texttt{man} pages.
+
+  \vfill
+
+  A few commands inside \texttt{less}: Page-up/down, R (repaint), F
+  (follow), [0-9]+ (scroll that many lines), / (search forwards for a
+  regexp), ? (search backwards for a regexp), q (quit).
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    Find, with \texttt{less}, the IP address of the first Brazilian
+    visitor after the $100^{\text{th}}$ line of
+    \texttt{DistroWatch/20100428/debian}.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outputting the first/last lines}
+  Do not test your scripts on the whole dataset!
+
+  \vfill
+
+  \texttt{head} outputs the first lines of the input; \texttt{tail}
+  its last lines.
+
+  \vfill
+
+  A few options: -[0-9]+ tunes the number of lines (10 by default), -n
+  too but a \texttt{-}/\texttt{+} prefix asks
+  \texttt{head}/\texttt{tail} to output all lines except the provided
+  number of last/first lines.
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    Print the lines 5 to 15 of one file in \texttt{DistroWatch.com}'s
+    logs.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Shuffling lines}
+  The \texttt{shuf} command shuffles the input lines.
+
+  \vfill
+
+  A few options: -n [0-9]+ outputs only the number of lines in
+  argument (uniform random sampling \emph{without} replacement), -r
+  allows repetitions (uniform random sampling \emph{with}
+  replacement), -e specifies a line (rather than taking those in an
+  input file).
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    Sample, in a uniformly random way, 100 visits to the Ubuntu page
+    on April, 28$^{\text{th}}$ 2010.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Concatenating files}
+  The \texttt{cat} command concatenates files, its arguments.
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    Concatenate the files related to the visits to the Ubuntu page.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Replacing characters}
+  Given, in argument, two lists of characters, the \texttt{tr} command
+  outputs its standard input after replacing (aka translating) every
+  character in the first list with the one at the same position in the
+  second list.  The last character in the second list is considered
+  repeated up to the size of the first list.  \texttt{-} between two
+  characters defines an interval.
+
+  \vfill
+
+  A few options: -c specifies the first list as the complement of the
+  provided characters, -d deletes (rather than replaces) the
+  characters in the first list, given consecutive characters found in
+  the first list, -s substitutes the first one and deletes the rest
+  (squeeze).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Basic reformatting with \texttt{tr}}
+  \begin{exampleblock}{Exercise}
+    Choose one of the files in \texttt{DistroWatch.com}'s logs and:
+    \begin{enumerate}
+    \item change its delimiters into spaces;
+    \item make its country codes lower cased.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \vfill
+
+  Notice that the shell processes the command line before executing
+  it: the command line is broken w.r.t. whitespaces, \texttt{\$var} is
+  replaced by the content of the shell variable \texttt{var},
+  \texttt{*} is replaced by any string to match existing file paths,
+  etc. To preserve the literal meaning:
+  \begin{itemize}
+  \item a backslash can precede every special character;
+  \item a (portion of an) argument can be enclosed with single quotes
+    (with double quotes to still let the shell interpret \texttt{\$}
+    and \texttt{`}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Counting lines, words and/or characters}
+  The \texttt{wc} command counts the number of input lines (option
+  -l), words (option -w) and/or characters (option -m).
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    In \texttt{DistroWatch.com}'s logs, what are the numbers of visits
+    per day to the Ubuntu page. Is there something special (compare to
+    other distributions)?
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Selecting fields}
+  The \texttt{cut} command selects fields. \texttt{cut} considers that
+  there is an empty field between two subsequent delimiters.
+
+  \vfill
+
+  -d specifies the delimiter (tab by default), -f specifies the fields
+  \texttt{cut} must keep (comma-separated numbers or intervals, using
+  \texttt{-}).
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    From one of the file in \texttt{DistroWatch.com}'s logs, get rid
+    of the IP addresses.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pasting}
+  The \texttt{paste} command concatenates the lines of the input
+  files.
+
+  \vfill
+
+  -d specifies the delimiter (tab by default).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Comparing}
+  \texttt{comm} compares the lines of two \emph{sorted} files.  It
+  outputs the lines only in the first file (first column), only in the
+  second file (second column), and those in both files (third column).
+
+  \vfill
+
+  -1, -2 and -3 respectively remove the first, second and third column
+  from the output.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Joining}
+  \texttt{join} joins the lines of two files. The join fields of both
+  files must be \emph{sorted}.
+
+  \vfill
+
+  A few options: -1 NUM sets the join field of the first file, -2 NUM
+  for the second file, -j for both, -a \{1, 2\} outputs unpairable
+  lines from the specified file \emph{too}, -v \{1, 2\} \emph{only}
+  outputs unpairable lines from the specified file, -i ignores case,
+  -t CHAR sets the delimiter.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Sorting}
+  The \texttt{sort} command sorts the lines.  The \emph{locale}
+  settings affect the ordering (you may want LC\_ALL=C).
+
+  \vfill
+
+  A few options: -r reverses the ordering, -f ignores case, -n
+  numerically sorts, -c checks if sorted, -k POS1[,POS2] sorts
+  according to the fields in the interval, -t sets the field
+  delimiter, -u removes duplicates, -m merges already sorted files.
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    In \texttt{DistroWatch.com}'s logs:
+    \begin{enumerate}
+    \item How many different countries are there?
+    \item On the 29th, what are the countries who originated visits to
+      the site but no visit to Ubuntu's page?
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reporting or omitting repeated lines}
+  The \texttt{uniq} command removes \emph{adjacent} repeated lines.
+
+  \vfill
+
+  A few options: -c counts and reports how many repetitions, -d only
+  outputs repeated lines, -u only outputs unique lines, -i ignores
+  case, -f [0-9]+ ignores the first fields (number in argument).
+
+  \vfill
+  \pause
+
+  \begin{exampleblock}{Exercise}
+    In \texttt{DistroWatch.com}'s logs, what are the ten countries
+    that originated the highest numbers of accesses to the index page,
+    during the three days.
+  \end{exampleblock}
+\end{frame}
+
+\section*{Homework}
+
+\begin{frame}
+  \frametitle{Reading for next Wednesday}
+  % \begin{alertblock}{Exercise for next Wednesday}
+  %   Given a list of keywords and a text, use the commands presented so
+  %   far to:
+  %   \begin{enumerate}
+  %   \item list each keyword occurring in the text;
+  %   \item count the occurrences of each keyword in the text.
+  %   \end{enumerate}
+  % \end{alertblock}
+
+  % \vfill
+
+  \begin{alertblock}{Reading for next Wednesday}
+    \href{https://pt.wikipedia.org/wiki/Express\%C3\%A3o\_regular\#BRE:_express.C3.B5es\_regulares\_b.C3.A1sicas}{\emph{Basic
+        Regular Expressions} in Wikipedia.}
+  \end{alertblock}
+\end{frame}
+
+\section*{}
+
+\begin{frame}
+  \frametitle{License}
+  \begin{block}{\copyright 2012--2019 Loïc Cerf}
+    \includegraphics[height=1.5ex]{img/licenses/cc-by-sa}\hskip1pt
+    These slides are licensed under the Creative Commons
+    Attribution-ShareAlike 4.0 International License.
+  \end{block}
+\end{frame}
+
+\end{document}

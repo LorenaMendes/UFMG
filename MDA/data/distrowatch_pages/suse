@@ -1,0 +1,3696 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+<title>DistroWatch.com: openSUSE</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="description" content="News and feature lists of Linux and BSD distributions." />
+<meta name="keywords" content="distrowatch, linux, android, bsd, unix, distro, distros, distributions, ubuntu, debian, suse, opensuse, fedora, red hat, centos, mageia, knoppix, gentoo, slackware, freebsd, openbsd" />
+<meta name="author" content="DistroWatch" />
+<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic&amp;subset=Latin" />-->
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: Latest News" href="news/dw.xml" />
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: Latest Distributions" href="news/dwd.xml" />
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: Latest Packages" href="news/dwp.xml" />
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: Latest Ratings" href="news/ratings.xml" />
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: DistroWatch Weekly" href="news/dww.xml" />
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: Latest DWW Podcast (MP3)" href="news/podcast.xml" />
+<link rel="alternate" type="application/rss+xml" title="DistroWatch: Latest DWW Podcast (OGG)" href="news/oggcast.xml" />
+<link rel="icon" href="favicon.ico" type="image/ico" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script async type="text/javascript" src="//s.clickiocdn.com/t/pb207055.js"></script>
+<script async type="text/javascript" src="//s.clickiocdn.com/t/common_258.js"></script>
+
+<!-- comply with European Union cookie law -->
+
+<!-- 
+<script type="text/javascript">window.cookieconsent_options = {"message":"This website uses cookies to customize your experience. Third-party cookies may also be used by our advertisers.","dismiss":"Accept","learnMore":"Learn more","link":"http://distrowatch.com/dwres.php?resource=privacy","theme":"dark-bottom"};</script><script type="text/javascript" src="js/cookieconsent.latest.min.js"></script>--> 
+
+<link rel="stylesheet" href="css/tables.css" type="text/css"><style type="text/css"></style>
+</head>
+<body bcolor="#ffffff">
+<table style="width: 100%; border: 2px silver groove; background-color: #f6edc8; table-layout: auto">
+  <tr>
+    <td style="width: 468px; text-align: left; border: 0px">
+      <table style="width: 468px">
+        <tr>
+        <a href="./"><img src="images/cpxtu/dwbanner.png" border="0" title="DistroWatch.com. Put the fun back into computing, use Linux, BSD." /></a>
+        </tr>
+        <tr>
+          <td style="border: 0px; width: 230px; text-align: center">
+            <form style="height: 1%" action="table.php" method="get">
+            <input style="width: 160px; font-size: 10px"; type="text" name="distribution" value="Type Distribution Name" onfocus="value=''" maxlength="36" />
+            <input style="width: 50px" type="submit" value="Go" />
+            </form>
+          </td>
+          <td style="border: 0px; width: 230px; text-align: center">
+            <form style="height: 1%" action="table.php" method="get">
+            <select style="width: 160px" name="distribution" onchange="location = this.options[this.selectedIndex].value;">
+<option value="3cx">3CX</option><option value="4mlinux">4MLinux</option><option value="absolute">Absolute</option><option value="abuledu">AbulÉdu</option><option value="alpine">Alpine</option><option value="alt">ALT</option><option value="androidx86">Android-x86</option><option value="antergos">Antergos</option><option value="antix">antiX</option><option value="apodio">APODIO</option><option value="arch">Arch</option><option value="archbang">ArchBang</option><option value="archlabs">ArchLabs</option><option value="archstrike">ArchStrike</option><option value="arya">Arya</option><option value="asianux">Asianux</option><option value="asterisknow">AsteriskNOW</option><option value="audiophile">Audiophile</option><option value="austrumi">AUSTRUMI</option><option value="avlinux">AV Linux</option><option value="backbox">BackBox</option><option value="baruwa">Baruwa</option><option value="berry">Berry</option><option value="bicom">Bicom</option><option value="biolinux">Bio-Linux</option><option value="bitkey">BitKey</option><option value="blacklab">Black Lab</option><option value="blackarch">BlackArch</option><option value="blackpanther">blackPanther</option><option value="blankon">BlankOn</option><option value="blueonyx">BlueOnyx</option><option value="bluestar">Bluestar</option><option value="bodhi">Bodhi</option><option value="boss">BOSS</option><option value="bsdrp">BSDRP</option><option value="bunsenlabs">BunsenLabs</option><option value="caine">CAINE</option><option value="calculate">Calculate</option><option value="canaima">Canaima</option><option value="centos">CentOS</option><option value="chakra">Chakra</option><option value="chapeau">Chapeau</option><option value="clear">Clear</option><option value="clearos">ClearOS</option><option value="clonezilla">Clonezilla</option><option value="cloudready">CloudReady</option><option value="connochaet">Connochaet</option><option value="container">Container</option><option value="crux">CRUX</option><option value="cucumber">Cucumber</option><option value="debian">Debian</option><option value="skolelinux">Debian Edu</option><option value="deepin">deepin</option><option value="deft">DEFT</option><option value="devil">Devil</option><option value="devuan">Devuan</option><option value="dragonflybsd">DragonFly</option><option value="drbl">DRBL</option><option value="duzeru">DuZeru</option><option value="easynas">EasyNAS</option><option value="edubuntu">Edubuntu</option><option value="elastix">Elastix</option><option value="elementary">elementary</option><option value="elive">Elive</option><option value="emmabuntus">Emmabuntüs</option><option value="endian">Endian</option><option value="endlessos">Endless</option><option value="exe">Exe</option><option value="exherbo">Exherbo</option><option value="extix">ExTiX</option><option value="fatdog">Fatdog64</option><option value="fedora">Fedora</option><option value="ferenos">feren</option><option value="fermi">Fermi</option><option value="finnix">Finnix</option><option value="freebsd">FreeBSD</option><option value="freenas">FreeNAS</option><option value="freepbx">FreePBX</option><option value="frugalware">Frugalware</option><option value="fuguita">FuguIta</option><option value="funtoo">Funtoo</option><option value="gecko">Gecko</option><option value="gentoo">Gentoo</option><option value="ghostbsd">GhostBSD</option><option value="gnewsense">gNewSense</option><option value="gnustep">GNUstep</option><option value="gobo">GoboLinux</option><option value="gparted">GParted</option><option value="greenie">Greenie</option><option value="grml">Grml</option><option value="guixsd">GuixSD</option><option value="haiku">Haiku</option><option value="ipfire">IPFire</option><option value="kaiana">Kaiana</option><option value="kali">Kali</option><option value="kanotix">KANOTIX</option><option value="kaos">KaOS</option><option value="karoshi">Karoshi</option><option value="kdeneon">KDE neon</option><option value="keysoft">Keysoft</option><option value="knoppix">KNOPPIX</option><option value="kodachi">Kodachi</option><option value="kolibri">KolibriOS</option><option value="korora">Korora</option><option value="kubuntu">Kubuntu</option><option value="kwort">Kwort</option><option value="kxstudio">KXStudio</option><option value="lakka">Lakka</option><option value="leeenux">Leeenux</option><option value="lfs">LFS</option><option value="libreelec">LibreELEC</option><option value="linhes">LinHES</option><option value="linuxbbq">LinuxBBQ</option><option value="linuxconsole">LinuxConsole</option><option value="linuxfx">Linuxfx</option><option value="lite">Lite</option><option value="liveraizo">Live Raizo</option><option value="lliurex">LliureX</option><option value="lubuntu">Lubuntu</option><option value="lunar">Lunar</option><option value="luninux">LuninuX</option><option value="lxle">LXLE</option><option value="mageia">Mageia</option><option value="makulu">MakuluLinux</option><option value="mangaka">Mangaka</option><option value="manjaro">Manjaro</option><option value="maui">Maui</option><option value="max">MAX</option><option value="metamorphose">Metamorphose</option><option value="midnightbsd">MidnightBSD</option><option value="mll">Minimal</option><option value="minino">MiniNo</option><option value="minix">MINIX</option><option value="mint">Mint</option><option value="miros">MirOS</option><option value="morpheusarch">MorpheusArch</option><option value="mx">MX Linux</option><option value="nanolinux">Nanolinux</option><option value="nas4free">NAS4Free</option><option value="neptune">Neptune</option><option value="netbsd">NetBSD</option><option value="nethserver">NethServer</option><option value="netrunner">Netrunner</option><option value="nexentastor">NexentaStor</option><option value="nitrux">Nitrux</option><option value="nixos">NixOS</option><option value="nst">NST</option><option value="nutyx">NuTyX</option><option value="ob2d">OB2D</option><option value="olpc">OLPC</option><option value="omoikane">Omoikane</option><option value="openbsd">OpenBSD</option><option value="openelec">OpenELEC</option><option value="openindiana">OpenIndiana</option><option value="openmandriva">OpenMandriva</option><option value="openmediavault">OpenMediaVault</option><option selected value="opensuse">openSUSE</option><option value="openwall">Openwall</option><option value="opnsense">OPNsense</option><option value="oracle">Oracle</option><option value="osgeo">OSGeo</option><option value="osmc">OSMC</option><option value="ovios">OviOS</option><option value="paldo">paldo</option><option value="parabola">Parabola</option><option value="pardus">Pardus</option><option value="pardus">Pardus</option><option value="parrotsecurity">Parrot</option><option value="parsix">Parsix</option><option value="partedmagic">Parted Magic</option><option value="pclinuxos">PCLinuxOS</option><option value="peachosi">Peach OSI</option><option value="pearl">Pearl</option><option value="pelicanhpc">PelicanHPC</option><option value="pentoo">Pentoo</option><option value="peppermint">Peppermint</option><option value="pfsense">pfSense</option><option value="photonos">Photon</option><option value="pisi">Pisi</option><option value="plamo">Plamo</option><option value="pld">PLD</option><option value="plop">Plop</option><option value="point">Point</option><option value="poliarch">PoliArch</option><option value="porteus">Porteus</option><option value="porteuskiosk">Porteus Kiosk</option><option value="primtux">PrimTux</option><option value="proxmox">Proxmox</option><option value="puppy">Puppy</option><option value="q4os">Q4OS</option><option value="qubes">Qubes</option><option value="quirky">Quirky</option><option value="rancheros">RancherOS</option><option value="raspbian">Raspbian</option><option value="raspbsd">RaspBSD</option><option value="rasplex">RasPlex</option><option value="rds">RDS</option><option value="reactos">ReactOS</option><option value="rebeccablackos">RebeccaBlackOS</option><option value="rebellin">Rebellin</option><option value="redhat">Red Hat</option><option value="redcore">Redcore</option><option value="refracta">Refracta</option><option value="rescatux">Rescatux</option><option value="resulinux">Resulinux</option><option value="revengeos">Revenge</option><option value="risc">RISC</option><option value="robolinux">Robolinux</option><option value="rockscluster">Rocks Cluster</option><option value="rockstor">Rockstor</option><option value="rosa">ROSA</option><option value="rss">RSS</option><option value="runtu">Runtu</option><option value="sabayon">Sabayon</option><option value="salentos">SalentOS</option><option value="salix">Salix</option><option value="scientific">Scientific</option><option value="securepoint">Securepoint</option><option value="selks">SELKS</option><option value="semplice">Semplice</option><option value="sharklinux">Shark</option><option value="siduction">siduction</option><option value="simplicity">Simplicity</option><option value="slackel">Slackel</option><option value="slackware">Slackware</option><option value="slitaz">SliTaz</option><option value="smartos">SmartOS</option><option value="smeserver">SME Server</option><option value="smoothwall">Smoothwall</option><option value="sms">SMS</option><option value="solus">Solus</option><option value="solydxk">SolydXK</option><option value="sonar">Sonar</option><option value="sophos">Sophos</option><option value="sourcemage">Source Mage</option><option value="sparky">SparkyLinux</option><option value="springdale">Springdale</option><option value="steamos">SteamOS</option><option value="stella">Stella</option><option value="stresslinux">StressLinux</option><option value="subgraph">Subgraph</option><option value="sulix">SuliX</option><option value="supergrub">Super Grub2</option><option value="sle">SUSE</option><option value="swagarch">SwagArch</option><option value="swecha">Swecha</option><option value="swift">Swift</option><option value="systemrescue">SystemRescue</option><option value="t2">T2</option><option value="tails">Tails</option><option value="talkingarch">TalkingArch</option><option value="tanglu">Tanglu</option><option value="tens">TENS</option><option value="thinstation">Thinstation</option><option value="tinycore">Tiny Core</option><option value="tooppy">ToOpPy</option><option value="torios">ToriOS</option><option value="toutou">Toutou</option><option value="trisquel">Trisquel</option><option value="trueos">TrueOS</option><option value="turnkey">TurnKey</option><option value="tuxtrans">tuxtrans</option><option value="uberstudent">UberStudent</option><option value="ubos">UBOS</option><option value="ubuntu">Ubuntu</option><option value="ubuntubudgie">Ubuntu Budgie</option><option value="ubuntudp">Ubuntu DP</option><option value="ubuntugnome">Ubuntu GNOME</option><option value="ubuntukylin">Ubuntu Kylin</option><option value="ubuntumate">Ubuntu MATE</option><option value="ubuntustudio">Ubuntu Studio</option><option value="uhu">UHU-Linux</option><option value="ulteo">Ulteo</option><option value="ultimate">Ultimate</option><option value="univention">Univention</option><option value="untangle">Untangle</option><option value="urix">URIX</option><option value="uruk">Uruk</option><option value="ututo">UTUTO</option><option value="vector">Vector</option><option value="vine">Vine</option><option value="vinux">Vinux</option><option value="void">Void</option><option value="volumio">Volumio</option><option value="vortexbox">VortexBox</option><option value="voyager">Voyager</option><option value="vyos">VyOS</option><option value="wattos">wattOS</option><option value="webconverger">Webconverger</option><option value="whonix">Whonix</option><option value="wifislax">Wifislax</option><option value="wmlive">WM Live</option><option value="xstreamos">XStreamOS</option><option value="xubuntu">Xubuntu</option><option value="zentyal">Zentyal</option><option value="zenwalk">Zenwalk</option><option value="zeroshell">Zeroshell</option><option value="zevenet">Zevenet</option><option value="zorin">Zorin</option>            </select>
+            <input style="width: 50px" type="submit" value="Go" />
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 0px; width: 230px; text-align: center">
+<form action="//distrowatch.com/" id="cse-search-box">
+  <div style="text-align: center">
+    <input type="hidden" name="cx" value="partner-pub-1979814992302941:8421330539" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input style="width: 160px; font-size: 10px" type="text" name="q" size="24" onfocus="value=''" />
+    <input style="width: 50px" type="submit" name="sa" value="Go" />
+  </div>
+</form>
+<script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+          </td>
+          <td style="border: 0px; width: 230px; text-align: center">
+            <form style="height: 1%" action="random.php">
+            <input style="width: 214px; vertical-align: top" type="submit" value="Random Distribution" />
+            </form>
+          </td>
+        </tr>
+      </table>    </td>
+    <td style="text-align: left; vertical-align: top; border: 0px; width: 100%">
+      <table style="table-layout: auto; width: 100%; column-span: 3;">
+        <tr>
+          <td style="border: 0px; text-align: right; width: 100%"><a href="http://distrowatch.com/?language=EN"><img style="vertical-align: middle" src="images/lbxfnbfzbi/en.png" border="0" title="English" /></a> &bull; <a href="http://distrowatch.com/?language=ES"><img style="vertical-align: middle" src="images/lbxfnbfzbi/es.png" border="0" title="Spanish" /></a> &bull; <a href="http://distrowatch.com/?language=FR"><img style="vertical-align: middle" src="images/lbxfnbfzbi/fr.png" border="0" title="French" /></a> &bull; <a href="http://distrowatch.com/?language=DE"><img style="vertical-align: middle" src="images/lbxfnbfzbi/de.png" border="0" title="German" /></a> &bull; <a href="http://distrowatch.com/?language=PT"><img style="vertical-align: middle" src="images/lbxfnbfzbi/pt.png" border="0" title="Portuguese" /></a> &bull; <a href="http://distrowatch.com/?language=RO"><img style="vertical-align: middle" src="images/lbxfnbfzbi/ro.png" border="0" title="Romanian" /></a> &bull; <a href="http://distrowatch.com/?language=JP"><img style="vertical-align: middle" src="images/lbxfnbfzbi/jp.png" border="0" title="Japanese" /></a> &bull; <a href="http://distrowatch.com/?language=AR"><img style="vertical-align: middle" src="images/lbxfnbfzbi/ar.png" border="0" title="Arabic" /></a>          </td>
+        </tr>
+      </table>
+      <table style="table-layout: auto; width: 100%">
+        <tr>
+          <th class="NavMenu">
+            &nbsp;&bull; <a href="./">Home Page</a>, <a href="/dwres.php?resource=headlines">Headlines</a><br />
+            &nbsp;&bull; <a href="weekly.php?issue=current">DW Weekly</a>, <a href="weekly.php?issue=current&amp;mode=67#comments">Comments</a><br />
+            &nbsp;&bull; <a href="packages.php">Packages</a>, 
+            <a href="dwres.php?resource=package-management">Package Management</a><br />
+            &nbsp;&bull; <a href="dwres.php?resource=glossary">Glossary</a>,             <a href="dwres.php?resource=faq">FAQ</a>,             <a href="index.php?mobile=1">Mobile Site</a>
+          </th>
+          <th class="NavMenu">
+            &nbsp;&bull; <a href="search.php">Search</a>, <a href="dwres.php?resource=sitemap">Sitemap</a><br />
+            &nbsp;&bull; <a href="dwres.php?resource=major">Major Distributions</a><br />
+            &nbsp;&bull; <a href="dwres.php?resource=submit">Submit Distribution</a><br />
+            &nbsp;&bull; <a href="weekly.php?issue=current#upcoming">Upcoming Releases</a><br />
+          </th>
+          <th class="NavMenu">
+            &nbsp;&bull; <a href="dwres.php?resource=about">About DistroWatch</a><br />
+            &nbsp;&bull; <a href="dwres.php?resource=popularity">Page Hit Ranking</a><br />
+            &nbsp;&bull; <a href="dwres.php?resource=advertise">Advertise</a><br />
+            &nbsp;&bull; <a href="http://cryptocoin.cc/">CryptoCoin.cc</a><br />
+          </th>
+        </tr>
+        <tr>
+<table style="width: 100%; border: none; background-color: #f6efc8">
+  <tr>
+    <td class="NewsLogo" style="border: none; text-align: right; background-color: #f6efc8; width: 100%">
+<span style="vertical-align: bottom; color: silver">DistroWatch.com is sponsored by </span><a href="https://www.3cx.com/"><img style="vertical-align: middle" src="images/k/3cx-19.png" border="0" alt="3CX - Software Based VoIP IP PBX / PABX" title="3CX - Software Based VoIP IP PBX / PABX"></a>&nbsp;<a href="https://www.acunetix.com/"><img style="vertical-align: bottom" src="images/k/acunetix-19.png" border="0" alt="Web application security with Acunetix" title="Web application security with Acunetix"></a>    </td>
+  </tr>
+</table>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<link rel="stylesheet" href="/css/nav-menu.css" type="text/css" />
+
+<ul class="dropmenu">
+  <li class="dropdown">
+     <a href="javascript:void(0)" class="dropbtn" onclick="MenuFunction(1)">News/Opinions/Reviews &#9660;</a>
+     <div class="dropdown-content" id="myDropdown1">
+      <a href="/">Release Announcements</a>
+      <a href="dwres.php?resource=headlines">News and Headlines</a>
+      <a href="weekly.php?issue=current">DistroWatch Weekly</a>
+      <a href="dwres.php?resource=article-search">News/Article Search</a>
+      <a href="weekly.php?issue=current#upcoming">Upcoming Releases</a>
+      <a href="polls.php">Opinion Polls</a>
+      <a href="dwres.php?resource=ratings">Visitor Ratings &amp; Reviews</a>
+      <a href="dwres.php?resource=ranking">Project Rankings by Ratings</a>
+      <a href="dwres.php?resource=podcast-mobile">Podcasts, Newsletters &amp; Reviews</a>
+    </div>
+
+  </li>
+  <li class="dropdown">
+     <a href="javascript:void(0)" class="dropbtn" onclick="MenuFunction(2)">Packages &#9660;</a>
+     <div class="dropdown-content" id="myDropdown2">
+      <a href="packages.php">Packages We Track</a>
+      <a href="dwres.php?resource=package-management">Package Management</a>
+      <a href="dwres.php?resource=headlines">Package Releases</a>
+      <a href="dwres.php?resource=compare-packages">Compare Packages Across Distros</a>
+    </div>
+
+  </li>
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="MenuFunction(3)">Find/Submit Distro &#9660;</a>
+    <div class="dropdown-content" id="myDropdown3">
+      <a href="search.php">Search For Distro</a>
+      <a href="dwres.php?resource=major">Major Distributions</a>
+      <a href="new">Waiting List</a>
+      <a href="dwres.php?resource=submit">Submit New Distro</a>
+      <a href="random.php">Show Random Distro</a>
+    </div>
+  </li>
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="MenuFunction(4)">Tutorials &amp; Learning &#9660;</a>
+    <div class="dropdown-content" id="myDropdown4">
+      <a href="dwres.php?resource=article-search">Search For An Article</a>
+      <a href="qanda.php">Questions And Answers Columns</a>
+      <a href="tips.php">Tips And Tricks Columns</a>
+      <a href="tips.php">Myths And Misunderstandings Columns</a>
+      <a href="dwres.php?resource=glossary">Glossary Of Common Terms</a>
+      <a href="dwres.php?resource=man-pages">Simplified Manual Pages</a>
+    </div>
+  </li>
+  
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="MenuFunction(5)">Related Resources &#9660;</a>
+    <div class="dropdown-content" id="myDropdown5">
+      <a href="dwres.php?resource=links">Other Operating Systems</a>
+      <a href="dwres.php?resource=hardware">Compatible Hardware</a>
+      <a href="dwres.php?resource=security">Security Advisories</a>
+      <a href="dwres.php?resource=bittorrent">Torrents</a>
+      <a href="dwres.php?resource=upload-torrent">Upload Torrents</a>
+      <a href="dwres.php?resource=keys">Distro Signing Keys</a>
+      <a href="dwres.php?resource=family-tree">Visual Distro Family Tree</a>
+    </div>
+  </li>
+
+   <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="MenuFunction(6)">DistroWatch.com &#9660;</a>
+    <div class="dropdown-content" id="myDropdown6">
+      <a href="dwres.php?resource=about">About DistroWatch</a>
+      <a href="dwres.php?resource=contact">Contact Us</a>
+      <a href="wiki">DistroWatch Wiki</a>
+      <a href="dwres.php?resource=popularity">Page Hit Ranking</a>
+      <a href="dwres.php?resource=trending">Page Hit Trends</a>
+      <a href="dwres.php?resource=advertise">Advertise With Us</a>
+      <a href="dwres.php?resource=faq">Frequently Asked Questions</a>
+      <a href="dwres.php?resource=contributing">Contribute</a>
+      <a href="dwres.php?resource=donate">Donate</a>
+      <a href="dwres.php?resource=donations">Our donations Programme</a>
+      <a href="http://cryptocoin.cc/">CryptoCoin.cc (sister site)</a>
+    </div>
+  </li>
+
+</ul>
+
+
+<script language="JavaScript">
+<!--
+
+function ClearMenus()
+{
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+    }
+}
+
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function MenuFunction(num) {
+    var full_name = "myDropdown" + num;
+    var already_visible = false;
+
+    if ( document.getElementById(full_name).classList.contains('show') )
+       already_visible = true;
+    ClearMenus();
+    if (already_visible == false)
+       document.getElementById(full_name).classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    ClearMenus();
+  }
+}
+
+// -->
+</script>
+<h2><div>
+<!-- 728x90 ATF -->            
+                <script type="text/javascript">
+                    var googletag = googletag || {};
+                    googletag.cmd = googletag.cmd || [];
+                    (function() {
+                      var gads = document.createElement("script");
+                      gads.async = true;
+                      gads.type = "text/javascript";
+                      var useSSL = "https:" == document.location.protocol;
+                      gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+                      var node =document.getElementsByTagName("script")[0];
+                      node.parentNode.insertBefore(gads, node);
+                     })();
+                </script>
+                <div id="div-gpt-ad-3702747505048-0">
+                    <script type="text/javascript">
+                       googletag.cmd.push(function() {
+googletag.pubads().set("page_url", "http://distrowatch.com");                       googletag.defineSlot("/8456/IDG.US_NET_Distrowatch.com", [728,90],"div-gpt-ad-3702747505048-0")
+                           .addService(googletag.pubads())
+                           .setTargeting("pos", "ATF")
+                           .setTargeting("URL", encodeURIComponent(window.location));
+                         googletag.enableServices();
+                         googletag.display("div-gpt-ad-3702747505048-0");
+                       });
+                    </script> 
+                </div>
+<!-- END 728x90 ATF -->
+</div></h2><table width="100%">
+<tr>
+<td style="width: 80%; border: 0; margin: 0; padding: 0; vertical-align: top">
+<table style="width: 100%">
+<tr>
+ <th class="Invert">DistroWatch.com: openSUSE</th>
+</tr>
+<tr>
+  <td class="TablesTitle">
+  <a href="images/cgfjoewdlbc/opensuse.png"><img src="images/cgfjoewdlbc/opensuse-small.png" border="0" title="openSUSE" vspace="6" hspace="6" align="right"></a>
+  <h1>openSUSE</h1><div>Last Update: 2017-08-23 19:20 UTC</div><br />
+<hr><img src="images/yvzhuwbpy/opensuse.png" border="0" title="openSUSE" vspace="41" hspace="32" align="left"><ul><li><b>OS Type:</b> <a href="search.php?ostype=Linux#simple">Linux</a><br /><li><b>Based on:</b> Independent<br /><li><b>Origin:</b> <a href="search.php?origin=Germany#simple">Germany</a>
+<br /><li><b>Architecture:</b> <a href="search.php?architecture=arm64#simple">arm64</a>, <a href="search.php?architecture=armhf#simple">armhf</a>, <a href="search.php?architecture=ppc64#simple">ppc64</a>, <a href="search.php?architecture=ppc64el#simple">ppc64el</a>, <a href="search.php?architecture=s390x#simple">s390x</a>, <a href="search.php?architecture=x86_64#simple">x86_64</a><br /><li><b>Desktop:</b> <a href="search.php?desktop=Cinnamon#simple">Cinnamon</a>, <a href="search.php?desktop=GNOME#simple">GNOME</a>, <a href="search.php?desktop=IceWM#simple">IceWM</a>, <a href="search.php?desktop=KDE#simple">KDE</a>, <a href="search.php?desktop=LXDE#simple">LXDE</a>, <a href="search.php?desktop=Openbox#simple">Openbox</a>, <a href="search.php?desktop=WMaker#simple">WMaker</a>, <a href="search.php?desktop=Xfce#simple">Xfce</a><br /><li><b>Category:</b> <a href="search.php?category=Desktop#simple">Desktop</a>, <a href="search.php?category=Server#simple">Server</a>, <a href="search.php?category=Live+Medium#simple">Live Medium</a>, <a href="search.php?category=Raspberry+Pi#simple">Raspberry Pi</a><br /><!-- <li><b>Release Model:</b> <br /><li><b>Init:</b> <br /> --> <li><b>Status:</b> <font color="green">Active</font><br /><li><b>Popularity:</b> <a href="dwres.php?resource=popularity">6 (1,048 hits per day)</a>
+</ul>
+The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution. The openSUSE project has three main goals: make openSUSE the easiest Linux for anyone to obtain and the most widely used Linux distribution; leverage open source collaboration to make openSUSE the world's most usable Linux distribution and desktop environment for new and experienced Linux users; dramatically simplify and open the development and packaging processes to make openSUSE the platform of choice for Linux developers and software vendors.
+    <br /><br />
+<b><a href="dwres.php?resource=popularity">Popularity (hits per day)</a>:</b> 12 months: <b>5</b> (1,202), 6 months: <b>6</b> (1,048), 3 months: <b>6</b> (988), 4 weeks: <b>6</b> (1,079), 1 week: <b>8</b> (872)<br /><br /><b><a href="dwres.php?resource=ratings">Average visitor rating</a></b>: <b>8.87</b>/10 from <b>112</b> <a href="dwres.php?resource=ratings&distro=opensuse">review(s)</a>.<br><br>
+
+  </th>
+</tr>
+</table><br />
+<table class="Info">
+  <tr>
+    <th class="Invert" colspan="2">openSUSE Summary</th>
+  </tr>
+    <tr class="Background">
+    <th class="Info">Distribution</th>
+    <td class="Info">openSUSE (formerly SUSE Linux)</td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Home Page</th>
+    <td class="Info"><a href="http://www.opensuse.org/">http://www.opensuse.org/</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Mailing Lists</th>
+    <td class="Info"><a href="http://en.opensuse.org/openSUSE:Communication_channels">http://en.opensuse.org/openSUSE:Communication_channels</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">User Forums</th>
+    <td class="Info"><a href="http://forums.opensuse.org/">http://forums.opensuse.org/</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Alternative User Forums</th>
+    <td class="Info"><a href="http://www.linuxquestions.org/questions/linux-distributions-5/">LinuxQuestions.org</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Documentation</th>
+    <td class="Info"><a href="http://en.opensuse.org/Portal:Documentation">http://en.opensuse.org/Portal:Documentation</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Screenshots</th>
+    <td class="Info"><a href="http://en.opensuse.org/Screenshots">http://en.opensuse.org/Screenshots</a> &bull; <a href="http://distrowatch.com/gallery.php?distribution=opensuse">DistroWatch Gallery</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Screencasts</th>
+    <td class="Info"></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Download Mirrors</th>
+    <td class="Info">
+      <a href="http://software.opensuse.org/">http://software.opensuse.org/</a><br>
+      <a href="http://mirrors.opensuse.org/list/all.html">http://mirrors.opensuse.org/list/all.html</a>
+    </td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Bug Tracker</th>
+    <td class="Info"><a href="http://bugs.opensuse.org/">http://bugs.opensuse.org/</a></td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Related Websites</th>
+    <td class="Info">
+      <a href="http://news.opensuse.org/">openSUSE News</a> &bull;
+      <a href="http://opensuse-community.org/">openSUSE Community</a> &bull;
+      <a href="http://planet.opensuse.org/">Planet SUSE</a> &bull;
+      <a href="http://opensuse-guide.org/">openSUSE Guide</a> &bull;
+      <a href="http://www.susegeek.com/">SUSEGeek</a> &bull;
+      <a href="http://linux01.gwdg.de/apt4rpm/">APT for SUSE</a> &bull;
+      <a href="http://www.links2linux.de/">Links2Linux.de</a> &bull;
+      <a href="http://en.wikipedia.org/wiki/OpenSUSE">Wikipedia</a> &bull;
+      <a href="http://www.susebr.org/">openSUSE Brazil</a> &bull;
+      <a href="http://www.suseportal.cz/">openSUSE Czech Republic</a> &bull;
+      <a href="http://www.alionet.org/">openSUSE France</a> &bull;
+      <a href="http://opensuse.hu/">openSUSE Hungary</a> &bull;
+      <a href="http://www.suseitalia.org/">openSUSE Italy</a> &bull;
+      <a href="http://www.susek.info/">openSUSE Poland</a> &bull;
+      <a href="http://www.open-suse.ru/">openSUSE Russia</a> &bull;
+      <a href="http://www.forosuse.org/">openSUSE Spain</a>
+    </td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Reviews</th>
+    <td class="Info">
+      Tumbleweed: <a href="https://www.ordinatechnic.com/distro-reviews/opensuse/opensuse-tumbleweed-snapshot-20161204-review">Ordinatechnic</a> &bull;
+       <a href="https://lwn.net/Articles/697968/">LWN</a><br>
+      42.3: <a href="https://www.pro-linux.de/artikel/2/1896/opensuse-leap-423.html">Pro-Linux</a> (German) &bull;
+            <a href="weekly.php?issue=20170814#opensuse">DistroWatch</a><br>
+      42.2: <a href="http://www.dedoimedo.com/computers/opensuse-42-2-gnome.html">Dedoimedo</a> &bull;
+            <a href="http://www.everydaylinuxuser.com/2017/02/an-everyday-linux-user-review-of.html">Everyday Linux User</a> &bull;
+            <a href="http://www.dedoimedo.com/computers/opensuse-42-2.html">Dedoimedo</a> &bull;
+      <a href="weekly.php?issue=20161128#opensuse">DistroWatch</a><br>
+      42.1: <a href="http://www.dedoimedo.com/computers/opensuse-42-1.html">Dedoimedo</a> &bull;
+      <a href="http://www.pro-linux.de/artikel/2/1803/opensuse-421-leap.html">Pro-Linux</a> (German) &bull; 
+      <a href="weekly.php?issue=20151116#opensuse">DistroWatch</a> &bull;
+      <a href="http://ordinatechnic.com/distros/distro-reviews/opensuse/opensuse-leap-421-review">Ordinatechnic</a> &bull;
+      <a href="http://linuxfr.org/news/nouvelle-opensuse-leap-42-1">LinuxFR</a> (French)<br>
+      13.2: <a href="http://www.dedoimedo.com/computers/lenovo-g50-opensuse.html">Dedoimedo</a> &bull;
+      <a href="http://ordinatechnic.com/distro-reviews/opensuse/opensuse-13-2-review">Ordinatechnic</a> &bull;
+      <a href="https://atolstoy.wordpress.com/2015/03/12/">Wordpress</a> (Russian) &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-13-2.html">Dedoimedo</a> &bull;
+      <a href="weekly.php?issue=20141117#feature">DistroWatch</a> &bull;
+      <a href="http://linuxfr.org/news/opensuse-13-2-nouvelle-version-du-cameleon-disponible">LinuxFR</a> &bull;
+      <a href="http://www.heise.de/open/artikel/Im-Test-OpenSuse-13-2-2441505.html">Heise</a> (German) &bull;
+      <a href="http://www.everydaylinuxuser.com/2015/04/an-everyday-linux-review-of-opensuse-132.html">Every Day Linux User</a><br>
+      13.1: <a href="http://mylinuxexplore.blogspot.com/2014/02/opensuse-131-education-li-f-e-review.html">Blogspot</a> &bull;
+      <a href="http://www.linux.com/news/software/applications/759484-distro-review-60-days-beating-up-opensuse-131/">Linux.com</a> &bull;
+      <a href="http://tallinux.altervista.org/blog/la-mia-recensione-di-opensuse-13-1-kde/">TalLinux</a> &bull;
+      <a href="weekly.php?issue=20131202#feature">DistroWatch</a> &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-13-1.html">Dedoimedo</a> &bull;
+      <a href="http://mylinuxexplore.blogspot.com/2013/11/opensuse-131-kde-review.html">Blogspot</a> &bull;
+      <a href="http://derstandard.at/1381373810279/openSUSE-131-veroeffentlicht---und-im-Test">derStandard</a> (German)<br>
+      12.x: <a href="http://www.dedoimedo.com/computers/opensuse-12-3.html">Dedoimedo</a> &bull;
+      <a href="http://www.pro-linux.de/artikel/2/1623/opensuse-123.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.guiadopc.com.br/noticias/32469/review-opensuse-12-3.html">Guia do PC</a> (Portuguese) &bull;
+      <a href="weekly.php?issue=20130325#feature">DistroWatch</a> &bull;
+      <a href="http://www.hecticgeek.com/2013/03/performance-opensuse-12-3-kde-review/">HecticGeek</a> &bull;
+      <a href="http://www.theregister.co.uk/2013/03/15/suse_linux_12_3_review/">The Register</a> &bull;
+      <a href="https://lwn.net/Articles/542119/">LWN</a> &bull;
+      <a href="http://www.zdnet.com/opensuse-12-3-in-depth-and-hands-on-7000012698/">ZDNet</a> &bull;
+      <a href="http://www.heise.de/open/artikel/Die-Neuerungen-in-Opensuse-12-3-1821658.html">Heise Open</a> (German) &bull;
+      <a href="http://beginlinux.com/blog/2012/11/looking-over-opensuse-12-2/">BeginLinux</a> &bull;
+      <a href="http://desktopdave.wordpress.com/2012/11/18/linux-distribution-reveiw-opensuse-12-2-kde/">Wordpress</a> &bull;
+      <a href="http://www.linuxzasve.com/opensuse-12-2-i-kde-4-9">Linux Za Sve</a> (Croatian) &bull;
+      <a href="weekly.php?issue=20121001#feature">DistroWatch</a> &bull;
+      <a href="http://vazhavandan.blogspot.com/2012/09/opensuse-education-li-f-e-122-edition.html">Blogspot</a> &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-12-2.html">Dedoimedo</a> &bull;
+      <a href="http://www.linuxzasve.com/opensuse-12-2-prvi-dojmovi">Linux Za Sve</a> (Croatian) &bull;
+      <a href="http://www.heise.de/open/artikel/Die-Neuerungen-von-OpenSuse-12-2-1699388.html">Heise Open</a> (German) &bull;
+      <a href="http://www.linuxzasve.com/prvi-pogled-na-opensuse-12-1">Linux Za Sve</a> (Croatian) &bull;
+      <a href="http://www.dedoimedo.com/computers/suse-12-two-months.html">Dedoimedo</a> &bull;
+      <a href="http://www.pro-linux.de/artikel/2/1543/opensuse-121.html">Pro-Linux</a> (German) &bull;
+      <a href="http://linuxreview.ir/1390/09/opensuse-12-1-review/">Linux Review</a> (Farsi) &bull;
+      <a href="http://duskfire.wordpress.com/2011/11/29/opensuse-12-1/">Wordpress</a> &bull;
+      <a href="http://www.mylinuxrig.com/post/13403783266/a-review-of-gnome-3-and-opensuse-12-1">My Linux Rig</a> &bull;
+      <a href="http://uselinux.over-blog.fr/article-opensuse-12-1-le-test-88619110.html">OverBlog</a> (French) &bull;
+      <a href="weekly.php?issue=20111128#feature">DistroWatch</a> &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-12-1-high-end.html">Dedoimedo</a> &bull;
+      <a href="http://www.opensuse.cz/novinka/recenze-opensuse-121">openSUSE.cz</a> (Czech) &bull;
+      <a href="http://www.linuxuser.co.uk/reviews/opensuse-12-1-review-new-heights-of-high-tech/">Linux User</a> &bull;
+      <a href="http://derstandard.at/1319182612065/WebStandard-Test-openSUSE-121-ist-da-Verlockendes-aus-zweierlei-Welten">derStandard</a> (German) &bull;
+      <a href="http://www.heise.de/open/artikel/Was-OpenSuse-12-1-bringt-1379293.html">Heise Open</a> (German)<br>
+      11.x: <a href="http://www.dedoimedo.com/computers/opensuse-11sp4-kde.html">Dedoimedo</a> &bull;
+      <a href="http://linuxreview.ir/1390/01/opensuse-114-review/">Linux Review</a> (Persian) &bull;
+      <a href="http://www.muycomputer.com/2011/03/23/opensuse-11-4-el-analisis">MuyComputer</a> (Spanish) &bull;
+      <a href="http://index.hu/tech/2011/03/27/jo_lesz_nekunk_a_linux_is/">Index</a> (Hungarian) &bull;
+      <a href="https://lwn.net/Articles/433506/">LWN</a> &bull;
+      <a href="http://www.itworld.com/operating-systems/140885/opensuse-114-blast-linux-past">ITworld</a> &bull;
+      <a href="weekly.php?issue=20110321#feature">DistroWatch</a> &bull;
+      <a href="http://mybroadband.co.za/news/software/19131-New-OpenSuse-114-still-tops.html">MyBroadband</a> &bull;
+      <a href="http://www.linuxuser.co.uk/reviews/opensuse-11-4-review-kde-4-6-and-tumbleweed-shine/">Linux User</a> &bull;
+      <a href="http://cristalinux.blogspot.com/2011/03/opensuse-114-review.html">Blogspot</a> &bull;
+      <a href="http://www.theregister.co.uk/2011/03/14/opensuse_11_point_4_review/">The Register</a> &bull;
+      <a href="http://www.opensuse.cz/kategorie/clanky-navody/recenze-opensuse-11-4">openSUSE.cz</a> (Czech) &bull;
+      <a href="http://www.linuxexpres.cz/distro/recenze-opensuse-11-4">Linux EXPRESS</a> (Czech) &bull;
+      <a href="http://www.pro-linux.de/artikel/2/1496/test-opensuse-114-mit-kde-46.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.heise.de/open/artikel/OpenSuse-11-4-installieren-und-entdecken-1204775.html">Heise Open</a> (German) &bull;
+      <a href="http://derstandard.at/1297819923422/WebStandard-Test-openSUSE-114-ist-da---samt-LibreOffice-und-Firefox-4">derStandard</a> (German) &bull;
+      <a href="http://www.pcadvisor.co.uk/reviews/index.cfm?reviewid=3248194">PC Advisor</a> &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-11sp3-edu-life.html">Dedoimedo</a> &bull;
+      <a href="http://atolstoy.wordpress.com/2010/07/20/">Wordpress</a> &bull;
+      <a href="http://linmagazine.co.il/suse/2010/07/17/sml/opensuse-11-3">LinMagazine</a> (Hebrew) &bull;
+      <a href="http://derstandard.at/1277338199064/WebStandard-Test-openSUSE-113-Eine-Versuchung-nicht-nur-in-KDE">derStandard</a> (German) &bull;
+      <a href="http://blogs.computerworld.com/16544/opensuse_11_3_the_linux_distribution_for_kde_lovers">Computerworld Blogs</a> &bull;
+      <a href="http://www.heise.de/open/artikel/Die-Neuerungen-von-OpenSuse-11-3-1038912.html">Heise Open</a> (German) &bull;
+      <a href="http://www.linuxexpres.cz/distro/recenze-opensuse-11-3">LinuxEXPRES</a> (Czech) &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-11sp2-gnome.html">Dedoimedo</a> &bull;
+      <a href="http://www.makeuseof.com/tag/opensuse-11-2-a-polished-linux-system-perfect-for-new-users-and-pros-alike/">MakeUseOf</a> &bull;
+      <a href="http://www.pro-linux.de/berichte/opensuse112.html">Pro-Linux</a> (German) &bull;
+      <a href="http://danlynch.org/blog/2009/11/opensuse/">Adventures in Open Source</a> &bull;
+      <a href="http://sourceforge.jp/magazine/09/11/26/1135257">SourceForge</a> (Japanese) &bull;
+      <a href="http://lwn.net/Articles/362211/">LWN</a> &bull;
+      <a href="http://www.dedoimedo.com/computers/opensuse-11sp2.html">Dedoimedo</a> &bull;
+      <a href="weekly.php?issue=20091116#feature">DistroWatch</a> &bull;
+      <a href="http://www.linuxexpres.cz/distro/recenze-opensuse-11-2">Linux EXPRESS</a> (Czech) &bull;
+      <a href="http://atolstoy.wordpress.com/2009/11/13/">Wordpress</a> (Russian) &bull;
+      <a href="http://www.heise.de/open/artikel/OpenSuse-11-2-im-Test-857479.html">Heise Open</a> (German) &bull;
+      <a href="http://celettu.wordpress.com/2009/06/18/opensuse-11-1-quick-review/">Wordpress</a> &bull;
+      <a href="http://www.radioworld.com/article/78008">Radio World</a> &bull;
+      <a href="http://server.ericsbinaryworld.com/blog/2009/02/18/review-opensuse-111/">It's A Binary World</a> &bull;
+      <a href="http://www.headshotgamer.com/review.aspx?id=103">HeadshotGamer</a> &bull;
+      <a href="http://www.linuxexpres.cz/distro/slecno-chtel-bych-vam-ukazat-nove-opensuse-11-1">Linux EXPRESS</a> (Czech) &bull;
+      <a href="http://www.pro-linux.de/berichte/opensuse111.html">Pro-Linux</a> (German) &bull;
+      <a href="weekly.php?issue=20081222">DistroWatch</a> &bull;
+      <a href="http://www.heise.de/open/OpenSuse-11-1-Frischer-Wind--/artikel/120597">Heise Open</a> (German) &bull;
+      <a href="http://www.abclinuxu.cz/clanky/recenze/opensuse-11.1">ABC Linuxu</a> (Czech) &bull;
+      <a href="http://arstechnica.com/news.ars/post/20081215-the-lizard-roars-opensuse-11-1-officially-released.html">Ars Technica</a> &bull;
+      <a href="http://www.tux.in.ua/articles/877">Linuxoid</a> (Russian) &bull;
+      <a href="http://www.linuxplanet.com/linuxplanet/reviews/6526/1/">LinuxPlanet</a> &bull;
+      <a href="http://server.ericsbinaryworld.com/blog/2008/08/27/review-opensuse-110-and-kde-4/">It's A Binary World</a> &bull;
+      <a href="http://www.linuxplanet.com/linuxplanet/reviews/6517/2/">LinuxPlanet</a> &bull;
+      <a href="http://www.guiadopc.com.br/artigos-e-dicas/1655/opensuse-11-uma-distribuicao-linux-simplesmente-incrivel.html">Guia do PC</a> (Portuguese) &bull;
+      <a href="http://www.pro-linux.de/berichte/opensuse110.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.linuxexpres.cz/distro/opensuse-11-jedenacta-rada-chameleona">Linux Express</a> (Czech) &bull;
+      <a href="http://www.root.cz/clanky/prvni-dojmy-z-opensuse-11-0/">Root.cz</a> (Czech) &bull;
+      <a href="http://www.html.it/articoli/le-novit-di-opensuse-11-1/">HTML.it</a> (Italian) &bull;
+      <a href="http://sunnytalkstech.blogspot.com/2008/06/review-opensuse-110.html">Blogspot</a> &bull;
+      <a href="http://www.heise.de/open/OpenSuse-11-im-Test--/artikel/109683/">Heise Open</a> (German) &bull;
+      <a href="http://www.abclinuxu.cz/clanky/recenze/opensuse-11.0">ABC Linuxu</a> (Czech) &bull;
+      <a href="http://www.theregister.co.uk/2008/06/18/open_suse_11_review/">The Register</a><br>
+      10.x: <a href="http://www.downloadsquad.com/2008/04/13/flipping-the-linux-switch-opensuse-geeko-of-many-colors/">Download Squad</a> &bull;
+      <a href="http://www.tux.in.ua/articles/21">Linuxoid</a> (Russian) &bull;
+      <a href="http://junauza.blogspot.com/2007/12/opensuse-103-for-my-friend.html">Blogspot</a> &bull;
+      <a href="http://www.mandrake.tips.4.free.fr/opensuse10.3.review.html">Mandrake Tips4Free</a> &bull;
+      <a href="http://www.abclinuxu.cz/clanky/recenze/opensuse-10.3">ABC Linuxu</a> (Czech) &bull;
+      <a href="http://www.root.cz/clanky/opensuse-10-3-inovace-a-dobra-pouzitelnost/">Root.cz</a> (Czech) &bull;
+      <a href="weekly.php?issue=20071015#review">DistroWatch</a> &bull;
+      <a href="http://www.pro-linux.de/berichte/opensuse103.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.tuxmachines.org/node/20958">Tuxmachines</a> &bull;
+      <a href="http://sunnytalkstech.blogspot.com/2007/10/review-opensuse-103.html">Blogspot</a> &bull;
+      <a href="http://www.heise.de/open/artikel/96900/">Heise Open</a> (German) &bull;
+      <a href="http://justanothertechblog.blogspot.com/2007/07/review-of-opensuse-102.html">Blogspot</a> &bull;
+      <a href="http://linuxhelp.blogspot.com/2007/04/opensuse-102-review.html">Blogspot</a> &bull;
+      <a href="http://www.abclinuxu.cz/clanky/recenze/opensuse-10.2">ABC Linuxu</a> (Czech) &bull;
+      <a href="http://www.guiadohardware.net/analises/opensuse-10/">Guia do Hardware</a> (Portuguese) &bull;
+      <a href="http://www.free-bees.co.uk/articles/opensuse102/">Free-Bees</a> &bull;
+      <a href="http://element14.wordpress.com/2007/01/10/a-switch-from-kubuntu-to-opensuse-102/">Wordpress</a> &bull;
+      <a href="http://www.informationweek.com/showArticle.jhtml?articleID=196800885">InformationWeek</a> &bull;
+      <a href="http://www.tuxmachines.org/node/12077">Tuxmachines</a> &bull;
+      <a href="http://www.linuxforums.org/reviews/suse_10.2_review.html">LinuxForums</a> &bull;
+      Blogbeebe (<a href="http://blogbeebe.blogspot.com/2006/12/suse-102-first-impressions.html">Part 1</a>, <a href="http://blogbeebe.blogspot.com/2006/12/suse-102-part-2.html">Part 2</a>, <a href="http://blogbeebe.blogspot.com/2006/12/suse-102-part-3-looking-at-kde.html">Part 3</a>) &bull;
+      <a href="http://jonrobsblog.blogspot.com/2006/12/opensuse-102.html">JonRob's Blog</a> &bull;
+      <a href="http://www.heise.de/open/artikel/82151">Heise Open</a> (German) &bull;
+      <a href="http://www.pro-linux.de/berichte/suse101.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.tuxmachines.org/node/6879">Tuxmachines</a> &bull;
+      <a href="http://www.free-bees.co.uk/article.php?n=suse100">Free-Bees</a> &bull;
+      <a href="http://www.abclinuxu.cz/clanky/recenze/opensuse-10.0">ABC Linuxu</a> (Czech) &bull;
+      <a href="http://www.pro-linux.de/berichte/suse10.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.groklaw.net/article.php?story=20051025010202503">Groklaw</a> &bull;
+      <a href="http://linux-noob.com/review/suse/10/">Linux-Noob</a> &bull;
+      <a href="http://www.tuxmachines.org/node/2945">Tuxmachines</a><br>
+      9.x: <a href="http://www.ffnn.nl/pages/reviews/linux/suse-9.3-ftp.php">Forever For Now</a> &bull;
+      <a href="http://index.hu/tech/szoftver/suse0715/">Index.hu</a> (Hungarian) &bull;
+      <a href="http://www.hwupgrade.it/articoli/lnx/1218/index.html">Hardware Upgrade</a> (Italian) &bull;
+      <a href="http://www.pro-linux.de/berichte/suse93.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.novell.com/coolsolutions/feature/14691.html">Cool Solutions</a> &bull;
+      <a href="http://www.linux-noob.com/review/suse/9.3/index.html">Linux-Noob</a> &bull;
+      <a href="http://www.novell.com/coolsolutions/feature/11878.html">Cool Solutions</a> &bull;
+      <a href="http://www.mandrake.tips.4.free.fr/reviewsuse92.html">Mandrake Tips4Free</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=9321">OSNews</a> &bull;
+      <a href="http://linuxgazette.net/109/howell.html">Linux Gazette</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=8893">OSNews</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=8885">OSNews</a> &bull;
+      <a href="http://www.pro-linux.de/berichte/suse92.html">Pro-Linux</a> (German) &bull;
+      <a href="http://www.osnews.com/story.php?news_id=8699">OSNews</a> &bull;
+      <a href="http://www.linux-magazine.com/issue/44/Suse_Linux_91_Pro_Review.pdf">Linux Magazine</a> (PDF) &bull;
+      <a href="http://www.osnews.com/story.php?news_id=7314">OSNews</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=7151">OSNews</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=6937">OSNews</a> &bull;
+      <a href="http://www.pl-berichte.de/berichte/suse91.html">Pro-Linux</a> (German) &bull;
+      <a href="http://lwn.net/Articles/81559/">LWN</a> &bull;
+      <a href="http://www.smh.com.au/articles/2004/04/22/1082530280403.html">Sydney Morning Herald</a> &bull;
+      <a href="http://www.pl-berichte.de/berichte/suse90.html">Pro-Linux</a> (German)<br>
+      8.x: <a href="http://www.linuxjournal.com/article.php?sid=7147">Linux Journal</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=3163">OSNews</a> &bull;
+      <a href="http://www.linuxjournal.com/article.php?sid=6408&amp;mode=thread&amp;order=0">Linux Journal</a> &bull;
+      <a href="http://www.osnews.com/story.php?news_id=1887">OSNews</a> &bull;
+      <a href="review-suse">DistroWatch</a>
+    </td>
+  </tr>
+  <tr class="Background">
+    <th class="Info">Where To Buy</th>
+    <td class="Info"><a href="osdisc?opensuse">OSDisc.com</a> (sponsored link)</td>
+  </tr>
+<br>
+</table>
+    <br />
+  <table width=100%>
+    <tr>
+      <td style="width: 75%; border: 0; margin: 0; padding: 0; vertical-align: top">
+        <table class="Info">          <tr>            <th class="Invert" style="width: 100%">Recent Related News and Releases</th>          </tr>          <tr class="Background">            <td class="Info" style="width: 100%"><div style="float:right; margin-right:2px; margin-bottom:2px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- large_rectangle -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-1979814992302941"
+     data-ad-slot="9956182134"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>&nbsp;&nbsp;<b>Releases, download links and checksums:</b><br>
+&nbsp;&bull; 2017-07-26: <a href="9910">Distribution Release: openSUSE 42.3</a><br />&nbsp;&bull; 2016-11-16: <a href="9638">Distribution Release: openSUSE 42.2</a><br />&nbsp;&bull; 2016-11-02: <a href="9624">Development Release: openSUSE 42.2 RC2</a><br />&nbsp;&bull; 2016-10-18: <a href="9598">Development Release: openSUSE 42.2 RC1</a><br />&nbsp;&bull; 2016-10-05: <a href="9580">Development Release: openSUSE 42.2 Beta 3</a><br />&nbsp;&bull; 2016-09-22: <a href="9566">Development Release: openSUSE 42.2 Beta 2</a><br />&nbsp;&bull; 2016-08-31: <a href="9533">Development Release: openSUSE 42.2 Beta 1</a><br />&nbsp;&bull; 2016-07-20: <a href="9478">Development Release: openSUSE 42.2 Alpha 3</a><br />&nbsp;&bull; 2016-06-21: <a href="9452">Development Release: openSUSE 42.2 Alpha 2</a><br />&nbsp;&bull; 2016-05-24: <a href="9411">Development Release: openSUSE 42.2 Alpha 1</a><br />&nbsp;&bull; 2015-12-24: <a href="9237">Distribution Release: openSUSE 42.1 "Edu Li-f-e"</a><br />&nbsp;&bull; 2015-11-04: <a href="9176">Distribution Release: openSUSE 42.1</a><br />    &nbsp;&bull; <a href="index.php?distribution=opensuse"><b>More openSUSE releases...</b></a><br><br>&nbsp;&nbsp;<b>Headlines:</b><br>
+&nbsp;&bull;2017-07-05 <a href="dwres.php?resource=showheadline&story=3717">openSUSE 42.3 feature list</a><br>&nbsp;&bull;2017-06-23 <a href="dwres.php?resource=showheadline&story=3639">openSUSE gains MP3 support</a><br>&nbsp;&bull;2017-06-06 <a href="dwres.php?resource=showheadline&story=3550">openSUSE's rolling development model</a><br>&nbsp;&bull;2017-03-20 <a href="dwres.php?resource=showheadline&story=2987">openSUSE 42.1 reaching its EoL</a><br>&nbsp;&bull;2017-03-07 <a href="dwres.php?resource=showheadline&story=2881">Let's Encrypt YaST module</a><br>&nbsp;&bull;2016-12-05 <a href="dwres.php?resource=showheadline&story=2124">openSUSE's 64-bit RPi images</a><br>&nbsp;&bull;2016-12-05 <a href="dwres.php?resource=showheadline&story=2123">New YaST features</a><br>&nbsp;&bull;2016-11-17 <a href="dwres.php?resource=showheadline&story=1964">openSUSE 13.2 near EoL</a><br>&nbsp;&bull;2016-09-14 <a href="dwres.php?resource=showheadline&story=1451">Updates to Tumbleweed</a><br>&nbsp;&bull;2016-08-31 <a href="dwres.php?resource=showheadline&story=1342">openSUSE updates schedule</a><br>&nbsp;&bull; <a href="dwres.php?resource=headlines&distro=opensuse"><b>More openSUSE headlines...</b></a><br>            </td>          </tr>        </table>      </td>
+    </tr>
+  </table>
+<br />
+<table class="Info" style="width: 100%">
+<tr>
+<th class="Invert">Table Notes and Explanations</th>
+</tr>
+<tr class="Background">
+<td style="width: 100%">
+<div style="float:left; margin-right:25px;"><!-- 300x250 ATF -->            
+                <script type="text/javascript">
+                    var googletag = googletag || {};
+                    googletag.cmd = googletag.cmd || [];
+                    (function() {
+                      var gads = document.createElement("script");
+                      gads.async = true;
+                      gads.type = "text/javascript";
+                      var useSSL = "https:" == document.location.protocol;
+                      gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+                      var node =document.getElementsByTagName("script")[0];
+                      node.parentNode.insertBefore(gads, node);
+                     })();
+                </script>
+                
+                
+                <div id="div-gpt-ad-1126124602464-0">
+                    <script type="text/javascript">
+                       googletag.cmd.push(function() {
+googletag.pubads().set("page_url", "http://distrowatch.com");                       
+                         googletag.defineSlot("/8456/IDG.US_NET_Distrowatch.com", [300,250],"div-gpt-ad-1126124602464-0")
+                           .addService(googletag.pubads())
+                           .setTargeting("pos", "ATF")
+                           .setTargeting("URL", encodeURIComponent(window.location));
+                         googletag.enableServices();
+                         googletag.display("div-gpt-ad-1126124602464-0");
+                       });
+                    </script> 
+                </div>
+            <!-- END 300x250 ATF --></div><br />(<i>Please refer to the table below.</i>)<br />
+<form action="table.php?distribution=opensuse" enctype="multipart/form-data" method="post"><ul><li><b>Select view:</b> <input type="radio" name="view" value="major" id="rb-view-major"><label for="rb-view-major">Major packages only (52)</label> <input type="radio" name="view" value="all" id="rb-view-all" checked><label for="rb-view-all">All tracked packages (226)</label> <input type="submit" name="refresh" value="Refresh">
+</form></li></ul>
+<ul><li>To compare the software in this project to the software available in other distributions, please see our <a href="dwres.php?resource=compare-packages&firstlist=opensuse"><b>Compare Packages</b></a> page.</li></ul><ul><li><b>Notes:</b> In case where multiple versions of a package are shipped with a distribution, only the default version appears in the table. For indication about the GNOME version, please check the "nautilus" and "gnome-shell" packages. The Apache web server is listed as "httpd" and the Linux kernel is listed as "linux". The KDE desktop is represented by the "kdelibs" and "plasma-desktop" packages and the Xfce desktop by the "xfdesktop" package.<br /></li></ul><ul><li><b>Colour scheme:</b> <span class="Current">green text</span> = latest stable version, <span class="Beta">red text</span> = development or beta version. The function determining beta versions is not 100% reliable due to a wide variety of versioning schemes.</li></ul></td>
+</tr>
+</table>
+<br />
+    </td>
+    <td style="width: 20%; border: 0; margin: 0; padding: 0; vertical-align: top">
+      <table class="News" style="direction: ltr">
+        <tr>
+          <th colspan="3" class="Invert">Linux Media</th>
+        </tr>
+<tr><td colspan="3" class="News" style="text-align: center">
+<a href="pjkstlkadpbzg"><img src="images/cpxtu/szcwaloklwywfbh" title="O S D i s c" border="0" vspace="10"></a></td></tr><tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/linuxmint?affiliate=distrowatch">Linux Mint 18.2</a></td><td class="News" style="text-align: right;">$5.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/ubuntu?affiliate=distrowatch">Ubuntu 17.04</a></td><td class="News" style="text-align: right;">$5.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/debian?affiliate=distrowatch">Debian 9.1.0</a></td><td class="News" style="text-align: right;">$5.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/suse?affiliate=distrowatch">openSUSE 42.3</a></td><td class="News" style="text-align: right;">$5.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/manjaro?affiliate=distrowatch">Manjaro 17.0.2</a></td><td class="News" style="text-align: right;">$5.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/fedora?affiliate=distrowatch">Fedora 26</a></td><td class="News" style="text-align: right;">$5.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/puppy?affiliate=distrowatch">Puppy 6.3.2</a></td><td class="News" style="text-align: right;">$2.95</td></tr>
+<tr><td class="News" style="text-align: center;" colspan="2"><b>USB Flash Drives</b></td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/linuxmint/usb?affiliate=distrowatch">Linux Mint 18.2 16GB</a></td><td class="News" style="text-align: right;">$9.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/ubuntu/usb?affiliate=distrowatch">Ubuntu 17.04 16GB</a></td><td class="News" style="text-align: right;">$9.95</td></tr>
+<tr><td class="News" style="text-align: center;"><a href="https://www.osdisc.com/products/fedora/usb?affiliate=distrowatch">Fedora 26 16GB</a></td><td class="News" style="text-align: right;">$9.95</td></tr>
+
+<tr><td class="News" colspan="3" style="text-align: center;">
+<p><b>Free Shipping</b> on orders over $20<br><b>Professional Quality</b><br><a href="pjkstlkadpbzg">Click here to visit <b>OSDisc.com</b> now</a><p>
+</td></tr>
+</table>
+<br>
+<table class="Info">  <tr>    <th class="Invert" style="width: 20%">Advertisement</th>  </tr>  <tr class="Background">    <td class="News" style="width: 20%; text-align: center; background-color: #f6edc8"><div>
+<!-- 160x600 ATF -->            
+                <script type="text/javascript">
+                    var googletag = googletag || {};
+                    googletag.cmd = googletag.cmd || [];
+                    (function() {
+                      var gads = document.createElement("script");
+                      gads.async = true;
+                      gads.type = "text/javascript";
+                      var useSSL = "https:" == document.location.protocol;
+                      gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+                      var node =document.getElementsByTagName("script")[0];
+                      node.parentNode.insertBefore(gads, node);
+                     })();
+                </script>
+                
+                
+                <div id="div-gpt-ad-1126124602464-1">
+                    <script type="text/javascript">
+                       googletag.cmd.push(function() {
+googletag.pubads().set("page_url", "http://distrowatch.com");                       
+                         googletag.defineSlot("/8456/IDG.US_NET_Distrowatch.com", [160,600],"div-gpt-ad-1126124602464-1")
+                           .addService(googletag.pubads())
+                           .setTargeting("pos", "ATF")
+                           .setTargeting("URL", encodeURIComponent(window.location));
+                         googletag.enableServices();
+                         googletag.display("div-gpt-ad-1126124602464-1");
+                       });
+                    </script> 
+                </div>
+            <!-- END 160x600 ATF --> 
+</div>
+    </td>  </tr></table><br />      <table class="News" width="100%">
+        <tr>
+          <th class="Invert">Linux Training</th>
+        </tr>
+        <tr>
+          <td class="News" style="text-align: center"><br>
+            <a href="evlemv"><img src="images/k/linfou0.png" border="0" alt="Linux Training"></a><br><br>
+<b>Get <a href="evlemv">Linux Training</a> straight from the source</b><br><br>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <table class="News">
+        <tr>
+          <th class="Invert">Metapress</th>
+        </tr>
+        <tr>
+          <td class="News" style="text-align: center"><br>
+            <a href="https://metapress.com/"><img src="images/k/dpfmmtp" border="0" alt="Metapress | Discover More"></a><br><br>
+<b>Read detailed guides on <a href="https://metapress.com/how-to-create-a-website">how to make a website</a>, <a href="https://metapress.com/how-to-start-a-blog">start a blog</a>, <a href="https://metapress.com/how-to-increase-website-traffic/">increase traffic</a> and find the best <a href="https://metapress.com/website-builders/">website builders</a> at <a href="https://metapress.com/about/">Metapress</a>.</b><br><br>
+          </td>
+        </tr>
+      </table>
+      <br>
+    </td>
+  </tr>
+  </table>
+<table>
+  <tr>
+   <th class="TablesInvert">Feature</th>
+    <td class="TablesInvert">tumbleweed</td>
+    <td class="TablesInvert">42.3</td>
+    <td class="TablesInvert">42.2</td>
+    <td class="TablesInvert">42.1</td>
+    <td class="TablesInvert">13.2</td>
+    <td class="TablesInvert">13.1</td>
+    <td class="TablesInvert">12.3</td>
+    <td class="TablesInvert">12.2</td>
+    <td class="TablesInvert">12.1</td>
+    <td class="TablesInvert">11.4</td>
+    <td class="TablesInvert">11.3</td>
+    <td class="TablesInvert">11.2</td>
+    <td class="TablesInvert">11.1</td>
+    <td class="TablesInvert">11.0</td>
+    <td class="TablesInvert">10.3</td>
+    <td class="TablesInvert">10.2</td>
+    <td class="TablesInvert">10.1</td>
+    <td class="TablesInvert">10.0</td>
+    <td class="TablesInvert">9.3</td>
+    <td class="TablesInvert">9.2</td>
+    <td class="TablesInvert">9.1</td>
+    <td class="TablesInvert">9.0</td>
+    <td class="TablesInvert">8.2</td>
+    <td class="TablesInvert">8.1</td>
+    <td class="TablesInvert">8.0</td>
+    <td class="TablesInvert">7.3</td>
+    <td class="TablesInvert">7.2</td>
+    <td class="TablesInvert">7.1</td>
+    <td class="TablesInvert">7.0</td>
+    <td class="TablesInvert">6.4</td>
+    <td class="TablesInvert">6.3</td>
+    <td class="TablesInvert">6.2</td>
+    <td class="TablesInvert">6.1</td>
+    <td class="TablesInvert">6.0</td>
+    <td class="TablesInvert">5.3</td>
+    <td class="TablesInvert">5.2</td>
+   <th class="TablesInvert">Feature</th>
+  </tr>
+  <tr>
+    <th>Release Date</th>
+    <td class="Date">2017-08-23</td>
+    <td class="Date">2017-07-26</td>
+    <td class="Date">2016-11-16</td>
+    <td class="Date">2015-11-04</td>
+    <td class="Date">2014-11-04</td>
+    <td class="Date">2013-11-19</td>
+    <td class="Date">2013-03-13</td>
+    <td class="Date">2012-09-05</td>
+    <td class="Date">2011-11-16</td>
+    <td class="Date">2011-03-10</td>
+    <td class="Date">2010-07-15</td>
+    <td class="Date">2009-11-12</td>
+    <td class="Date">2008-12-18</td>
+    <td class="Date">2008-06-19</td>
+    <td class="Date">2007-10-04</td>
+    <td class="Date">2006-12-07</td>
+    <td class="Date">2006-05-11</td>
+    <td class="Date">2005-10-06</td>
+    <td class="Date">2005-04-15</td>
+    <td class="Date">2004-10-25</td>
+    <td class="Date">2004-04-23</td>
+    <td class="Date">2003-10-15</td>
+    <td class="Date">2003-04-07</td>
+    <td class="Date">2002-09-30</td>
+    <td class="Date">2002-04-22</td>
+    <td class="Date">2001-10-13</td>
+    <td class="Date">2001-06-15</td>
+    <td class="Date">2001-01-24</td>
+    <td class="Date">2000-09-27</td>
+    <td class="Date">2000-03-09</td>
+    <td class="Date">1999-11-05</td>
+    <td class="Date">1999-08-12</td>
+    <td class="Date">1999-04-07</td>
+    <td class="Date">1998-12-21</td>
+    <td class="Date">1998-09-10</td>
+    <td class="Date">1998-03-23</td>
+    <th>Release Date</th>
+  </tr>
+  <tr class="Background">
+    <th>End Of Life</th>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>2017-05</td>
+    <td>2017-01</td>
+    <td>2016-01</td>
+    <td>2015-01</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>End Of Life</th>
+  </tr>
+  <tr>
+    <th>Price (US$)</th>
+    <td>--</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>Free</td>
+    <td>60</td>
+    <td>60</td>
+    <td>60</td>
+    <td>60</td>
+    <td>60</td>
+    <td>50</td>
+    <td>50</td>
+    <td>100</td>
+    <td>90</td>
+    <td>30 - 90</td>
+    <td>40 - 80</td>
+    <td>40 - 80</td>
+    <td>40 - 80</td>
+    <td>40 - 80</td>
+    <td>40 - 80</td>
+    <td>30 - 70</td>
+    <td>30 - 70</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Price (US$)</th>
+  </tr>
+  <tr class="Background">
+    <th>Image Size (MB)</th>
+    <td>&nbsp;</td>
+    <td>108-4450</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Image Size (MB)</th>
+  </tr>
+  <tr>
+    <th>Free Download</th>
+    <td><a href="http://software.opensuse.org/">RPMs</a></td>
+    <td><a href="http://download.opensuse.org/distribution/leap/42.3/iso/">ISO</a></td>
+    <td><a href="http://download.opensuse.org/distribution/leap/42.2/iso/">ISO</a></td>
+    <td><a href="http://download.opensuse.org/distribution/leap/42.1/iso/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISOs</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://software.opensuse.org/">ISO</a></td>
+    <td><a href="http://www.novell.com/products/linuxprofessional/downloads/ftp/int_mirrors.html">ISO</a></td>
+    <td><a href="http://www.novell.com/products/linuxprofessional/downloads/ftp/int_mirrors.html">ISO</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">ISO</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td><a href="http://www.suse.com/us/private/download/index.html">FTP install</a></td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th>Free Download</th>
+  </tr>
+  <tr class="Background">
+    <th>Installation</th>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>Graphical</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Installation</th>
+  </tr>
+  <tr>
+    <th>Default Desktop</th>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>GNOME, KDE</td>
+    <td>GNOME, KDE</td>
+    <td>GNOME, KDE</td>
+    <td>GNOME, KDE</td>
+    <td>GNOME, KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>KDE</td>
+    <td>&nbsp;</td>
+    <th>Default Desktop</th>
+  </tr>
+  <tr class="Background">
+    <th>Package Management</th>
+    <td>RPM (zypper)</td>
+    <td>RPM (zypper)</td>
+    <td>RPM (zypper)</td>
+    <td>RPM (zypper)</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <td>RPM</td>
+    <th>Package Management</th>
+  </tr>
+  <tr>
+    <th>Release Model</th>
+    <td>Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <td>Fixed, Rolling</td>
+    <th>Release Model</th>
+  </tr>
+  <tr class="Background">
+    <th>Office Suite</th>
+    <td>Calligra, GOffice, LibreOffice</td>
+    <td>Calligra, GOffice, LibreOffice</td>
+    <td>Calligra, GOffice, LibreOffice</td>
+    <td>Calligra, GOffice, LibreOffice</td>
+    <td>Calligra, LibreOffice</td>
+    <td>LibreOffice</td>
+    <td>LibreOffice</td>
+    <td>GOffice, LibreOffice</td>
+    <td>GOffice, KOffice, LibreOffice</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>GOffice, KOffice, OO.o</td>
+    <td>KOffice, OO.o</td>
+    <td>KOffice, OO.o</td>
+    <td>KOffice, OO.o</td>
+    <td>KOffice, OO.o, StarOffice</td>
+    <td>KOffice, StarOffice</td>
+    <td>KOffice, StarOffice</td>
+    <td>KOffice, StarOffice</td>
+    <td>StarOffice</td>
+    <td>StarOffice</td>
+    <td>StarOffice</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Office Suite</th>
+  </tr>
+  <tr>
+    <th>Processor Architecture</th>
+    <td>armhf, i586, x86_64</td>
+    <td>x86_64</td>
+    <td>x86_64</td>
+    <td>x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, ppc, x86_64</td>
+    <td>i586, ppc, x86_64</td>
+    <td>i586, ppc, x86_64</td>
+    <td>i586, ppc, x86_64</td>
+    <td>i586, ppc, x86_64</td>
+    <td>i586, ppc, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586, x86_64</td>
+    <td>i586</td>
+    <td>i386</td>
+    <td>i386, ppc</td>
+    <td>i386</td>
+    <td>i386, ppc</td>
+    <td>i386</td>
+    <td>i386</td>
+    <td>i386</td>
+    <td>i386</td>
+    <td>i386</td>
+    <td>i386</td>
+    <td>i386</td>
+    <td>i386</td>
+    <th>Processor Architecture</th>
+  </tr>
+  <tr class="Background">
+    <th>Init Software</th>
+    <td>systemd</td>
+    <td>systemd</td>
+    <td>systemd</td>
+    <td>systemd</td>
+    <td>systemd</td>
+    <td>systemd</td>
+    <td>systemd</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <td>SysV</td>
+    <th>Init Software</th>
+  </tr>
+  <tr>
+    <th>Journaled File Systems</th>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, XFS</td>
+    <td>Btrfs, ext3, ext4, XFS</td>
+    <td>Btrfs, ext3, ext4, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>Btrfs, ext3, ext4, JFS, ReiserFS, XFS</td>
+    <td>ext3, ext4, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, ReiserFS, XFS</td>
+    <td>ext3, JFS, ReiserFS, XFS</td>
+    <td>ext3, JFS, ReiserFS, XFS</td>
+    <td>ext3, JFS, ReiserFS, XFS</td>
+    <td>ext3, JFS, ReiserFS, XFS</td>
+    <td>ext3, JFS, ReiserFS</td>
+    <td>ext3, JFS, ReiserFS</td>
+    <td>ext3, JFS, ReiserFS</td>
+    <td>ext3, JFS, ReiserFS</td>
+    <td>ReiserFS</td>
+    <td>ReiserFS</td>
+    <td>ReiserFS</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Journaled File Systems</th>
+  </tr>
+  <tr class="Background">
+    <th>Multilingual</th>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Multilingual</th>
+  </tr>
+  <tr>
+    <th>Asian Language Support</th>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>cn, jp, kr, tw</td>
+    <td>cn, jp, kr, tw</td>
+    <td>cn, jp, kr, tw</td>
+    <td>cn, jp, kr, tw</td>
+    <td>cn, jp, tw</td>
+    <td>cn, jp, tw</td>
+    <td>cn, jp, tw</td>
+    <td>jp</td>
+    <td>jp</td>
+    <td>jp</td>
+    <td>jp</td>
+    <td>jp</td>
+    <td>jp</td>
+    <td>jp</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Asian Language Support</th>
+  </tr>
+  <tr class="Background">
+    <th>Full Package List</th>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=tumbleweed#pkglist">tumbleweed</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=42.3#pkglist">42.3</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=42.2#pkglist">42.2</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=42.1#pkglist">42.1</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=13.2#pkglist">13.2</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=13.1#pkglist">13.1</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=12.3#pkglist">12.3</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=12.2#pkglist">12.2</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=12.1#pkglist">12.1</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=11.4#pkglist">11.4</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=11.3#pkglist">11.3</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=11.2#pkglist">11.2</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=11.1#pkglist">11.1</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=11.0#pkglist">11.0</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=10.3#pkglist">10.3</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=10.2#pkglist">10.2</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=10.1#pkglist">10.1</a></td>
+    <td><a href="table.php?distribution=opensuse&pkglist=true&version=10.0#pkglist">10.0</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>Full Package List</th>
+  </tr>
+  <tr>
+   <th class="TablesInvert">Package</th>
+    <td class="TablesInvert">tumbleweed</td>
+    <td class="TablesInvert">42.3</td>
+    <td class="TablesInvert">42.2</td>
+    <td class="TablesInvert">42.1</td>
+    <td class="TablesInvert">13.2</td>
+    <td class="TablesInvert">13.1</td>
+    <td class="TablesInvert">12.3</td>
+    <td class="TablesInvert">12.2</td>
+    <td class="TablesInvert">12.1</td>
+    <td class="TablesInvert">11.4</td>
+    <td class="TablesInvert">11.3</td>
+    <td class="TablesInvert">11.2</td>
+    <td class="TablesInvert">11.1</td>
+    <td class="TablesInvert">11.0</td>
+    <td class="TablesInvert">10.3</td>
+    <td class="TablesInvert">10.2</td>
+    <td class="TablesInvert">10.1</td>
+    <td class="TablesInvert">10.0</td>
+    <td class="TablesInvert">9.3</td>
+    <td class="TablesInvert">9.2</td>
+    <td class="TablesInvert">9.1</td>
+    <td class="TablesInvert">9.0</td>
+    <td class="TablesInvert">8.2</td>
+    <td class="TablesInvert">8.1</td>
+    <td class="TablesInvert">8.0</td>
+    <td class="TablesInvert">7.3</td>
+    <td class="TablesInvert">7.2</td>
+    <td class="TablesInvert">7.1</td>
+    <td class="TablesInvert">7.0</td>
+    <td class="TablesInvert">6.4</td>
+    <td class="TablesInvert">6.3</td>
+    <td class="TablesInvert">6.2</td>
+    <td class="TablesInvert">6.1</td>
+    <td class="TablesInvert">6.0</td>
+    <td class="TablesInvert">5.3</td>
+    <td class="TablesInvert">5.2</td>
+   <th class="TablesInvert">Package</th>
+  </tr>
+  <tr>
+    <th><a title="AbiWord: a full-featured word processor
+" href="https://www.abisource.com/">abiword</a> (<a href="https://www.abisource.com/downloads/abiword/3.0.2/source/abiword-3.0.2.tar.gz">3.0.2</a>)</th>
+    <td class="Current">3.0.2</td>
+    <td>3.0.1</td>
+    <td>3.0.1</td>
+    <td>--</td>
+    <td>3.0.0</td>
+    <td>2.8.6</td>
+    <td>2.8.6</td>
+    <td>2.8.6</td>
+    <td>2.8.6</td>
+    <td>2.8.6</td>
+    <td>2.8.2</td>
+    <td>2.6.8</td>
+    <td>2.6.4</td>
+    <td>2.6.2</td>
+    <td>2.4.6</td>
+    <td>2.4.5</td>
+    <td>2.4.2</td>
+    <td>2.2.9</td>
+    <td>2.2.4</td>
+    <td>2.0.6</td>
+    <td>2.0.5</td>
+    <td>1.99.5</td>
+    <td>1.0.4</td>
+    <td>1.0.2</td>
+    <td>0.99.1</td>
+    <td>0.9.2</td>
+    <td>0.7.13</td>
+    <td>0.7.11</td>
+    <td>0.7.10</td>
+    <td>0.7.8</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="AbiWord: a full-featured word processor
+" href="https://www.abisource.com/">abiword</a> (<a href="https://www.abisource.com/downloads/abiword/3.0.2/source/abiword-3.0.2.tar.gz">3.0.2</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="alsa-lib: an audio library for use with the ALSA kernel modules
+" href="http://www.alsa-project.org/">alsa-lib</a> (<a href="ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2">1.1.4.1</a>)</th>
+    <td class="Current">1.1.4.1</td>
+    <td class="Current">1.1.4.1</td>
+    <td>1.1.2</td>
+    <td>1.0.29</td>
+    <td>1.0.28</td>
+    <td>1.0.27.2</td>
+    <td>1.0.26</td>
+    <td>1.0.25</td>
+    <td>1.0.24.1</td>
+    <td>1.0.24.1</td>
+    <td>1.0.23</td>
+    <td>1.0.21</td>
+    <td>1.0.18</td>
+    <td>1.0.16</td>
+    <td>1.0.14</td>
+    <td>1.0.13</td>
+    <td>1.0.11</td>
+    <td>1.0.9</td>
+    <td>1.0.8</td>
+    <td>1.0.6</td>
+    <td>1.0.3</td>
+    <td>0.9.6</td>
+    <td>0.9.0cvs</td>
+    <td>0.9.0cvs</td>
+    <td>0.9.0cvs</td>
+    <td>0.5.11</td>
+    <td>0.5.10</td>
+    <td>0.5.10</td>
+    <td>0.5.9</td>
+    <td>0.5.7</td>
+    <td>0.4.1d</td>
+    <td>0.3.0pre5</td>
+    <td>0.3.0pre5</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="alsa-lib: an audio library for use with the ALSA kernel modules
+" href="http://www.alsa-project.org/">alsa-lib</a> (<a href="ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2">1.1.4.1</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="ATI driver: a proprietary Linux display driver for XFree86/X.Org by ATI, the Catalyst series
+" href="http://support.amd.com/en-us/download">ati-driver</a> (<a href="http://support.amd.com/en-us/download">16.40</a>)</th>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="ATI driver: a proprietary Linux display driver for XFree86/X.Org by ATI, the Catalyst series
+" href="http://support.amd.com/en-us/download">ati-driver</a> (<a href="http://support.amd.com/en-us/download">16.40</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Bash: an sh-compatible command language interpreter
+" href="http://www.gnu.org/software/bash/bash.html">bash</a> (<a href="ftp://ftp.cwru.edu/pub/bash/bash-4.4.tar.gz">4.4</a>)</th>
+    <td class="Current">4.4</td>
+    <td>4.3</td>
+    <td>4.3</td>
+    <td>4.2</td>
+    <td>4.2</td>
+    <td>4.2</td>
+    <td>4.2</td>
+    <td>4.2</td>
+    <td>4.2</td>
+    <td>4.1</td>
+    <td>4.1</td>
+    <td>4.0</td>
+    <td>3.2</td>
+    <td>3.2</td>
+    <td>3.2</td>
+    <td>3.1</td>
+    <td>3.1</td>
+    <td>3.0</td>
+    <td>3.0</td>
+    <td>3.0</td>
+    <td>2.05b</td>
+    <td>2.05b</td>
+    <td>2.05b</td>
+    <td>2.05b</td>
+    <td>2.05</td>
+    <td>2.05</td>
+    <td>2.05</td>
+    <td>2.04</td>
+    <td>2.04</td>
+    <td>2.03</td>
+    <td>2.03</td>
+    <td>2.03</td>
+    <td>2.02.1</td>
+    <td>2.02.1</td>
+    <td>2.01.1</td>
+    <td>2.01.1</td>
+    <th><a title="Bash: an sh-compatible command language interpreter
+" href="http://www.gnu.org/software/bash/bash.html">bash</a> (<a href="ftp://ftp.cwru.edu/pub/bash/bash-4.4.tar.gz">4.4</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="ISC BIND: an implementation of the Domain Name System (DNS) protocols
+" href="http://www.isc.org/downloads/bind/">bind</a> (<a href="ftp://ftp.isc.org/isc/bind9/9.11.2/bind-9.11.2.tar.gz">9.11.2</a>)</th>
+    <td>9.10.4-P5</td>
+    <td>9.9.9-P1</td>
+    <td>9.9.9-P1</td>
+    <td>9.9.6-P1</td>
+    <td>9.9.5-P1</td>
+    <td>9.9.3-P2</td>
+    <td>9.9.2-P1</td>
+    <td>9.9.1-P2</td>
+    <td>9.8.1</td>
+    <td>9.7.3</td>
+    <td>9.7.1</td>
+    <td>9.6.1-P1</td>
+    <td>9.5.0-P2</td>
+    <td>9.4.2</td>
+    <td>9.4.1-P1</td>
+    <td>9.3.2</td>
+    <td>9.3.2</td>
+    <td>9.3.1</td>
+    <td>9.3.1</td>
+    <td>9.2.4</td>
+    <td>9.2.3</td>
+    <td>9.2.2</td>
+    <td>9.2.2</td>
+    <td>9.1.3</td>
+    <td>9.1.3</td>
+    <td>9.2.0rc3</td>
+    <td>9.1.2</td>
+    <td>4.9.8</td>
+    <td>4.9.7</td>
+    <td>4.9.7</td>
+    <td>4.9.7</td>
+    <td>8.1.2</td>
+    <td>4.9.7</td>
+    <td>4.9.7</td>
+    <td>4.9.7</td>
+    <td>4.9.6</td>
+    <th><a title="ISC BIND: an implementation of the Domain Name System (DNS) protocols
+" href="http://www.isc.org/downloads/bind/">bind</a> (<a href="ftp://ftp.isc.org/isc/bind9/9.11.2/bind-9.11.2.tar.gz">9.11.2</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Google Chromium: an open-source edition of Google Chrome, a graphical web browser
+" href="http://www.chromium.org/Home">chromium</a> (<a href="http://src.chromium.org/viewvc/chrome/">60.0.3112.101</a>)</th>
+    <td class="Current">60.0.3112.101</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Google Chromium: an open-source edition of Google Chrome, a graphical web browser
+" href="http://www.chromium.org/Home">chromium</a> (<a href="http://src.chromium.org/viewvc/chrome/">60.0.3112.101</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="CUPS: a UNIX printing system based on the Internet Printing Protocol
+" href="https://www.cups.org/">cups</a> (<a href="https://github.com/apple/cups/releases/download/v2.2.4/cups-2.2.4-source.tar.gz">2.2.4</a>)</th>
+    <td>2.2.3</td>
+    <td>1.7.5</td>
+    <td>1.7.5</td>
+    <td>1.7.5</td>
+    <td>1.5.4</td>
+    <td>1.5.4</td>
+    <td>1.5.4</td>
+    <td>1.5.3</td>
+    <td>1.5.0</td>
+    <td>1.4.6</td>
+    <td>1.4.4</td>
+    <td>1.3.11</td>
+    <td>1.3.9</td>
+    <td>1.3.7</td>
+    <td>1.2.12</td>
+    <td>1.2.7</td>
+    <td>1.1.23</td>
+    <td>1.1.23</td>
+    <td>1.1.23</td>
+    <td>1.1.21</td>
+    <td>1.1.20</td>
+    <td>1.1.19</td>
+    <td>1.1.18</td>
+    <td>1.1.15</td>
+    <td>1.1.12</td>
+    <td>1.1.10</td>
+    <td>1.1.6</td>
+    <td>1.1.6</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="CUPS: a UNIX printing system based on the Internet Printing Protocol
+" href="https://www.cups.org/">cups</a> (<a href="https://github.com/apple/cups/releases/download/v2.2.4/cups-2.2.4-source.tar.gz">2.2.4</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="ISC DHCP: a server and client for automatic IP configuration
+" href="http://www.isc.org/downloads/dhcp/">dhcp</a> (<a href="ftp://ftp.isc.org/isc/dhcp/4.3.6/dhcp-4.3.6.tar.gz">4.3.6</a>)</th>
+    <td>4.3.5</td>
+    <td>4.3.3</td>
+    <td>4.3.3</td>
+    <td>4.3.3</td>
+    <td>4.2.6</td>
+    <td>4.2.5-P1</td>
+    <td>4.2.5</td>
+    <td>4.2.4-P1</td>
+    <td>4.2.2</td>
+    <td>4.2.0-P2</td>
+    <td>4.1.1-P1</td>
+    <td>3.1.2-P1</td>
+    <td>3.1.1</td>
+    <td>3.0.6</td>
+    <td>3.0.6</td>
+    <td>3.0.5</td>
+    <td>3.0.3</td>
+    <td>3.0.3</td>
+    <td>3.0.2</td>
+    <td>3.0.1</td>
+    <td>3.0.1rc13</td>
+    <td>3.0.1rc12</td>
+    <td>3.0.1rc10</td>
+    <td>3.0.1rc9</td>
+    <td>3.0.1rc6</td>
+    <td>3.0rc12</td>
+    <td>3.0rc4</td>
+    <td>2.0pl5</td>
+    <td>2.0pl3</td>
+    <td>2.0</td>
+    <td>2.0</td>
+    <td>2.0</td>
+    <td>2.0b1pl18</td>
+    <td>2.0b1p16</td>
+    <td>1.0pl2</td>
+    <td>1.0.0</td>
+    <th><a title="ISC DHCP: a server and client for automatic IP configuration
+" href="http://www.isc.org/downloads/dhcp/">dhcp</a> (<a href="ftp://ftp.isc.org/isc/dhcp/4.3.6/dhcp-4.3.6.tar.gz">4.3.6</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="e2fsprogs: contains the required utilities for the EXT2 file system
+" href="http://e2fsprogs.sourceforge.net/">e2fsprogs</a> (<a href="http://downloads.sourceforge.net/e2fsprogs/e2fsprogs-1.43.5.tar.gz">1.43.5</a>)</th>
+    <td>1.43.4</td>
+    <td>1.42.11</td>
+    <td>1.42.11</td>
+    <td>1.42.11</td>
+    <td>1.42.12</td>
+    <td>1.42.8</td>
+    <td>1.42.6</td>
+    <td>1.42.4</td>
+    <td>1.41.14</td>
+    <td>1.41.14</td>
+    <td>1.41.11</td>
+    <td>1.41.9</td>
+    <td>1.41.1</td>
+    <td>1.40.8</td>
+    <td>1.40.2</td>
+    <td>1.39</td>
+    <td>1.38</td>
+    <td>1.38</td>
+    <td>1.36</td>
+    <td>1.35</td>
+    <td>1.34</td>
+    <td>1.34</td>
+    <td>1.28</td>
+    <td>1.28</td>
+    <td>1.26</td>
+    <td>1.24a</td>
+    <td>1.19</td>
+    <td>1.19</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="e2fsprogs: contains the required utilities for the EXT2 file system
+" href="http://e2fsprogs.sourceforge.net/">e2fsprogs</a> (<a href="http://downloads.sourceforge.net/e2fsprogs/e2fsprogs-1.43.5.tar.gz">1.43.5</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Mozilla Firefox: a web browser for Windows, Linux, macOS, FreeBSD and Android
+" href="http://www.mozilla.org/products/firefox/">firefox</a> (<a href="https://ftp.mozilla.org/pub/firefox/releases/55.0.2/source/firefox-55.0.2.source.tar.xz">55.0.2</a>)</th>
+    <td>52.3.0</td>
+    <td>52.2</td>
+    <td>49.0.2</td>
+    <td>41.0.2</td>
+    <td>33.0</td>
+    <td>25.0</td>
+    <td>19.0</td>
+    <td>14.0.1</td>
+    <td>7.0.1</td>
+    <td>4.0b12</td>
+    <td>3.6.6</td>
+    <td>3.5.4</td>
+    <td>3.0.4</td>
+    <td>2.9.95</td>
+    <td>2.0.0.6</td>
+    <td>2.0</td>
+    <td>1.5.0.3</td>
+    <td>1.0.6</td>
+    <td>1.0.1</td>
+    <td>0.10.0</td>
+    <td>0.8</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Mozilla Firefox: a web browser for Windows, Linux, macOS, FreeBSD and Android
+" href="http://www.mozilla.org/products/firefox/">firefox</a> (<a href="https://ftp.mozilla.org/pub/firefox/releases/55.0.2/source/firefox-55.0.2.source.tar.xz">55.0.2</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="FreeType: a free, quality, portable font engine
+" href="https://www.freetype.org/">freetype</a> (<a href="https://downloads.sourceforge.net/freetype/freetype-2.8.tar.bz2">2.8</a>)</th>
+    <td>2.7.1</td>
+    <td>2.6.3</td>
+    <td>2.6.3</td>
+    <td>2.5.5</td>
+    <td>2.5.3</td>
+    <td>2.5.0.1</td>
+    <td>2.4.11</td>
+    <td>2.4.9</td>
+    <td>2.4.7</td>
+    <td>2.4.4</td>
+    <td>2.3.12</td>
+    <td>2.3.9</td>
+    <td>2.3.7</td>
+    <td>2.3.5</td>
+    <td>2.3.5</td>
+    <td>2.2.1</td>
+    <td>2.1.10</td>
+    <td>2.1.10</td>
+    <td>2.1.9</td>
+    <td>2.1.9</td>
+    <td>2.1.7</td>
+    <td>2.1.4</td>
+    <td>2.1.3</td>
+    <td>2.0.9</td>
+    <td>2.0.8</td>
+    <td>2.0.4</td>
+    <td>2.0.1</td>
+    <td>2.0.1</td>
+    <td>1.3.1</td>
+    <td>1.3.1</td>
+    <td>1.2</td>
+    <td>1.2</td>
+    <td>1.1</td>
+    <td>1.1</td>
+    <td>1.1</td>
+    <td>1.0</td>
+    <th><a title="FreeType: a free, quality, portable font engine
+" href="https://www.freetype.org/">freetype</a> (<a href="https://downloads.sourceforge.net/freetype/freetype-2.8.tar.bz2">2.8</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="GNU GCC: the GNU compiler collection
+" href="http://gcc.gnu.org/">gcc</a> (<a href="http://ftp.gnu.org/gnu/gcc/gcc-7.2.0/gcc-7.2.0.tar.xz">7.2.0</a>)</th>
+    <td>7</td>
+    <td>4.8.5</td>
+    <td>4.8.5</td>
+    <td>4.8.5</td>
+    <td>4.8.3</td>
+    <td>4.8.1</td>
+    <td>4.7.2</td>
+    <td>4.7.1</td>
+    <td>4.6.2</td>
+    <td>4.5.1</td>
+    <td>4.5.0</td>
+    <td>4.4.1</td>
+    <td>4.3.3</td>
+    <td>4.3.1</td>
+    <td>4.2.1</td>
+    <td>4.1.3</td>
+    <td>4.1.0</td>
+    <td>4.0.2</td>
+    <td>3.3.5</td>
+    <td>3.3.4</td>
+    <td>3.3.3</td>
+    <td>3.3.1</td>
+    <td>3.3pre</td>
+    <td>3.2</td>
+    <td>2.95.3</td>
+    <td>2.95.3</td>
+    <td>2.95.3</td>
+    <td>2.95.2</td>
+    <td>2.95.2</td>
+    <td>2.95.2</td>
+    <td>2.7.2.3</td>
+    <td>2.7.2.3</td>
+    <td>2.7.2.3</td>
+    <td>2.7.2.1</td>
+    <td>2.7.2.1</td>
+    <td>2.7.2.1</td>
+    <th><a title="GNU GCC: the GNU compiler collection
+" href="http://gcc.gnu.org/">gcc</a> (<a href="http://ftp.gnu.org/gnu/gcc/gcc-7.2.0/gcc-7.2.0.tar.xz">7.2.0</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="GIMP: the GNU Image Manipulation Program
+" href="https://www.gimp.org/">gimp</a> (<a href="https://download.gimp.org/pub/gimp/v2.8/gimp-2.8.22.tar.bz2">2.8.22</a>)</th>
+    <td class="Current">2.8.22</td>
+    <td>2.8.18</td>
+    <td>2.8.18</td>
+    <td>2.8.14</td>
+    <td>2.8.14</td>
+    <td>2.8.6</td>
+    <td>2.8.2</td>
+    <td>2.8.0</td>
+    <td>2.6.11</td>
+    <td>2.6.11</td>
+    <td>2.6.8</td>
+    <td>2.6.7</td>
+    <td>2.6.2</td>
+    <td>2.4.5</td>
+    <td>2.2.17</td>
+    <td>2.2.13</td>
+    <td>2.2.10</td>
+    <td>2.2.8</td>
+    <td>2.2.4</td>
+    <td>2.0.4</td>
+    <td>2.0.0</td>
+    <td>1.2.5</td>
+    <td>1.2.3</td>
+    <td>1.2.3</td>
+    <td>1.2.3</td>
+    <td>1.2.2</td>
+    <td>1.2.1</td>
+    <td>1.2.0</td>
+    <td>1.1.24</td>
+    <td>1.1.18</td>
+    <td>1.1.11</td>
+    <td>1.1.7</td>
+    <td>1.1.4</td>
+    <td>1.0.2</td>
+    <td>1.0.0</td>
+    <td>0.99.18</td>
+    <th><a title="GIMP: the GNU Image Manipulation Program
+" href="https://www.gimp.org/">gimp</a> (<a href="https://download.gimp.org/pub/gimp/v2.8/gimp-2.8.22.tar.bz2">2.8.22</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="glibc: a C library for use with GNU/Hurd and GNU/Linux
+" href="http://www.gnu.org/software/libc/libc.html">glibc</a> (<a href="http://ftp.gnu.org/gnu/glibc/glibc-2.26.tar.xz">2.26</a>)</th>
+    <td>2.25</td>
+    <td>2.22</td>
+    <td>2.22</td>
+    <td>2.19</td>
+    <td>2.19</td>
+    <td>2.18</td>
+    <td>2.17</td>
+    <td>2.15</td>
+    <td>2.14.1</td>
+    <td>2.11.3</td>
+    <td>2.11.2</td>
+    <td>2.10.1</td>
+    <td>2.9</td>
+    <td>2.8</td>
+    <td>2.6.1</td>
+    <td>2.5</td>
+    <td>2.4</td>
+    <td>2.3.5</td>
+    <td>2.3.4</td>
+    <td>2.3.3</td>
+    <td>2.3.3</td>
+    <td>2.3.2</td>
+    <td>2.3.2</td>
+    <td>2.2.5</td>
+    <td>2.2.5</td>
+    <td>2.2.4</td>
+    <td>2.2.2</td>
+    <td>2.2</td>
+    <td>2.1.3</td>
+    <td>2.1.3</td>
+    <td>2.1.2</td>
+    <td>2.1.1</td>
+    <td class="Beta">99.4.14</td>
+    <td>2.0.7</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="glibc: a C library for use with GNU/Hurd and GNU/Linux
+" href="http://www.gnu.org/software/libc/libc.html">glibc</a> (<a href="http://ftp.gnu.org/gnu/glibc/glibc-2.26.tar.xz">2.26</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="GNOME Shell: a core user interface of the GNOME 3 desktop
+" href="http://live.gnome.org/GnomeShell">gnome-shell</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/gnome-shell/3.24/gnome-shell-3.24.3.tar.xz">3.24.3</a>)</th>
+    <td class="Current">3.24.3</td>
+    <td>3.20.4</td>
+    <td>3.20.4</td>
+    <td>3.16.4</td>
+    <td>3.14.1</td>
+    <td>3.10.1</td>
+    <td>3.6.3.1</td>
+    <td>3.4.2</td>
+    <td>3.2.1</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="GNOME Shell: a core user interface of the GNOME 3 desktop
+" href="http://live.gnome.org/GnomeShell">gnome-shell</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/gnome-shell/3.24/gnome-shell-3.24.3.tar.xz">3.24.3</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="GNUCash: an open source personal finance suite
+" href="http://www.gnucash.org/">gnucash</a> (<a href="http://downloads.sourceforge.net/gnucash/gnucash-2.6.17.tar.bz2">2.6.17</a>)</th>
+    <td class="Current">2.6.17</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>2.6.4</td>
+    <td>2.4.13</td>
+    <td>2.4.11</td>
+    <td>2.4.10</td>
+    <td>2.4.7</td>
+    <td>2.4.0</td>
+    <td>2.2.9</td>
+    <td>2.2.9</td>
+    <td>2.2.7</td>
+    <td>2.2.4</td>
+    <td>2.2.0</td>
+    <td>2.0.2</td>
+    <td>1.8.12</td>
+    <td>1.8.9</td>
+    <td>1.8.9</td>
+    <td>1.8.8</td>
+    <td>1.8.8</td>
+    <td>1.8.5</td>
+    <td>1.8.0</td>
+    <td>1.6.6</td>
+    <td>1.6.5</td>
+    <td>1.6.2</td>
+    <td>1.4.11</td>
+    <td>1.4.9</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="GNUCash: an open source personal finance suite
+" href="http://www.gnucash.org/">gnucash</a> (<a href="http://downloads.sourceforge.net/gnucash/gnucash-2.6.17.tar.bz2">2.6.17</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="Gnumeric: a spreadsheet and a part of the GNOME Desktop
+" href="http://www.gnome.org/projects/gnumeric/">gnumeric</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/gnumeric/1.12/gnumeric-1.12.35.tar.xz">1.12.35</a>)</th>
+    <td>1.12.34</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>1.11.3</td>
+    <td>1.10.17</td>
+    <td>1.10.12</td>
+    <td>1.10.2</td>
+    <td>1.9.13</td>
+    <td>1.9.2</td>
+    <td>1.8.2</td>
+    <td>1.7.11</td>
+    <td>1.6.3</td>
+    <td>1.6.1</td>
+    <td>1.4.3</td>
+    <td>1.4.3</td>
+    <td>1.2.13</td>
+    <td>1.2.8</td>
+    <td>1.1.20</td>
+    <td>1.0.12</td>
+    <td>1.0.9</td>
+    <td>1.0.4</td>
+    <td>0.70</td>
+    <td>0.64</td>
+    <td>0.61</td>
+    <td>0.56</td>
+    <td>0.48</td>
+    <td>0.41</td>
+    <td>--</td>
+    <td>0.23</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Gnumeric: a spreadsheet and a part of the GNOME Desktop
+" href="http://www.gnome.org/projects/gnumeric/">gnumeric</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/gnumeric/1.12/gnumeric-1.12.35.tar.xz">1.12.35</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="GRUB: the GRand Unified Bootloader
+" href="http://www.gnu.org/software/grub/">grub</a> (<a href="ftp://ftp.gnu.org/gnu/grub/grub-2.02.tar.xz">2.02</a>)</th>
+    <td class="Current">2.02</td>
+    <td class="Current">2.02</td>
+    <td class="Beta">2.02beta2</td>
+    <td class="Beta">2.02beta2</td>
+    <td class="Beta">2.02beta2</td>
+    <td>2.00</td>
+    <td>2.00</td>
+    <td>2.00</td>
+    <td>1.99</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.97</td>
+    <td>0.96</td>
+    <td>0.95</td>
+    <td>0.95</td>
+    <td>0.94</td>
+    <td>0.93</td>
+    <td>0.93</td>
+    <td>0.92</td>
+    <td>0.91</td>
+    <td>0.5.96.1</td>
+    <td>0.5.96.1</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="GRUB: the GRand Unified Bootloader
+" href="http://www.gnu.org/software/grub/">grub</a> (<a href="ftp://ftp.gnu.org/gnu/grub/grub-2.02.tar.xz">2.02</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="GTK+: a multi-platform toolkit for creating GUIs
+" href="https://www.gtk.org/">gtk+</a> (<a href="ftp://ftp.gnome.org/pub/GNOME/sources/gtk+/3.22/gtk+-3.22.19.tar.xz">3.22.19</a>)</th>
+    <td>3.22.18</td>
+    <td>3.20.10</td>
+    <td>3.20.9</td>
+    <td>3.16.7</td>
+    <td>3.14.3</td>
+    <td>3.10.2</td>
+    <td>3.6.4</td>
+    <td>3.4.4</td>
+    <td>3.2.1</td>
+    <td>2.22.1</td>
+    <td>2.20.1</td>
+    <td>2.18.1</td>
+    <td>2.14.4</td>
+    <td>2.12.9</td>
+    <td>2.12.0</td>
+    <td>2.10.6</td>
+    <td>2.8.10</td>
+    <td>2.8.3</td>
+    <td>2.6.4</td>
+    <td>2.4.9</td>
+    <td>2.2.4</td>
+    <td>2.2.3</td>
+    <td>2.2.1</td>
+    <td>2.0.6</td>
+    <td>1.2.10</td>
+    <td>1.2.10</td>
+    <td>1.2.10</td>
+    <td>1.2.8</td>
+    <td>1.2.8</td>
+    <td>1.2.7</td>
+    <td>1.2.6</td>
+    <td>1.2.3</td>
+    <td>1.0.6</td>
+    <td>1.1.2</td>
+    <td>1.0.4</td>
+    <td>--</td>
+    <th><a title="GTK+: a multi-platform toolkit for creating GUIs
+" href="https://www.gtk.org/">gtk+</a> (<a href="ftp://ftp.gnome.org/pub/GNOME/sources/gtk+/3.22/gtk+-3.22.19.tar.xz">3.22.19</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="httpd: a high-performance HTTP server, Apache 2.x version series
+" href="http://httpd.apache.org/">httpd</a> (<a href="http://www.apache.org/dist/httpd/httpd-2.4.27.tar.gz">2.4.27</a>)</th>
+    <td class="Current">2.4.27</td>
+    <td>2.4.23</td>
+    <td>2.4.23</td>
+    <td>2.4.16</td>
+    <td>2.4.10</td>
+    <td>2.4.6</td>
+    <td>2.2.22</td>
+    <td>2.2.22</td>
+    <td>2.2.21</td>
+    <td>2.2.17</td>
+    <td>2.2.15</td>
+    <td>2.2.13</td>
+    <td>2.2.10</td>
+    <td>2.2.8</td>
+    <td>2.2.4</td>
+    <td>2.2.3</td>
+    <td>2.2.0</td>
+    <td>2.0.54</td>
+    <td>2.0.53</td>
+    <td>2.0.50</td>
+    <td>2.0.49</td>
+    <td>2.0.47</td>
+    <td>2.0.44</td>
+    <td>2.0.40</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="httpd: a high-performance HTTP server, Apache 2.x version series
+" href="http://httpd.apache.org/">httpd</a> (<a href="http://www.apache.org/dist/httpd/httpd-2.4.27.tar.gz">2.4.27</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="Inkscape: a drawing tool that uses the W3C standard scalable vector graphics format (SVG)
+" href="http://www.inkscape.org/">inkscape</a> (<a href="https://inkscape.org/en/gallery/item/11254/inkscape-0.92.2.tar.bz2">0.92.2</a>)</th>
+    <td class="Current">0.92.2</td>
+    <td>0.91</td>
+    <td>0.91</td>
+    <td>0.91</td>
+    <td>0.48.5</td>
+    <td>0.48.4</td>
+    <td>0.48.4</td>
+    <td>0.48.3.1</td>
+    <td>0.48.2</td>
+    <td>0.48.1</td>
+    <td>0.47</td>
+    <td>0.46</td>
+    <td>0.46</td>
+    <td>0.46</td>
+    <td>0.45.1</td>
+    <td>0.44.1</td>
+    <td>0.43</td>
+    <td>0.42.2</td>
+    <td>0.41</td>
+    <td>0.39</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Inkscape: a drawing tool that uses the W3C standard scalable vector graphics format (SVG)
+" href="http://www.inkscape.org/">inkscape</a> (<a href="https://inkscape.org/en/gallery/item/11254/inkscape-0.92.2.tar.bz2">0.92.2</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="K3b: a KDE-GUI for cdrecord and cdrdao, similar to Nero
+" href="http://www.k3b.org/">k3b</a> (<a href="https://github.com/KDE/k3b/archive/v17.04.0.tar.gz">17.08.0</a>)</th>
+    <td>17.04.3</td>
+    <td>17.04.2</td>
+    <td>2.0.3</td>
+    <td>2.0.3</td>
+    <td>2.0.2</td>
+    <td>2.0.2</td>
+    <td>2.0.2</td>
+    <td>2.0.2</td>
+    <td>2.0.2</td>
+    <td>2.0.2</td>
+    <td>1.93.0</td>
+    <td>1.68.0</td>
+    <td>1.0.5</td>
+    <td>1.0.4</td>
+    <td>1.0.3</td>
+    <td>0.12.17</td>
+    <td>0.12.14</td>
+    <td>0.12.3</td>
+    <td>0.11.22</td>
+    <td>0.11.15</td>
+    <td>0.11.7</td>
+    <td>0.9cvs</td>
+    <td>0.8.1</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="K3b: a KDE-GUI for cdrecord and cdrdao, similar to Nero
+" href="http://www.k3b.org/">k3b</a> (<a href="https://github.com/KDE/k3b/archive/v17.04.0.tar.gz">17.08.0</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="kmod: a set of programs for loading, inserting, and removing kernel modules
+" href="https://www.kernel.org/pub/linux/utils/kernel/kmod/">kmod</a> (<a href="https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-24.tar.xz">24</a>)</th>
+    <td class="Current">24</td>
+    <td>17</td>
+    <td>17</td>
+    <td>17</td>
+    <td>18</td>
+    <td>14</td>
+    <td>12</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="kmod: a set of programs for loading, inserting, and removing kernel modules
+" href="https://www.kernel.org/pub/linux/utils/kernel/kmod/">kmod</a> (<a href="https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-24.tar.xz">24</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="libgnome: the library that provides access to the non-X11 dependant parts of the GNOME framework
+" href="https://www.gnome.org/">libgnome</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/libgnome/2.32/libgnome-2.32.1.tar.bz2">2.32.1</a>)</th>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td class="Current">2.32.1</td>
+    <td>2.32.0</td>
+    <td>2.30.0</td>
+    <td>2.28.0</td>
+    <td>2.24.1</td>
+    <td>2.22.0</td>
+    <td>2.20.0</td>
+    <td>2.16.0</td>
+    <td>2.12.0.1</td>
+    <td>2.12.0.1</td>
+    <td>2.10.0</td>
+    <td>2.6.1</td>
+    <td>2.4.0</td>
+    <td>2.2.3</td>
+    <td>2.2.0.1</td>
+    <td>2.0.2</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="libgnome: the library that provides access to the non-X11 dependant parts of the GNOME framework
+" href="https://www.gnome.org/">libgnome</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/libgnome/2.32/libgnome-2.32.1.tar.bz2">2.32.1</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="LibreOffice: a free personal productivity suite
+" href="http://www.libreoffice.org/">libreoffice</a> (<a href="http://download.documentfoundation.org/libreoffice/stable/5.4.0/">5.4.0</a>)</th>
+    <td class="Beta">5.4.0.3</td>
+    <td>5.3.3</td>
+    <td>5.1.5</td>
+    <td>5.0.2</td>
+    <td>4.3.2</td>
+    <td>4.1.2</td>
+    <td>3.6.3</td>
+    <td>3.5.4</td>
+    <td>3.4.2</td>
+    <td>3.3.1</td>
+    <td>3.2.1</td>
+    <td>3.1.1</td>
+    <td>3.0.0</td>
+    <td>2.4.0</td>
+    <td>2.3.0</td>
+    <td>2.0.4</td>
+    <td>2.0.2</td>
+    <td>1.9.125</td>
+    <td>1.9.79</td>
+    <td>1.1.3</td>
+    <td>1.1.1</td>
+    <td>1.1</td>
+    <td>1.0.2</td>
+    <td>1.0.1</td>
+    <td class="Beta">641c</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="LibreOffice: a free personal productivity suite
+" href="http://www.libreoffice.org/">libreoffice</a> (<a href="http://download.documentfoundation.org/libreoffice/stable/5.4.0/">5.4.0</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Linux kernel: a UNIX clone written from scratch by Linus Torvalds
+" href="https://www.kernel.org/">linux</a> (<a href="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.12.8.tar.xz">4.12.8</a>)</th>
+    <td class="Current">4.12.8</td>
+    <td>4.4.76</td>
+    <td>4.4.27</td>
+    <td>4.1.12</td>
+    <td>3.16.6</td>
+    <td>3.11.6</td>
+    <td>3.7.10</td>
+    <td>3.4.6</td>
+    <td>3.1</td>
+    <td>2.6.37.1</td>
+    <td>2.6.34</td>
+    <td>2.6.31.5</td>
+    <td>2.6.27.7</td>
+    <td>2.6.25.5</td>
+    <td>2.6.22.5</td>
+    <td>2.6.18.2</td>
+    <td>2.6.16.13</td>
+    <td>2.6.13</td>
+    <td>2.6.11.4</td>
+    <td>2.6.8</td>
+    <td>2.6.4</td>
+    <td>2.4.21</td>
+    <td>2.4.20</td>
+    <td>2.4.19</td>
+    <td>2.4.18</td>
+    <td>2.4.9</td>
+    <td>2.4.4</td>
+    <td>2.2.18</td>
+    <td>2.2.16</td>
+    <td>2.2.14</td>
+    <td>2.2.13</td>
+    <td>2.2.10</td>
+    <td>2.2.6</td>
+    <td>2.0.36</td>
+    <td>2.0.35</td>
+    <td>2.0.33</td>
+    <th><a title="Linux kernel: a UNIX clone written from scratch by Linus Torvalds
+" href="https://www.kernel.org/">linux</a> (<a href="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.12.8.tar.xz">4.12.8</a>)</th>
+  </tr>
+  <tr>
+   <th class="TablesInvert">Package</th>
+    <td class="TablesInvert">tumbleweed</td>
+    <td class="TablesInvert">42.3</td>
+    <td class="TablesInvert">42.2</td>
+    <td class="TablesInvert">42.1</td>
+    <td class="TablesInvert">13.2</td>
+    <td class="TablesInvert">13.1</td>
+    <td class="TablesInvert">12.3</td>
+    <td class="TablesInvert">12.2</td>
+    <td class="TablesInvert">12.1</td>
+    <td class="TablesInvert">11.4</td>
+    <td class="TablesInvert">11.3</td>
+    <td class="TablesInvert">11.2</td>
+    <td class="TablesInvert">11.1</td>
+    <td class="TablesInvert">11.0</td>
+    <td class="TablesInvert">10.3</td>
+    <td class="TablesInvert">10.2</td>
+    <td class="TablesInvert">10.1</td>
+    <td class="TablesInvert">10.0</td>
+    <td class="TablesInvert">9.3</td>
+    <td class="TablesInvert">9.2</td>
+    <td class="TablesInvert">9.1</td>
+    <td class="TablesInvert">9.0</td>
+    <td class="TablesInvert">8.2</td>
+    <td class="TablesInvert">8.1</td>
+    <td class="TablesInvert">8.0</td>
+    <td class="TablesInvert">7.3</td>
+    <td class="TablesInvert">7.2</td>
+    <td class="TablesInvert">7.1</td>
+    <td class="TablesInvert">7.0</td>
+    <td class="TablesInvert">6.4</td>
+    <td class="TablesInvert">6.3</td>
+    <td class="TablesInvert">6.2</td>
+    <td class="TablesInvert">6.1</td>
+    <td class="TablesInvert">6.0</td>
+    <td class="TablesInvert">5.3</td>
+    <td class="TablesInvert">5.2</td>
+   <th class="TablesInvert">Package</th>
+  </tr>
+  <tr>
+    <th><a title="LXDE: a lightweight, fast and energy-saving desktop environment
+" href="http://www.lxde.org/">lxde-common</a> (<a href="http://downloads.sourceforge.net/lxde/lxde-common-0.99.2.tar.xz">0.99.2</a>)</th>
+    <td class="Current">0.99.2</td>
+    <td class="Current">0.99.2</td>
+    <td>0.99.0</td>
+    <td>0.99.0</td>
+    <td>0.5.5</td>
+    <td>0.5.5</td>
+    <td>0.5.5</td>
+    <td>0.5.5</td>
+    <td>0.5.5</td>
+    <td>0.5.0</td>
+    <td>0.5.0</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="LXDE: a lightweight, fast and energy-saving desktop environment
+" href="http://www.lxde.org/">lxde-common</a> (<a href="http://downloads.sourceforge.net/lxde/lxde-common-0.99.2.tar.xz">0.99.2</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="MariaDB: a robust SQL server, a fork of MySQL
+" href="https://mariadb.org/">mariadb</a> (<a href="ftp://ftp.osuosl.org/pub/mariadb/mariadb-10.2.8/source/mariadb-10.2.8.tar.gz">10.2.8</a>)</th>
+    <td>10.1.25</td>
+    <td>10.0.30</td>
+    <td>10.0.27</td>
+    <td>10.0.21</td>
+    <td>10.0.13</td>
+    <td>5.5.33</td>
+    <td>5.5.29</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="MariaDB: a robust SQL server, a fork of MySQL
+" href="https://mariadb.org/">mariadb</a> (<a href="ftp://ftp.osuosl.org/pub/mariadb/mariadb-10.2.8/source/mariadb-10.2.8.tar.gz">10.2.8</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="MATE: a traditional desktop environment forked from GNOME 2
+" href="http://mate-desktop.org/">mate-desktop</a> (<a href="http://pub.mate-desktop.org/releases/1.18/mate-desktop-1.18.0.tar.xz">1.18.0</a>)</th>
+    <td class="Current">1.18.0</td>
+    <td>--</td>
+    <td>--</td>
+    <td>1.10.2</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="MATE: a traditional desktop environment forked from GNOME 2
+" href="http://mate-desktop.org/">mate-desktop</a> (<a href="http://pub.mate-desktop.org/releases/1.18/mate-desktop-1.18.0.tar.xz">1.18.0</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Mesa: a 3D graphics library
+" href="http://www.mesa3d.org/">mesa</a> (<a href="https://mesa.freedesktop.org/archive/mesa-17.1.7.tar.xz">17.1.7</a>)</th>
+    <td>17.1.6</td>
+    <td>17.0.5</td>
+    <td>11.2.2</td>
+    <td>11.0.2</td>
+    <td>10.3.0</td>
+    <td>9.2.2</td>
+    <td>9.0.2</td>
+    <td>8.0.4</td>
+    <td>7.11</td>
+    <td>7.10.3</td>
+    <td>7.8.2</td>
+    <td>7.6</td>
+    <td>7.2</td>
+    <td>7.0.3</td>
+    <td>7.0.1</td>
+    <td>6.5.1</td>
+    <td>6.4.2</td>
+    <td>6.8.2</td>
+    <td>6.8.2</td>
+    <td>--</td>
+    <td>4.3.99.902</td>
+    <td>4.3.0.1</td>
+    <td>5.0</td>
+    <td>4.0.3</td>
+    <td>4.0.1</td>
+    <td>3.4.2</td>
+    <td>3.4.1</td>
+    <td>3.4</td>
+    <td>3.2</td>
+    <td>3.1</td>
+    <td>3.0</td>
+    <td>3.0</td>
+    <td>3.0</td>
+    <td>3.0</td>
+    <td>2.6</td>
+    <td>2.6</td>
+    <th><a title="Mesa: a 3D graphics library
+" href="http://www.mesa3d.org/">mesa</a> (<a href="https://mesa.freedesktop.org/archive/mesa-17.1.7.tar.xz">17.1.7</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="MySQL: an SQL database server
+" href="https://dev.mysql.com/downloads/mysql/">mysql</a> (<a href="http://mirror.switch.ch/mirror/mysql/Downloads/MySQL-5.7/mysql-5.7.19.tar.gz">5.7.19</a>)</th>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>5.5.25a</td>
+    <td>5.5.16</td>
+    <td>5.1.53</td>
+    <td>5.1.46</td>
+    <td>5.1.36</td>
+    <td>5.0.67</td>
+    <td>5.0.51a</td>
+    <td>5.0.45</td>
+    <td>5.0.26</td>
+    <td>5.0.18</td>
+    <td>4.1.13</td>
+    <td>4.1.10</td>
+    <td>4.0.21</td>
+    <td>4.0.18</td>
+    <td>4.0.15</td>
+    <td>3.23.55</td>
+    <td>3.23.52</td>
+    <td>3.23.48</td>
+    <td>3.23.41</td>
+    <td>3.23.37</td>
+    <td>3.23.33</td>
+    <td>3.22.32</td>
+    <td>3.22.32</td>
+    <td>3.22.27</td>
+    <td>3.22.25</td>
+    <td>3.22.21</td>
+    <td>3.21.33b</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="MySQL: an SQL database server
+" href="https://dev.mysql.com/downloads/mysql/">mysql</a> (<a href="http://mirror.switch.ch/mirror/mysql/Downloads/MySQL-5.7/mysql-5.7.19.tar.gz">5.7.19</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Nautilus: a file manager for the GNOME desktop
+" href="http://live.gnome.org/Nautilus">nautilus</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/nautilus/3.24/nautilus-3.24.2.1.tar.xz">3.24.2.1</a>)</th>
+    <td class="Current">3.24.2.1</td>
+    <td>3.20.3</td>
+    <td>3.20.3</td>
+    <td>3.16.2</td>
+    <td>3.14.0</td>
+    <td>3.10.0</td>
+    <td>3.6.3</td>
+    <td>3.4.2</td>
+    <td>3.2.1</td>
+    <td>2.32.2.1</td>
+    <td>2.30.1</td>
+    <td>2.28.0</td>
+    <td>2.24.1</td>
+    <td>2.22.2</td>
+    <td>2.20.0</td>
+    <td>2.16.1</td>
+    <td>2.12.2</td>
+    <td>2.12.0</td>
+    <td>2.10.0</td>
+    <td>2.6.3</td>
+    <td>2.4.2</td>
+    <td>2.2.4</td>
+    <td>2.2.1</td>
+    <td>2.0.3</td>
+    <td>1.0.6</td>
+    <td>1.0.4</td>
+    <td>1.0.1</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Nautilus: a file manager for the GNOME desktop
+" href="http://live.gnome.org/Nautilus">nautilus</a> (<a href="ftp://ftp.gnome.org/pub/gnome/sources/nautilus/3.24/nautilus-3.24.2.1.tar.xz">3.24.2.1</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="NVIDIA: a proprietary display driver for Linux, FreeBSD and Solaris
+" href="http://www.nvidia.com/object/unix.html">NVIDIA</a> (<a href="http://download.nvidia.com/XFree86/Linux-x86/384.69/NVIDIA-Linux-x86-384.69.run">384.69</a>)</th>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="NVIDIA: a proprietary display driver for Linux, FreeBSD and Solaris
+" href="http://www.nvidia.com/object/unix.html">NVIDIA</a> (<a href="http://download.nvidia.com/XFree86/Linux-x86/384.69/NVIDIA-Linux-x86-384.69.run">384.69</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Openbox: a standards-compliant, lightweight, extensible window manager
+" href="http://openbox.org/">openbox</a> (<a href="http://openbox.org/dist/openbox/openbox-3.6.1.tar.gz">3.6.1</a>)</th>
+    <td class="Current">3.6.1</td>
+    <td class="Current">3.6.1</td>
+    <td class="Current">3.6.1</td>
+    <td class="Current">3.6.1</td>
+    <td>3.5.2</td>
+    <td>3.5.2</td>
+    <td>3.5.0</td>
+    <td>3.5.0</td>
+    <td>3.5.0</td>
+    <td>3.4.11.2</td>
+    <td>3.4.11.2</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>3.4.2</td>
+    <td>3.3.1</td>
+    <td>3.2</td>
+    <td>3.2</td>
+    <td>3.2</td>
+    <td>3.2</td>
+    <td>3.1</td>
+    <td>2.3.0</td>
+    <td>2.2.3</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Openbox: a standards-compliant, lightweight, extensible window manager
+" href="http://openbox.org/">openbox</a> (<a href="http://openbox.org/dist/openbox/openbox-3.6.1.tar.gz">3.6.1</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="OpenJDK: a complete and free implementation of Java SE, the core Java platform
+" href="http://openjdk.java.net/">openjdk</a> (<a href="http://hg.openjdk.java.net/jdk8u/jdk8u/archive/jdk8u92-b14.tar.bz2">8u144</a>)</th>
+    <td>--</td>
+    <td>8u131</td>
+    <td>8u101</td>
+    <td>8u60</td>
+    <td>8u40</td>
+    <td>7u6</td>
+    <td>7u6</td>
+    <td>7u147</td>
+    <td>6b22</td>
+    <td>6b20</td>
+    <td>6b17</td>
+    <td>6b16</td>
+    <td>6b11</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="OpenJDK: a complete and free implementation of Java SE, the core Java platform
+" href="http://openjdk.java.net/">openjdk</a> (<a href="http://hg.openjdk.java.net/jdk8u/jdk8u/archive/jdk8u92-b14.tar.bz2">8u144</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="OpenSSH: a client and server for encrypted remote logins and file transfers
+" href="http://www.openssh.com/portable.html">openssh</a> (<a href="https://ftp3.usa.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz">7.5p1</a>)</th>
+    <td>7.2p2</td>
+    <td>7.2p2</td>
+    <td>7.2p2</td>
+    <td>6.6p1</td>
+    <td>6.6p1</td>
+    <td>6.2p2</td>
+    <td>6.1p1</td>
+    <td>6.0p1</td>
+    <td>5.8p2</td>
+    <td>5.8p1</td>
+    <td>5.4p1</td>
+    <td>5.2p1</td>
+    <td>5.1p1</td>
+    <td>5.0p1</td>
+    <td>4.6p1</td>
+    <td>4.4p1</td>
+    <td>4.2p1</td>
+    <td>4.1p1</td>
+    <td>3.9p1</td>
+    <td>3.9p1</td>
+    <td>3.8p1</td>
+    <td>3.7.1p2</td>
+    <td>3.5p1</td>
+    <td>3.4p1</td>
+    <td>3.0.2p1</td>
+    <td>2.9.9p2</td>
+    <td>2.9p1</td>
+    <td>2.5.1p1</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="OpenSSH: a client and server for encrypted remote logins and file transfers
+" href="http://www.openssh.com/portable.html">openssh</a> (<a href="https://ftp3.usa.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz">7.5p1</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="OpenSSL: a library for providing encrypted transport layers
+" href="https://www.openssl.org/">openssl</a> (<a href="ftp://ftp.openssl.org/source/openssl-1.1.0f.tar.gz">1.1.0f</a>)</th>
+    <td class="Beta">1_1_0</td>
+    <td>1.0.2j</td>
+    <td>1.0.2j</td>
+    <td>1.0.1</td>
+    <td>1.0.1i</td>
+    <td>1.0.1e</td>
+    <td>1.0.1e</td>
+    <td>1.0.1c</td>
+    <td>1.0.0e</td>
+    <td>1.0.0c</td>
+    <td>1.0.0</td>
+    <td>0.9.8k</td>
+    <td>0.9.8h</td>
+    <td>0.9.8g</td>
+    <td>0.9.8e</td>
+    <td>0.9.8d</td>
+    <td>0.9.8a</td>
+    <td>0.9.7g</td>
+    <td>0.9.7e</td>
+    <td>0.9.7d</td>
+    <td>0.9.7d</td>
+    <td>0.9.7b</td>
+    <td>0.9.6i</td>
+    <td>0.9.6g</td>
+    <td>0.9.6c</td>
+    <td>0.9.6b</td>
+    <td>0.9.6a</td>
+    <td>0.9.6</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="OpenSSL: a library for providing encrypted transport layers
+" href="https://www.openssl.org/">openssl</a> (<a href="ftp://ftp.openssl.org/source/openssl-1.1.0f.tar.gz">1.1.0f</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Perl: Larry Wall's Practical Extraction and Reporting Language
+" href="https://www.perl.org">perl</a> (<a href="http://www.cpan.org/src/5.0/perl-5.26.0.tar.gz">5.26.0</a>)</th>
+    <td>5.24.1</td>
+    <td>5.18.2</td>
+    <td>5.18.2</td>
+    <td>5.18.2</td>
+    <td>5.20.1</td>
+    <td>5.18.1</td>
+    <td>5.16.2</td>
+    <td>5.16.0</td>
+    <td>5.14.2</td>
+    <td>5.12.3</td>
+    <td>5.12.1</td>
+    <td>5.10.0</td>
+    <td>5.10.0</td>
+    <td>5.10.0</td>
+    <td>5.8.8</td>
+    <td>5.8.8</td>
+    <td>5.8.8</td>
+    <td>5.8.7</td>
+    <td>5.8.6</td>
+    <td>5.8.5</td>
+    <td>5.8.3</td>
+    <td>5.8.1</td>
+    <td>5.8.0</td>
+    <td>5.8.0</td>
+    <td>5.6.1</td>
+    <td>5.6.1</td>
+    <td>5.6.0</td>
+    <td>5.6.0</td>
+    <td>5.5.3</td>
+    <td>5.5.3</td>
+    <td>5.5.3</td>
+    <td>5.5.3</td>
+    <td>5.5.2</td>
+    <td>5.5.2</td>
+    <td>5.4.4</td>
+    <td>5.4.4</td>
+    <th><a title="Perl: Larry Wall's Practical Extraction and Reporting Language
+" href="https://www.perl.org">perl</a> (<a href="http://www.cpan.org/src/5.0/perl-5.26.0.tar.gz">5.26.0</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="PHP: a server-side HTML embedded scripting language
+" href="http://www.php.net/">php</a> (<a href="http://us3.php.net/distributions/php-7.1.8.tar.xz">7.1.8</a>)</th>
+    <td>5.6.31</td>
+    <td>5.5.14</td>
+    <td>5.5.14</td>
+    <td>5.5.14</td>
+    <td>5.6.1</td>
+    <td>5.4.20</td>
+    <td>5.3.17</td>
+    <td>5.3.15</td>
+    <td>5.3.8</td>
+    <td>5.3.5</td>
+    <td>5.3.2</td>
+    <td>5.3.0</td>
+    <td>5.2.6</td>
+    <td>5.2.5</td>
+    <td>5.2.4</td>
+    <td>5.2.0</td>
+    <td>5.1.2</td>
+    <td>5.0.4</td>
+    <td>5.0.3</td>
+    <td>4.3.8</td>
+    <td>4.3.4</td>
+    <td>4.3.3</td>
+    <td>4.3.1</td>
+    <td>4.2.2</td>
+    <td>4.1.0</td>
+    <td>4.0.6</td>
+    <td>4.0.4pl1</td>
+    <td>4.0.4pl1</td>
+    <td>4.0.0</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="PHP: a server-side HTML embedded scripting language
+" href="http://www.php.net/">php</a> (<a href="http://us3.php.net/distributions/php-7.1.8.tar.xz">7.1.8</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Plasma Desktop: a desktop environment
+" href="https://www.kde.org/workspaces/plasmadesktop/">plasma-desktop</a> (<a href="http://download.kde.org/stable/plasma/5.10.5/plasma-desktop-5.10.5.tar.xz">5.10.5</a>)</th>
+    <td>5.10.4</td>
+    <td>5.8.7.1</td>
+    <td>5.8.2</td>
+    <td>5.4.2</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Plasma Desktop: a desktop environment
+" href="https://www.kde.org/workspaces/plasmadesktop/">plasma-desktop</a> (<a href="http://download.kde.org/stable/plasma/5.10.5/plasma-desktop-5.10.5.tar.xz">5.10.5</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="Postfix: a mail transport agent
+" href="http://www.postfix.org/start.html">postfix</a> (<a href="ftp://ftp.porcupine.org/mirrors/postfix-release/official/postfix-3.2.2.tar.gz">3.2.2</a>)</th>
+    <td class="Current">3.2.2</td>
+    <td>3.2.0</td>
+    <td>2.11.8</td>
+    <td>2.11.6</td>
+    <td>2.11.0</td>
+    <td>2.9.6</td>
+    <td>2.9.6</td>
+    <td>2.8.11</td>
+    <td>2.8.5</td>
+    <td>2.7.2</td>
+    <td>2.7.1</td>
+    <td>2.6.1</td>
+    <td>2.5.5</td>
+    <td>2.5.1</td>
+    <td>2.4.5</td>
+    <td>2.3.2</td>
+    <td>2.2.9</td>
+    <td>2.2.5</td>
+    <td>2.2.1</td>
+    <td>2.1.5</td>
+    <td>2.0.19</td>
+    <td>2.0.14</td>
+    <td>2.0.6</td>
+    <td>1.1.11</td>
+    <td>1.1.4</td>
+    <td class="Beta">20010228</td>
+    <td class="Beta">20010228</td>
+    <td class="Beta">20001212</td>
+    <td class="Beta">19991231</td>
+    <td class="Beta">19991231</td>
+    <td class="Beta">19990906</td>
+    <td class="Beta">19990317</td>
+    <td class="Beta">19990317</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Postfix: a mail transport agent
+" href="http://www.postfix.org/start.html">postfix</a> (<a href="ftp://ftp.porcupine.org/mirrors/postfix-release/official/postfix-3.2.2.tar.gz">3.2.2</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="PostgreSQL: a relational database management system
+" href="https://www.postgresql.org/">postgresql</a> (<a href="http://ftp.postgresql.org/pub/source/v9.6.4/postgresql-9.6.4.tar.bz2">9.6.4</a>)</th>
+    <td>9.6</td>
+    <td>9.6.3</td>
+    <td>9.4.9</td>
+    <td>9.4</td>
+    <td>9.3.5</td>
+    <td>9.2.4</td>
+    <td>9.2.3</td>
+    <td>9.1.1</td>
+    <td>9.1.1</td>
+    <td>9.0.3</td>
+    <td>8.4.4</td>
+    <td>8.4.1</td>
+    <td>8.3.5</td>
+    <td>8.3.1</td>
+    <td>8.2.4</td>
+    <td>8.1.5</td>
+    <td>8.1.3</td>
+    <td>8.0.3</td>
+    <td>8.0.1</td>
+    <td>7.4.5</td>
+    <td>7.4.2</td>
+    <td>7.3.4</td>
+    <td>7.3.2</td>
+    <td>7.2.2</td>
+    <td>7.2</td>
+    <td>7.1.3</td>
+    <td>7.0.3</td>
+    <td>7.0.3</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>6.4beta4</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="PostgreSQL: a relational database management system
+" href="https://www.postgresql.org/">postgresql</a> (<a href="http://ftp.postgresql.org/pub/source/v9.6.4/postgresql-9.6.4.tar.bz2">9.6.4</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="Python: an interpreted, interactive, object-oriented programming language
+" href="https://www.python.org/">Python</a> (<a href="https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz">3.6.2</a>)</th>
+    <td>2.7.13</td>
+    <td>2.7.13</td>
+    <td>2.7.12</td>
+    <td>--</td>
+    <td>2.7.8</td>
+    <td>2.7.5</td>
+    <td>2.7.3</td>
+    <td>2.7.3</td>
+    <td>2.7.2</td>
+    <td>2.7</td>
+    <td>2.6.5</td>
+    <td>2.6.2</td>
+    <td>2.6.0</td>
+    <td>2.5.2</td>
+    <td>2.5.1</td>
+    <td>2.5</td>
+    <td>2.4.2</td>
+    <td>2.4.1</td>
+    <td>2.4</td>
+    <td>2.3.4</td>
+    <td>2.3.3</td>
+    <td>2.3</td>
+    <td>2.2.2</td>
+    <td>2.2.1</td>
+    <td>2.2</td>
+    <td>2.1.1</td>
+    <td>2.0</td>
+    <td>2.0</td>
+    <td>1.5.2</td>
+    <td>1.5.2</td>
+    <td>1.5.2</td>
+    <td>1.5.2</td>
+    <td>1.5.1</td>
+    <td>1.5.1</td>
+    <td>1.5.1</td>
+    <td>1.5</td>
+    <th><a title="Python: an interpreted, interactive, object-oriented programming language
+" href="https://www.python.org/">Python</a> (<a href="https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz">3.6.2</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Qt: a C++ application framework for writing graphical applications
+" href="http://qt-project.org/">qt</a> (<a href="http://download.qt-project.org/official_releases/qt/5.9/5.9.1/single/qt-everywhere-opensource-src-5.9.1.tar.xz">5.9.1</a>)</th>
+    <td class="Current">5.9.1</td>
+    <td>5.6.2</td>
+    <td>5.6.1</td>
+    <td>5.5.0</td>
+    <td>4.8.6</td>
+    <td>4.8.5</td>
+    <td>4.8.4</td>
+    <td>4.8.1</td>
+    <td>4.7.4</td>
+    <td>4.7.1</td>
+    <td>4.6.3</td>
+    <td>4.5.3</td>
+    <td>4.4.3</td>
+    <td>4.4.0</td>
+    <td>3.3.8</td>
+    <td>3.3.7</td>
+    <td>3.3.5</td>
+    <td>3.3.4</td>
+    <td>3.3.4</td>
+    <td>3.3.3</td>
+    <td>3.3.1</td>
+    <td>3.2.1</td>
+    <td>3.1.1</td>
+    <td>3.0.5</td>
+    <td>3.0.3</td>
+    <td>2.3.1</td>
+    <td>2.3.0</td>
+    <td>2.2.3</td>
+    <td>1.45</td>
+    <td>1.45</td>
+    <td>1.44</td>
+    <td>1.44</td>
+    <td>1.44</td>
+    <td>1.33</td>
+    <td>1.33</td>
+    <td>1.32</td>
+    <th><a title="Qt: a C++ application framework for writing graphical applications
+" href="http://qt-project.org/">qt</a> (<a href="http://download.qt-project.org/official_releases/qt/5.9/5.9.1/single/qt-everywhere-opensource-src-5.9.1.tar.xz">5.9.1</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="Samba: a free software re-implementation of SMB/CIFS networking protocol
+" href="http://www.samba.org/">samba</a> (<a href="http://us1.samba.org/samba/ftp/stable/samba-4.6.7.tar.gz">4.6.7</a>)</th>
+    <td>4.6.6</td>
+    <td>4.6.5</td>
+    <td>4.4.2</td>
+    <td>4.2.4</td>
+    <td>4.1.12</td>
+    <td>4.1.0</td>
+    <td>3.6.12</td>
+    <td>3.6.7</td>
+    <td>3.6.1</td>
+    <td>3.5.7</td>
+    <td>3.5.4</td>
+    <td>3.4.2</td>
+    <td>3.2.5</td>
+    <td>3.2.0</td>
+    <td>3.0.26a</td>
+    <td>3.0.23d</td>
+    <td>3.0.22</td>
+    <td>3.0.20</td>
+    <td>3.0.12</td>
+    <td>3.0.7</td>
+    <td>3.0.2a</td>
+    <td>2.2.8a</td>
+    <td>2.2.7a</td>
+    <td>2.2.5</td>
+    <td>2.2.3a</td>
+    <td>2.2.1a</td>
+    <td>2.2.0a</td>
+    <td>2.0.7</td>
+    <td>2.0.7</td>
+    <td>2.0.6</td>
+    <td>2.0.6</td>
+    <td>2.0.5a</td>
+    <td>2.0.3</td>
+    <td>1.9.18p10</td>
+    <td>1.9.18p10</td>
+    <td>1.9.18p3</td>
+    <th><a title="Samba: a free software re-implementation of SMB/CIFS networking protocol
+" href="http://www.samba.org/">samba</a> (<a href="http://us1.samba.org/samba/ftp/stable/samba-4.6.7.tar.gz">4.6.7</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="systemd: a system and service manager for Linux
+" href="http://www.freedesktop.org/wiki/Software/systemd/">systemd</a> (<a href="https://github.com/systemd/systemd/archive/v234.tar.gz">234</a>)</th>
+    <td class="Current">234</td>
+    <td>228</td>
+    <td>228</td>
+    <td>210</td>
+    <td>210</td>
+    <td>208</td>
+    <td>195</td>
+    <td>44</td>
+    <td>37</td>
+    <td>18</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="systemd: a system and service manager for Linux
+" href="http://www.freedesktop.org/wiki/Software/systemd/">systemd</a> (<a href="https://github.com/systemd/systemd/archive/v234.tar.gz">234</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="Mozilla Thunderbird: a full-featured e-mail and newsgroup client
+" href="http://www.mozilla.org/products/thunderbird/">thunderbird</a> (<a href="https://ftp.mozilla.org/pub/thunderbird/releases/52.3.0/source/thunderbird-52.3.0.source.tar.xz">52.3.0</a>)</th>
+    <td>52.2.1</td>
+    <td>52.2.1</td>
+    <td>45.4.0</td>
+    <td>38.3.0</td>
+    <td>31.2.0</td>
+    <td>24.1.0</td>
+    <td>17.0.3</td>
+    <td>14.0</td>
+    <td>7.0.1</td>
+    <td>3.1.7</td>
+    <td>3.0.5</td>
+    <td>3.0b4</td>
+    <td>2.0.0.18</td>
+    <td>2.0.0.12</td>
+    <td>2.0.0.6</td>
+    <td>1.5.0.8</td>
+    <td>1.5</td>
+    <td>1.0.6</td>
+    <td>1.0</td>
+    <td>0.8</td>
+    <td>0.5</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Mozilla Thunderbird: a full-featured e-mail and newsgroup client
+" href="http://www.mozilla.org/products/thunderbird/">thunderbird</a> (<a href="https://ftp.mozilla.org/pub/thunderbird/releases/52.3.0/source/thunderbird-52.3.0.source.tar.xz">52.3.0</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Vim: an improved version of the editor "vi", one of the standard text editors on UNIX
+" href="http://www.vim.org/">vim</a> (<a href="ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2">8.0</a>)</th>
+    <td class="Current">8.0</td>
+    <td>7.4</td>
+    <td>7.4</td>
+    <td>7.4</td>
+    <td>7.4</td>
+    <td>7.4</td>
+    <td>7.3</td>
+    <td>7.3</td>
+    <td>7.3</td>
+    <td>7.3</td>
+    <td>7.2</td>
+    <td>7.2</td>
+    <td>7.2</td>
+    <td>7.1</td>
+    <td>7.1</td>
+    <td>7.0</td>
+    <td>6.4</td>
+    <td>6.3</td>
+    <td>6.3</td>
+    <td>6.3</td>
+    <td>6.2</td>
+    <td>6.2</td>
+    <td>6.1</td>
+    <td>6.1</td>
+    <td>6.0</td>
+    <td>6.0av</td>
+    <td>5.7</td>
+    <td>5.7</td>
+    <td>5.6</td>
+    <td>5.6</td>
+    <td>5.4</td>
+    <td>5.3</td>
+    <td>5.3</td>
+    <td>5.3</td>
+    <td>4.6</td>
+    <td>4.6</td>
+    <th><a title="Vim: an improved version of the editor "vi", one of the standard text editors on UNIX
+" href="http://www.vim.org/">vim</a> (<a href="ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2">8.0</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="VLC: a cross-platform media player and streaming server
+" href="http://www.videolan.org/streaming/">vlc</a> (<a href="http://download.videolan.org/pub/videolan/vlc/2.2.6/vlc-2.2.6.tar.xz">2.2.6</a>)</th>
+    <td class="Current">2.2.6</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="VLC: a cross-platform media player and streaming server
+" href="http://www.videolan.org/streaming/">vlc</a> (<a href="http://download.videolan.org/pub/videolan/vlc/2.2.6/vlc-2.2.6.tar.xz">2.2.6</a>)</th>
+  </tr>
+  <tr class="Background">
+    <th><a title="Xfdesktop: a desktop manager for the Xfce desktop
+" href="http://www.xfce.org/">xfdesktop</a> (<a href="http://archive.xfce.org/src/xfce/xfdesktop/4.12/xfdesktop-4.12.4.tar.bz2">4.12.4</a>)</th>
+    <td>4.12.3</td>
+    <td>4.12.2</td>
+    <td>4.12.2</td>
+    <td>4.12.2</td>
+    <td>4.10.2</td>
+    <td>4.10.2</td>
+    <td>4.10.0</td>
+    <td>4.10.0</td>
+    <td>4.8.3</td>
+    <td>4.8</td>
+    <td>4.6.1</td>
+    <td>4.6.1</td>
+    <td>4.4.3</td>
+    <td>4.4.2</td>
+    <td>4.4.1</td>
+    <td>4.2.3</td>
+    <td>4.2.3</td>
+    <td>4.2.2</td>
+    <td>4.0.5</td>
+    <td>4.0.5</td>
+    <td>3.8.18</td>
+    <td>3.8.18</td>
+    <td>3.8.16</td>
+    <td>3.8.16</td>
+    <td>3.8.14</td>
+    <td>3.8.5</td>
+    <td>3.8.0</td>
+    <td>3.6.3</td>
+    <td>3.4.3</td>
+    <td>3.2.5</td>
+    <td>3.1.1</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="Xfdesktop: a desktop manager for the Xfce desktop
+" href="http://www.xfce.org/">xfdesktop</a> (<a href="http://archive.xfce.org/src/xfce/xfdesktop/4.12/xfdesktop-4.12.4.tar.bz2">4.12.4</a>)</th>
+  </tr>
+  <tr>
+    <th><a title="X.Org: the X.Org Foundation's public implementation of the X Window System
+" href="http://xorg.freedesktop.org/">xorg-server</a> (<a href="http://xorg.freedesktop.org/archive/individual/xserver/xorg-server-1.19.3.tar.bz2">1.19.3</a>)</th>
+    <td class="Current">1.19.3</td>
+    <td>1.18.3</td>
+    <td>1.18.3</td>
+    <td>1.17.2</td>
+    <td>1.16.1</td>
+    <td>1.14.3</td>
+    <td>1.13.2</td>
+    <td>1.12.3</td>
+    <td>1.10.4</td>
+    <td>1.9.3</td>
+    <td>1.8.0</td>
+    <td>1.6.5</td>
+    <td>(7.4)</td>
+    <td>(7.3)</td>
+    <td>(7.2)</td>
+    <td>(7.2)</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <th><a title="X.Org: the X.Org Foundation's public implementation of the X Window System
+" href="http://xorg.freedesktop.org/">xorg-server</a> (<a href="http://xorg.freedesktop.org/archive/individual/xserver/xorg-server-1.19.3.tar.bz2">1.19.3</a>)</th>
+  </tr>
+</table>
+<br /><table class="Info" style="width: 100%">
+<tr>
+<th class="Invert">Reader Ratings</th>
+</tr>
+<tr class="Background">
+<td style="width: 100%">
+<blockquote><table width="90%" cellpadding="5">
+<tr>
+<td width="80%" valign="top" align="left" style="border: 0px">
+<div style="float:right; margin-left: 10px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- large-skyscraper -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-1979814992302941"
+     data-ad-slot="2229834536"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div><a name="ratings"></a><b>Reader supplied reviews for openSUSE</b><br /><br />
+Average rating<br /><div style="font-size: 64px; text-align: left">8.9</div>from <b>112</b> review(s)<br />
+<form name="newreview" action="dwres.php" method="post">
+<br /><hr>
+<br /><b>What are your thoughts on openSUSE?</b><br />Please include a few pros and a few cons, along with your overall impression of the operating system.<br /><br />
+<input type=hidden name=resource value="ratings">
+<input type=hidden name=distro value="opensuse">
+<input type=hidden name=distribution value="opensuse">
+Version: <select name=version>
+<option value="0">--</option>
+<option value="tumbleweed">tumbleweed</option><option value="42.3">42.3</option><option value="42.2">42.2</option><option value="42.1">42.1</option><option value="13.2">13.2</option><option value="13.1">13.1</option><option value="12.3">12.3</option><option value="12.2">12.2</option><option value="12.1">12.1</option><option value="11.4">11.4</option><option value="11.3">11.3</option><option value="11.2">11.2</option><option value="11.1">11.1</option><option value="11.0">11.0</option><option value="10.3">10.3</option><option value="10.2">10.2</option><option value="10.1">10.1</option><option value="10.0">10.0</option><option value="9.3">9.3</option><option value="9.2">9.2</option><option value="9.1">9.1</option><option value="9.0">9.0</option><option value="8.2">8.2</option><option value="8.1">8.1</option><option value="8.0">8.0</option><option value="7.3">7.3</option><option value="7.2">7.2</option><option value="7.1">7.1</option><option value="7.0">7.0</option><option value="6.4">6.4</option><option value="6.3">6.3</option><option value="6.2">6.2</option><option value="6.1">6.1</option><option value="6.0">6.0</option><option value="5.3">5.3</option><option value="5.2">5.2</option><option value=""></option></select>
+<br /><br />Rating: &nbsp;&nbsp;<select name=stars>
+<option value="0">--</option>
+<option value="10">10</option>
+<option value="9">9</option>
+<option value="8">8</option>
+<option value="7">7</option>
+<option value="6">6</option>
+<option value="5">5</option>
+<option value="4">4</option>
+<option value="3">3</option>
+<option value="2">2</option>
+<option value="1">1</option>
+</select> out of 10
+<br /><br />Comments (maximum 2,048 characters):<br /><textarea name="body" cols="88" rows="18" maxlength="2048"></textarea>
+<br /><br /><input type=submit value="Submit Review">
+</form>
+<br /><hr><form name="sortreviews" method="get">
+<input type="hidden" name="resource" value="ratings">
+<input type="hidden" name="distro" value="opensuse">
+<input type="hidden" name="distribution" value="opensuse">
+<b>Past reviews</b> - sort by: <select name="sortby">
+<option selected value="date">Date</option><option value="votes">Votes</option>
+</select>
+<input type="submit" value="Go">
+</form>
+<br /><table style="border: 2" width="100%" cellspacing="5" cellpadding="5">
+<tr style="outline: thin solid black">
+<td width=30% style="border:0" valign=top>
+<b>Version:</b> 42.3<br /><b>Rating:</b> 10<br /><b>Date:</b> 2017-08-22<br /><b>Votes:</b> 5<br /><br /><br /></td>
+<td width="70%" style="border:0" valign="top">
+Test drove a lot of distro's, while trying to get into the linux environment(current Mac user here). This one so far sticks out amongst the crowd,  and I like what I'm seeing.<br /><br /><br /><form name=like method=get>
+<input type=hidden name=resource value=ratings>
+<input type=hidden name=distro value="opensuse">
+<input type=hidden name=distribution value="opensuse">
+<input type=hidden name=likepost value="5765">Was this review helpful? <input type=radio name=helpful value="Yes"> Yes 
+<input type=radio name=helpful value="No"> No 
+<input type=submit value="Vote">
+</form>
+</td>
+</tr>
+<tr style="outline: thin solid black">
+<td width=30% style="border:0" valign=top>
+<b>Version:</b> tumbleweed<br /><b>Rating:</b> 9<br /><b>Date:</b> 2017-08-21<br /><b>Votes:</b> 0<br /><br /><br /></td>
+<td width="70%" style="border:0" valign="top">
+A very good distro, like someone alreadey said, it's totally underrated.<br />It's very but very stable, Plasma work incredibly fast, it's not bloated like many other distroes.<br />I really recommend to everyday home use. Don't be afraid.<br />A problem is that Suse doesn't contai many popular IDE for developers in its repositories like Eclipse or Netbeans.<br />Generally repositories doesn't contain many softwar in comparison with Debian-based distroes.<br />I really do not know why. You need do install manually codecs, it should not be so. <br />Anyhow, like I've said, it's a very good system. Try it!<br /><br /><br /><br /><form name=like method=get>
+<input type=hidden name=resource value=ratings>
+<input type=hidden name=distro value="opensuse">
+<input type=hidden name=distribution value="opensuse">
+<input type=hidden name=likepost value="5735">Was this review helpful? <input type=radio name=helpful value="Yes"> Yes 
+<input type=radio name=helpful value="No"> No 
+<input type=submit value="Vote">
+</form>
+</td>
+</tr>
+<tr style="outline: thin solid black">
+<td width=30% style="border:0" valign=top>
+<b>Version:</b> 42.3<br /><b>Rating:</b> 10<br /><b>Date:</b> 2017-08-20<br /><b>Votes:</b> 0<br /><br /><br /></td>
+<td width="70%" style="border:0" valign="top">
+openSuse is my main OS, use it at work and home. Very good is the System configuration<br /> tool Yast, also a good tool for beginner with suse. And I'm a big fan of zypper, you<br /> can make all with GUI too but I need only zypper for manage my system<br /> updates and repos. The KDE Plasma Desktop works optimal with suse.<br /><br /><br /><form name=like method=get>
+<input type=hidden name=resource value=ratings>
+<input type=hidden name=distro value="opensuse">
+<input type=hidden name=distribution value="opensuse">
+<input type=hidden name=likepost value="5714">Was this review helpful? <input type=radio name=helpful value="Yes"> Yes 
+<input type=radio name=helpful value="No"> No 
+<input type=submit value="Vote">
+</form>
+</td>
+</tr>
+</table>
+<br />
+<a href="dwres.php?resource=ratings&distro=opensuse"><b>See all 112 reader reviews of openSUSE...</b></a><br /></td></tr></table>
+
+</blockquote></td>
+</tr>
+</table>
+<br /><div>
+<script async type='text/javascript' src='//s.clickiocdn.com/t/common_258.js'></script>
+<script class='__lxGc__' type='text/javascript'>
+((__lxGc__=window.__lxGc__||{'s':{},'b':0})['s']['_207055']=__lxGc__['s']['_207055']||{'b':{}})['b']['_599328']={'i':__lxGc__.b++};
+</script>
+</div><hr><table width="100%" border="0">  <tr><td style="width: 100%; text-align: center; border: 0px">Copyright (C) 2001 - 2017 Unsigned Integer Limited. All rights reserved. All trademarks are the property of their respective owners. <a href="dwres.php?resource=privacy">Privacy policy</a>.<br />DistroWatch.com is hosted at <a href="http://distrowatch.com/">Copenhagen</a>.<br /><br />Contact, corrections and suggestions: <a href="mailto:&#100;&#105;&#115;&#116;&#114;&#111;&#64;&#100;&#105;&#115;&#116;&#114;&#111;&#119;&#97;&#116;&#99;&#104;&#46;&#99;&#111;&#109;">Jesse Smith</a><br />
+Tips: BTC 1HVdyGfP8s37z19wmbcsnwSPSvFnssu5Mu &bull; <a href="https://www.paypal.me/distrowatchweekly">PayPal.me/distrowatchweekly</a>    </td>
+  </tr>
+</table><br />
+</body>
+</html>
