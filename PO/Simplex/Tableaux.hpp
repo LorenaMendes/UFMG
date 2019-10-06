@@ -14,9 +14,10 @@ struct Tableaux{
 	int HasNegative(float*);
 	bool IsBaseColumn(int);
 	bool ColNegativa();
+	// bool IsViable();
 	void PrintTableaux();
 	void Otima();
-	void Ilimitada();
+	void Ilimitada(int);
 };
 
 #endif

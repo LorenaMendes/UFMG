@@ -28,6 +28,11 @@ Tableaux::Tableaux(int rests, int vars) {
 
 void Tableaux::Simplex() {
 
+	// if(!IsViable()){
+	// 	cout << "Inviavel" << endl;
+	// 	return;
+	// }
+
 	while (1) {
 
 		// representa a coluna pivô
@@ -38,7 +43,6 @@ void Tableaux::Simplex() {
 		// par reprensentando <linha pivô, razão>
 		pair<int, float> pivot(def, def);
 
-		// while((col_pivo = HasNegative(this->matrix[0])) != -1){
 		if ((col_pivo = HasNegative(this->matrix[0])) != -1) {
 
 			if (DEBUG) cout << "Coluna pivô: " << col_pivo << endl;
@@ -57,7 +61,7 @@ void Tableaux::Simplex() {
 			}
 
 			if (pivo == def) {
-				this->Ilimitada();
+				this->Ilimitada(col_pivo);
 				break;
 			}
 
@@ -104,27 +108,31 @@ bool Tableaux::IsBaseColumn(int col){
 	return count != 1 ? false : true;
 }
 
-void Tableaux::Ilimitada() {
+// bool Tableaux::IsViable(){
+// 	bool flag = true;
+	
+// 	return flag;
+// }
+
+void Tableaux::Ilimitada(int col_zoada) {
 	cout << "Ilimitada" << endl;
 
 	// //achando o certificado
-	// float max = 0;
-	// float cert[vars];
-	// int index = -1;
-	// for (int i = 0; i < this->vars; ++i){}
-	// 	// acho o maior elemento positivo
-	// 	if(this->obj_func[i] > max){
-	// 		index = i;
-	// 		max = this->obj_func[i];
-	// 	}
-	
-	// for (int i = 0; i < this->lines; ++i){
-	// 	for (int j = 0; j < this->columns; ++j){
-	// 		if(j != index){
-				
-	// 		}
-	// 	}
-	// }
+	float cert[vars];
+	cert[col_zoada] = 1;
+
+	for (int j = 0; j < this->vars; ++j){
+		if(j == col_zoada) continue;
+		if(!IsBaseColumn(j)) cert[j] = 0;
+		else{
+			int val_um;
+			for (int i = 0; i < this->lines; ++i)
+				if(this->matrix[i][j] == 1) val_um = i;
+			cert[j] = 0 - this->matrix[val_um][col_zoada];
+		}
+	}
+		
+	for (int i = 0; i < this->vars; ++i) cout << cert[i] << " ";
 
 	cout << endl;
 }
