@@ -29,7 +29,7 @@ int main(int argc, char const *argv[]){
 	}
 
 	// Tab.PrintTableaux();
-	Tab.Simplex();
+	Tab.Simplex(Tab);
 
 	return 0;
 }

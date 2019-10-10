@@ -10,7 +10,8 @@ struct Tableaux{
 	float obj_func[10];
 
 	Tableaux(int, int);
-	void Simplex();
+	void CreateAuxiliar();
+	void Simplex(Tableaux Tab);
 	int HasNegative(float*);
 	bool IsBaseColumn(int);
 	bool ColNegativa();
@@ -18,6 +19,7 @@ struct Tableaux{
 	void PrintTableaux();
 	void Otima();
 	void Ilimitada(int);
+	double truncate(double);
 };
 
 #endif

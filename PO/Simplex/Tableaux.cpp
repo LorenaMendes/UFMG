@@ -26,8 +26,55 @@ Tableaux::Tableaux(int rests, int vars) {
 	}
 }
 
-void Tableaux::Simplex() {
+void Tableaux::CreateAuxiliar(){
+	int aux_col = this->columns;
+	int aux_lin = this->lines;
 
+	float Auxiliar[aux_lin][aux_col];
+	
+	for (int i = 0; i < aux_lin; ++i){
+		for (int j = 0; j < this->vars; ++j){
+			if(i == 0) Auxiliar[i][j] = 0;
+			else Auxiliar[i][j] = this->matrix[i][j];
+		}
+	}
+
+	for (int i = 0; i < aux_lin; ++i){
+		for (int j = this->vars; j < aux_col - 1; ++j){
+			if(i == 0) Auxiliar[i][j] = 1;
+			else if (j - i == (this->columns - 1) / 2 - 1) Auxiliar[i][j] = 1;
+			else Auxiliar[i][j] = 0;
+		}
+	}
+
+	for (int i = 0; i < aux_lin; ++i){
+		if(i == 0) Auxiliar[i][aux_col-1] = 0;
+		Auxiliar[i][aux_col-1] = this->matrix[i][this->columns-1];
+	}
+
+	for (int i = 0; i < aux_lin; ++i){
+		if(Auxiliar[i][aux_col-1] < 0){
+			Auxiliar[i][aux_col-1] *= -1;
+			for (int j = 0; j < this->vars; ++j)
+				Auxiliar[i][j] *= -1;
+		}
+	}
+
+	cout << endl;
+	for (int i = 0; i < aux_lin; ++i) {
+		for (int j = 0; j < aux_col; ++j) {
+			cout << Auxiliar[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	// return Auxiliar;
+}
+
+void Tableaux::Simplex(Tableaux Tab) {
+
+	// this->CreateAuxiliar();
+	
 	// if(!IsViable()){
 	// 	cout << "Inviavel" << endl;
 	// 	return;
@@ -43,25 +90,25 @@ void Tableaux::Simplex() {
 		// par reprensentando <linha pivô, razão>
 		pair<int, float> pivot(def, def);
 
-		if ((col_pivo = HasNegative(this->matrix[0])) != -1) {
+		if ((col_pivo = HasNegative(Tab.matrix[0])) != -1) {
 
 			if (DEBUG) cout << "Coluna pivô: " << col_pivo << endl;
 
 			// encontra o pivô
-			for (int i = 1; i < this->lines; ++i) {
-				if (this->matrix[i][col_pivo] != 0) {
-					float a = this->matrix[i][this->columns - 1];
-					float b = this->matrix[i][col_pivo];
+			for (int i = 1; i < Tab.lines; ++i) {
+				if (Tab.matrix[i][col_pivo] != 0) {
+					float a = Tab.matrix[i][Tab.columns - 1];
+					float b = Tab.matrix[i][col_pivo];
 					if (a / b >= 0 && a / b < pivot.second) {
 						pivot.first = i;
 						pivot.second = a / b;
-						pivo = this->matrix[pivot.first][col_pivo];
+						pivo = Tab.matrix[pivot.first][col_pivo];
 					}
 				}
 			}
 
 			if (pivo == def) {
-				this->Ilimitada(col_pivo);
+				Tab.Ilimitada(col_pivo);
 				break;
 			}
 
@@ -69,23 +116,23 @@ void Tableaux::Simplex() {
 			if (DEBUG) cout << "Pivô: " << pivo << endl;
 
 			// divide a linha toda pelo pivô
-			for (int i = 0; i < this->columns; ++i) {
-				this->matrix[pivot.first][i] /= pivo;
+			for (int i = 0; i < Tab.columns; ++i) {
+				Tab.matrix[pivot.first][i] /= pivo;
 			}
 
 			// transforma todo o tableaux a partir da nova linha-pivô
-			for (int i = 0; i < this->lines; ++i) {
+			for (int i = 0; i < Tab.lines; ++i) {
 				if (i != pivot.first) {
 
-					float val = -this->matrix[i][col_pivo];
-					for (int j = 0; j < this->columns; ++j)
-						this->matrix[i][j] += (val * this->matrix[pivot.first][j]);
+					float val = -Tab.matrix[i][col_pivo];
+					for (int j = 0; j < Tab.columns; ++j)
+						Tab.matrix[i][j] += (val * Tab.matrix[pivot.first][j]);
 				}
 			}
 
 		} else {
-			// if(!this->ColNegativa())
-			this->Otima();
+			// if(!Tab.ColNegativa())
+			Tab.Otima();
 			break;
 		}
 	}
@@ -120,16 +167,14 @@ void Tableaux::Ilimitada(int col_zoada) {
 	// //achando o certificado
 	float cert[vars];
 	cert[col_zoada] = 1;
+	int val;
 
 	for (int j = 0; j < this->vars; ++j){
 		if(j == col_zoada) continue;
-		if(!IsBaseColumn(j)) cert[j] = 0;
-		else{
-			int val_um;
-			for (int i = 0; i < this->lines; ++i)
-				if(this->matrix[i][j] == 1) val_um = i;
-			cert[j] = 0 - this->matrix[val_um][col_zoada];
-		}
+		if(IsBaseColumn(j)){
+			for (int i = 0; i < this->lines; ++i) if(this->matrix[i][j] == 1) val = i;
+			cert[j] = 0 - this->matrix[val][col_zoada];
+		} else cert[j] = 0;
 	}
 		
 	for (int i = 0; i < this->vars; ++i) cout << cert[i] << " ";
@@ -172,4 +217,10 @@ void Tableaux::PrintTableaux() {
 		}
 		cout << endl;
 	}
+}
+
+double Tableaux::truncate (double n) {
+	if (n>=0 && n<=1e-04) return 0;
+	else if (n>=(-1e-04) && n<=0) return 0;
+	else return n;
 }
