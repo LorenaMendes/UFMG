@@ -6,20 +6,24 @@
 struct Tableaux{
 	int lines, rests;
 	int columns, vars;
-	float matrix[10][10];
-	float obj_func[10];
+	float matrix[20][20];
+	float obj_func[20];
+	int type;
+	int aux;
 
 	Tableaux(int, int);
-	void CreateAuxiliar();
-	void Simplex(Tableaux Tab);
-	int HasNegative(float*);
-	bool IsBaseColumn(int);
-	bool ColNegativa();
-	// bool IsViable();
-	void PrintTableaux();
-	void Otima();
-	void Ilimitada(int);
-	double truncate(double);
 };
+
+
+bool CreateAuxiliar(Tableaux);
+Tableaux Simplex(Tableaux);
+int HasNegative(Tableaux, float*);
+bool IsBaseColumn(Tableaux, int);
+bool ColNegativa(Tableaux);
+void PrintTableaux(Tableaux);
+float Otima(Tableaux);
+void PrintOtima(Tableaux Tab);
+void Ilimitada(Tableaux, int, int);
+double truncate(double);
 
 #endif

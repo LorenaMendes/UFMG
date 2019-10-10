@@ -10,6 +10,7 @@ Tableaux::Tableaux(int rests, int vars) {
 	this->vars = vars;
 	this->lines = rests + 1;
 	this->columns = rests * 2 +1;
+	this->type = -1;
 
 	if (DEBUG) cout << "linhas: " << lines << endl;
 	if (DEBUG) cout << "colunas: " << columns << endl;
@@ -26,59 +27,74 @@ Tableaux::Tableaux(int rests, int vars) {
 	}
 }
 
-void Tableaux::CreateAuxiliar(){
-	int aux_col = this->columns;
-	int aux_lin = this->lines;
+// true para ótima, false para não ótima
+bool CreateAuxiliar(Tableaux Tab){
+	
+	bool isOtima;
 
-	float Auxiliar[aux_lin][aux_col];
+	int aux_col = Tab.columns;
+	int aux_lin = Tab.lines;
+
+	Tableaux Auxiliar(Tab.rests, Tab.vars);
 	
 	for (int i = 0; i < aux_lin; ++i){
-		for (int j = 0; j < this->vars; ++j){
-			if(i == 0) Auxiliar[i][j] = 0;
-			else Auxiliar[i][j] = this->matrix[i][j];
+		for (int j = 0; j < Tab.vars; ++j){
+			if(i == 0) Auxiliar.matrix[i][j] = 0;
+			else Auxiliar.matrix[i][j] = Tab.matrix[i][j];
 		}
 	}
 
 	for (int i = 0; i < aux_lin; ++i){
-		for (int j = this->vars; j < aux_col - 1; ++j){
-			if(i == 0) Auxiliar[i][j] = 1;
-			else if (j - i == (this->columns - 1) / 2 - 1) Auxiliar[i][j] = 1;
-			else Auxiliar[i][j] = 0;
+		for (int j = Tab.vars; j < aux_col - 1; ++j){
+			if(i == 0) Auxiliar.matrix[i][j] = 1;
+			else if (j - i == (Tab.columns - 1) / 2 - 1) Auxiliar.matrix[i][j] = 1;
+			else Auxiliar.matrix[i][j] = 0;
 		}
 	}
 
 	for (int i = 0; i < aux_lin; ++i){
-		if(i == 0) Auxiliar[i][aux_col-1] = 0;
-		Auxiliar[i][aux_col-1] = this->matrix[i][this->columns-1];
+		if(i == 0) Auxiliar.matrix[i][aux_col-1] = 0;
+		Auxiliar.matrix[i][aux_col-1] = Tab.matrix[i][Tab.columns-1];
 	}
 
 	for (int i = 0; i < aux_lin; ++i){
-		if(Auxiliar[i][aux_col-1] < 0){
-			Auxiliar[i][aux_col-1] *= -1;
-			for (int j = 0; j < this->vars; ++j)
-				Auxiliar[i][j] *= -1;
+		if(Auxiliar.matrix[i][aux_col-1] < 0){
+			Auxiliar.matrix[i][aux_col-1] *= -1;
+			for (int j = 0; j < Tab.vars; ++j)
+				Auxiliar.matrix[i][j] *= -1;
 		}
 	}
 
-	cout << endl;
-	for (int i = 0; i < aux_lin; ++i) {
-		for (int j = 0; j < aux_col; ++j) {
-			cout << Auxiliar[i][j] << " ";
-		}
-		cout << endl;
-	}
+	// PrintTableaux(Auxiliar);
 
-	// return Auxiliar;
+	Tableaux Temp = Simplex(Auxiliar);
+	if(Temp.type == 0){
+		if(Temp.aux == 0) isOtima = true;
+		else isOtima = false;
+ 	}
+	
+	return isOtima;
 }
 
-void Tableaux::Simplex(Tableaux Tab) {
+Tableaux Simplex(Tableaux Tab) {
 
-	// this->CreateAuxiliar();
-	
-	// if(!IsViable()){
-	// 	cout << "Inviavel" << endl;
-	// 	return;
-	// }
+	/*
+	0 = ótima
+	1 = inviável
+	2 = ilimitada
+	*/
+	Tab.type = 1;
+
+	bool negative = false;
+	for (int i = 1; i < Tab.lines; ++i)
+		if(Tab.matrix[i][Tab.columns-1] < 0) negative = true;
+
+	if(negative){
+		if(!CreateAuxiliar(Tab)){
+			Tab.type = 1;
+			return Tab;
+		}
+	}
 
 	while (1) {
 
@@ -90,7 +106,7 @@ void Tableaux::Simplex(Tableaux Tab) {
 		// par reprensentando <linha pivô, razão>
 		pair<int, float> pivot(def, def);
 
-		if ((col_pivo = HasNegative(Tab.matrix[0])) != -1) {
+		if ((col_pivo = HasNegative(Tab, Tab.matrix[0])) != -1) {
 
 			if (DEBUG) cout << "Coluna pivô: " << col_pivo << endl;
 
@@ -108,7 +124,10 @@ void Tableaux::Simplex(Tableaux Tab) {
 			}
 
 			if (pivo == def) {
-				Tab.Ilimitada(col_pivo);
+				// É ilimitada
+				Ilimitada(Tab, col_pivo, 0);
+				Tab.aux = col_pivo;
+				Tab.type = 2;
 				break;
 			}
 
@@ -132,69 +151,67 @@ void Tableaux::Simplex(Tableaux Tab) {
 
 		} else {
 			// if(!Tab.ColNegativa())
-			Tab.Otima();
+			Tab.type = 0;
+			Tab.aux = Otima(Tab);
 			break;
 		}
 	}
+	return Tab;
 }
 
-int Tableaux::HasNegative(float* vec) {
-	for (int i = 0; i < this->columns; ++i)
+int HasNegative(Tableaux Tab, float* vec) {
+	for (int i = 0; i < Tab.columns; ++i)
 		if (vec[i] < 0) return i;
 	return -1;
 }
 
-bool Tableaux::IsBaseColumn(int col){
+bool IsBaseColumn(Tableaux Tab, int col){
 	bool flag = true;
 	int count = 0;
-	for (int i = 0; i < this->lines; ++i){
-		float val = this->matrix[i][col];
+	for (int i = 0; i < Tab.lines; ++i){
+		float val = Tab.matrix[i][col];
 		if(val == 1) count++;
 		else if(val != 0) return false;
 	}
 	return count != 1 ? false : true;
 }
 
-// bool Tableaux::IsViable(){
-// 	bool flag = true;
-	
-// 	return flag;
-// }
-
-void Tableaux::Ilimitada(int col_zoada) {
-	cout << "Ilimitada" << endl;
+void Ilimitada(Tableaux Tab, int col_zoada, int flag) {
+	if(flag) cout << "Ilimitada" << endl;
 
 	// //achando o certificado
-	float cert[vars];
+	float cert[Tab.vars];
 	cert[col_zoada] = 1;
 	int val;
 
-	for (int j = 0; j < this->vars; ++j){
+	for (int j = 0; j < Tab.vars; ++j){
 		if(j == col_zoada) continue;
-		if(IsBaseColumn(j)){
-			for (int i = 0; i < this->lines; ++i) if(this->matrix[i][j] == 1) val = i;
-			cert[j] = 0 - this->matrix[val][col_zoada];
+		if(IsBaseColumn(Tab, j)){
+			for (int i = 0; i < Tab.lines; ++i) if(Tab.matrix[i][j] == 1) val = i;
+			cert[j] = 0 - Tab.matrix[val][col_zoada];
 		} else cert[j] = 0;
 	}
 		
-	for (int i = 0; i < this->vars; ++i) cout << cert[i] << " ";
+	if(flag) for (int i = 0; i < Tab.vars; ++i) cout << cert[i] << " ";
 
-	cout << endl;
+	if(flag) cout << endl;
 }
 
-void Tableaux::Otima() {
+void PrintOtima(Tableaux Tab) {
+	float otimo;
 	cout << "otima" << endl;
 	// imprimindo o valor ótimo
-	cout << this->matrix[0][this->columns - 1] << endl;
+	otimo = Tab.matrix[0][Tab.columns - 1];
+	cout << otimo << endl;
 
 	// imprimindo o vetor de valores que maximizam
-	for (int j = 0; j < (this->vars); ++j) {
-		if(!IsBaseColumn(j)) cout << "0 ";
+	for (int j = 0; j < (Tab.vars); ++j) {
+		if(!IsBaseColumn(Tab, j)) cout << "0 ";
 		else{
 			bool value = true;
-			for (int i = 1; i < this->lines; ++i)
-				if (this->matrix[i][j] == 1){
-					cout << this->matrix[i][this->columns - 1] << " ";
+			for (int i = 1; i < Tab.lines; ++i)
+				if (Tab.matrix[i][j] == 1){
+					cout << Tab.matrix[i][Tab.columns - 1] << " ";
 					value = false;
 				}
 			if(value) cout << "0 ";
@@ -203,23 +220,28 @@ void Tableaux::Otima() {
 	cout << endl;
 
 	//imprimindo o certificado de otimalidade
-	for (int j = (this->columns - 1) / 2; j < this->columns - 1; ++j)
-		cout << this->matrix[0][j] << " ";
+	for (int j = (Tab.columns - 1) / 2; j < Tab.columns - 1; ++j)
+		cout << Tab.matrix[0][j] << " ";
 	cout << endl;
-	this->PrintTableaux();
 }
 
-void Tableaux::PrintTableaux() {
+float Otima(Tableaux Tab) {
+	
+	float otimo = Tab.matrix[0][Tab.columns - 1];
+	return otimo;
+}
+
+void PrintTableaux(Tableaux Tab) {
 	cout << endl;
-	for (int i = 0; i < this->lines; ++i) {
-		for (int j = 0; j < this->columns; ++j) {
-			cout << this->matrix[i][j] << " ";
+	for (int i = 0; i < Tab.lines; ++i) {
+		for (int j = 0; j < Tab.columns; ++j) {
+			cout << Tab.matrix[i][j] << " ";
 		}
 		cout << endl;
 	}
 }
 
-double Tableaux::truncate (double n) {
+double truncate (double n) {
 	if (n>=0 && n<=1e-04) return 0;
 	else if (n>=(-1e-04) && n<=0) return 0;
 	else return n;

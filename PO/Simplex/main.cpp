@@ -28,8 +28,21 @@ int main(int argc, char const *argv[]){
 		cin >> Tab.matrix[i][n+n];
 	}
 
-	// Tab.PrintTableaux();
-	Tab.Simplex(Tab);
+	Tableaux Final = Simplex(Tab);
+	// int * res = Simplex(Tab);
+	// int type = res[0];
+	// int aux = res[1];
+	
+	switch(Final.type){
+		case 0:
+			PrintOtima(Final);
+			break;
+		case 1:
+			cout << "inviavel" << endl;
+			break;
+		case 2:
+			Ilimitada(Final, Final.aux, 1);
+	}
 
 	return 0;
 }
