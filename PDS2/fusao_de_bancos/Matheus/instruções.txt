@@ -1,0 +1,13 @@
+Trabalho Prático 1 - União dos Bancos
+
+Nome: 
+Matrícula: 
+
+Instruções de compilação e execução:
+$ gcc main.c -o main
+$ ./ main
+
+Os valores podem ser passados para o programa por meio entrada do usuário (pelo teclado). Nesse caso, basta digitar cada uma das linhas separadas por enter e cada valor de comando ou de banco separado por um espaço.
+
+Outra forma de passar a entrada para o programa é por meio de um arquivo com os valores. Nesse caso, basta executar da seguinte forma:
+$ ./main < input.txt

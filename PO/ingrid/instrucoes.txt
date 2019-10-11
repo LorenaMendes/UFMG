@@ -1,0 +1,6 @@
+O trabalho deve ser executado com Python versão 2.7.
+
+A única dependência do trabalho é a biblioteca numpy, que pode ser instalada via:
+$ pip2 install numpy
+
+O programa requer dois parâmetros: o nome de um arquivo de entrada e de um arquivo de saída.

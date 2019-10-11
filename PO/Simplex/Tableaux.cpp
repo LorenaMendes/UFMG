@@ -9,7 +9,7 @@ Tableaux::Tableaux(int rests, int vars) {
 	this->rests = rests;
 	this->vars = vars;
 	this->lines = rests + 1;
-	this->columns = rests * 2 +1;
+	this->columns = rests * 2 + 1;
 	this->type = -1;
 
 	if (DEBUG) cout << "linhas: " << lines << endl;

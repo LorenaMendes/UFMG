@@ -1,0 +1,43 @@
+SOLUÇÃO 1
+
+awk '{system("date +%s%N")}' |
+awk '
+	{q=NR;a[q]=$1;r=6e10};
+	q>1{b=q<6?(q-1)/($1-a[1]):4/($1-a[q-4]);print int(b*r)}
+'
+
+awk 'system("date +%s%N")'|awk '{q=NR;a[q]=$1}q>1{b=q<6?(q-1)/($1-a[1]):4/($1-a[q-4]);print int(b*6e10)" bpm"}'
+
+
+SOLUÇÃO 2
+
+awk xxxxx ex
+
+
+
+
+
+
+
+
+
+awk '{system("date +%s%N")}' |
+awk '
+	{q=NR;a[q]=$1;r=6e10};
+	q>1{b=((q-1)/($1-a[1]))*r};
+	q>5{b=(4/($1-a[q-4]))*r};
+	{print int(b)}
+'
+
+
+awk '{system("date +%s%N")}'|awk '{q=NR;a[q]=$1;r=6e10};q>1{b=q<6?(q-1)/($1-a[1]):4/($1-a[q-4]);print int(b*r)"bpm"}'
+
+
+awk '{system("date +%s%N")}' |
+awk '
+	BEGIN{a=60000};
+	NR==1{f=$1};
+	NR==5{d=$1};
+	NR<=5{bpm=($1-f)/a;print bpm};
+	NR>5{bpm=($1-d)/a;print bpm}
+'

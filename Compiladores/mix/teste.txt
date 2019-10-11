@@ -1,0 +1,14 @@
+este eh um arquivo
+de
+teste
+vamos testar
+// isso eh um comment
+// isso tambem
+54/8
+/*absdf asdhi ashdfuhas asdfas/* aslkdd*
+sdfasjd
+jdfisdj
+ddd
+lorenacd*/
+este arquivo
+de teste

@@ -1,0 +1,29 @@
+  
+  program test;
+  
+  var1 : boolean;
+  var2 boolean; // ERRO
+   op1 : int;
+   op2 : int;
+  
+  begin
+  
+  var1 := true;
+  var2 := false;
+   op1 = 10; // ERRO
+   op2 := 5;
+  
+  if(var1 and var2) print('V'); // ERRO
+  else print('F');
+  
+  if(var1 or var2) then print('Z');
+  else print('K') // ERRO
+  
+  write(op1(op2) // ERRO
+  write(op1-op2, op1*op2, op1/op2);
+
+  end
+
+
+
+
